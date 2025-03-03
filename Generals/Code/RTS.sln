@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.35731.53
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31314.256
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "Benchmark", "LIBRARIES\SOURCE\Benchmark\Benchmark.dsp", "{C9B14817-6281-4141-914C-E49C6E5953A0}"
 EndProject
