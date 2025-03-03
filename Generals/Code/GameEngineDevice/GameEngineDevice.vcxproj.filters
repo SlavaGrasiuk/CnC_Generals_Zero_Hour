@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{dda8aba1-c9ca-449b-92b2-098e8b225bc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice">
+      <UniqueIdentifier>{7f18980c-941d-4be4-8cd3-b529d2c82577}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\GameLogic %28W3DDevice%29">
+      <UniqueIdentifier>{a2f7f017-aa96-466e-83fe-f08418aea722}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\Common %28W3DDevice%29">
+      <UniqueIdentifier>{98210095-c4c3-4a03-8b77-971166f071ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\Common %28W3DDevice%29\Thing %28W3DDevice%29">
+      <UniqueIdentifier>{db7e8ce7-8c3f-4f03-b06e-130b423733fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\Common %28W3DDevice%29\System %28W3DDevice%29">
+      <UniqueIdentifier>{e7401318-c526-4b4e-bf58-00abd41051e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\GameClient %28W3DDevice%29">
+      <UniqueIdentifier>{2610e225-0287-4be1-8640-1d445ac00625}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29">
+      <UniqueIdentifier>{948b98f1-7dba-4341-8e54-6b15a59d4eb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29">
+      <UniqueIdentifier>{492263b0-5dc8-48e0-bbe2-6b3c16552114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29">
+      <UniqueIdentifier>{efd2258f-20ba-4247-aad9-333870c586ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29">
+      <UniqueIdentifier>{bc3dcba2-10e3-40c9-82d6-5b2000c06031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\GUICallbacks">
+      <UniqueIdentifier>{04af10d4-08ed-4073-86a3-f35b7c00be38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\GUICallbacks\Menus">
+      <UniqueIdentifier>{5d68e780-1a8a-4f9a-9164-797a96b50e9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\GameClient %28W3DDevice%29\Water">
+      <UniqueIdentifier>{710a8a1f-254e-4548-803e-ebfdf57c193d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\GameClient %28W3DDevice%29\Shaders">
+      <UniqueIdentifier>{806aa48c-681c-4fc3-a43a-735fdc3d6124}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\W3DDevice\GameClient %28W3DDevice%29\Shadow">
+      <UniqueIdentifier>{1af2d948-ee8d-44e1-80e5-30d47c890af9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Win32Device">
+      <UniqueIdentifier>{5c014ab3-7f82-4d1f-920c-f3f0606628e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Win32Device\Common %28Win32Device%29">
+      <UniqueIdentifier>{13e22aa6-274e-4efa-b5ce-2adea0b25fc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Win32Device\GameClient %28Win32Device%29">
+      <UniqueIdentifier>{e7e363de-ab49-4384-9b6d-9d1bccee4530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\VideoDevice">
+      <UniqueIdentifier>{589a7b5a-26e8-4bae-92c7-3bfeabc735c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\VideoDevice\Bink">
+      <UniqueIdentifier>{27f8b9af-a183-4ff8-8a69-d76b1d5ed19d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\MilesAudioDevice">
+      <UniqueIdentifier>{70bfb18a-1bbf-40fd-9a9b-e779158d37b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{6567464f-2e1b-4470-b783-84ae1fc0813a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\W3DDevice H">
+      <UniqueIdentifier>{81d5ca18-0ae8-4459-b926-bbde6e8a07a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\W3DDevice H\GameLogic H %28W3DDevice%29">
+      <UniqueIdentifier>{48961d24-f9d9-426c-ad85-ca07199bd52c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\W3DDevice H\Common H %28W3DDevice%29">
+      <UniqueIdentifier>{6e3b3eaf-a343-497e-b563-01de411c1d0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\W3DDevice H\GameClient H %28W3DDevice%29">
+      <UniqueIdentifier>{77ebdcb6-66f0-4dca-91df-115667831739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29">
+      <UniqueIdentifier>{f766a9e5-5dd4-4624-8f26-13e3f736ced2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Win32Device H">
+      <UniqueIdentifier>{f6b704e9-9447-4088-bc1c-322deb617839}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Win32Device H\Common H %28Win32Device%29">
+      <UniqueIdentifier>{c8f90660-61d1-480d-869e-255db86f364f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Win32Device H\GameClient H %28Win32Device%29">
+      <UniqueIdentifier>{be8d5a9b-5a21-4bdd-921d-ff5e3c7ebe76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\VideoDevice H">
+      <UniqueIdentifier>{b9ceb7ac-2b35-4007-b99e-a65ebe81529e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\VideoDevice H\Bink H">
+      <UniqueIdentifier>{098447f4-3409-4348-afc4-481820c6da46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\MilesAudioDevice H">
+      <UniqueIdentifier>{91292227-5af0-4e4d-8d7a-0340c9d5178f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\W3DDevice\GameLogic\W3DGameLogic.cpp">
+      <Filter>Source\W3DDevice\GameLogic %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameLogic\W3DGhostObject.cpp">
+      <Filter>Source\W3DDevice\GameLogic %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameLogic\W3DTerrainLogic.cpp">
+      <Filter>Source\W3DDevice\GameLogic %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\Common\Thing\W3DModuleFactory.cpp">
+      <Filter>Source\W3DDevice\Common %28W3DDevice%29\Thing %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\Common\Thing\W3DThingFactory.cpp">
+      <Filter>Source\W3DDevice\Common %28W3DDevice%29\Thing %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\Common\System\W3DFunctionLexicon.cpp">
+      <Filter>Source\W3DDevice\Common %28W3DDevice%29\System %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\Common\System\W3DRadar.cpp">
+      <Filter>Source\W3DDevice\Common %28W3DDevice%29\System %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\Common\W3DConvert.cpp">
+      <Filter>Source\W3DDevice\Common %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DDebrisDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DDefaultDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DDependencyModelDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DLaserDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DModelDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DOverlordTankDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DPoliceCarDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DProjectileStreamDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DRopeDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DScienceModelDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DSupplyDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DTankDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DTankTruckDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DTracerDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DTruckDraw.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Drawable %28W3DDevice%29\Draw %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DCheckBox.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DComboBox.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DHorizontalSlider.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DListBox.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DProgressBar.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DPushButton.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DRadioButton.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DStaticText.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DTabControl.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DTextEntry.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DVerticalSlider.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\Gadget %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\GUICallbacks\W3DMainMenu.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\GUICallbacks\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\GUICallbacks\W3DControlBar.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\GUICallbacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\GUICallbacks\W3DMOTD.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29\GUICallbacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\W3DGameFont.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\W3DGameWindow.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\W3DGameWindowManager.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\GUI %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Water\W3DWater.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Water\W3DWaterTracks.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Shadow\W3DBufferManager.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Shadow\W3DProjectedShadow.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Shadow\W3DShadow.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Shadow\W3DVolumetricShadow.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\HeightMap.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\TerrainTex.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\TileData.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DAssetManager.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DAssetManagerExposed.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DBibBuffer.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DBridgeBuffer.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DCustomEdging.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDebugDisplay.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDebugIcons.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDisplay.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDisplayString.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDisplayStringManager.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDynamicLight.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DFileSystem.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DGameClient.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DGranny.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DInGameUI.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DMouse.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DParticleSys.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DPoly.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DRoadBuffer.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DScene.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DShaderManager.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DShroud.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DStatusCircle.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DTerrainTracks.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DTerrainVisual.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DTreeBuffer.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DVideoBuffer.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DView.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3dWaypointBuffer.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DWebBrowser.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\WorldHeightMap.cpp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32BIGFile.cpp">
+      <Filter>Source\Win32Device\Common %28Win32Device%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32BIGFileSystem.cpp">
+      <Filter>Source\Win32Device\Common %28Win32Device%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32CDManager.cpp">
+      <Filter>Source\Win32Device\Common %28Win32Device%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32GameEngine.cpp">
+      <Filter>Source\Win32Device\Common %28Win32Device%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32LocalFile.cpp">
+      <Filter>Source\Win32Device\Common %28Win32Device%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32LocalFileSystem.cpp">
+      <Filter>Source\Win32Device\Common %28Win32Device%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32OSDisplay.cpp">
+      <Filter>Source\Win32Device\Common %28Win32Device%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\GameClient\Win32DIKeyboard.cpp">
+      <Filter>Source\Win32Device\GameClient %28Win32Device%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\GameClient\Win32Mouse.cpp">
+      <Filter>Source\Win32Device\GameClient %28Win32Device%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\VideoDevice\Bink\BinkVideoPlayer.cpp">
+      <Filter>Source\VideoDevice\Bink</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MilesAudioDevice\MilesAudioManager.cpp">
+      <Filter>Source\MilesAudioDevice</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\W3DDevice\GameLogic\W3DGameLogic.h">
+      <Filter>Include\W3DDevice H\GameLogic H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameLogic\W3DGhostObject.h">
+      <Filter>Include\W3DDevice H\GameLogic H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameLogic\W3DTerrainLogic.h">
+      <Filter>Include\W3DDevice H\GameLogic H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\Common\W3DConvert.h">
+      <Filter>Include\W3DDevice H\Common H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\Common\W3DFunctionLexicon.h">
+      <Filter>Include\W3DDevice H\Common H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\Common\W3DModuleFactory.h">
+      <Filter>Include\W3DDevice H\Common H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\Common\W3DRadar.h">
+      <Filter>Include\W3DDevice H\Common H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\Common\W3DThingFactory.h">
+      <Filter>Include\W3DDevice H\Common H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DAssetManagerExposed.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DDebrisDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DDefaultDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DDependencyModelDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DLaserDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DModelDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DOverlordTankDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DPoliceCarDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DProjectileStreamDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DRopeDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DScienceModelDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DSupplyDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DTankDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DTankTruckDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DTracerDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DTruckDraw.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29\Module H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\HeightMap.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\TerrainTex.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\TileData.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DAssetManager.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DBibBuffer.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DBridgeBuffer.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DBufferManager.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DCustomEdging.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DCustomScene.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDebugDisplay.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDebugIcons.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDisplay.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDisplayString.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDisplayStringManager.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDynamicLight.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DFileSystem.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGadget.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGameClient.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGameFont.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGameWindow.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGameWindowManager.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGranny.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGUICallbacks.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DInGameUI.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DMirror.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DMouse.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DParticleSys.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DPoly.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DProjectedShadow.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DRoadBuffer.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DScene.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DShaderManager.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DShadow.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DShroud.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DStatusCircle.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DTerrainTracks.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DTerrainVisual.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DTreeBuffer.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DVideobuffer.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DView.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DVolumetricShadow.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DWater.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DWaterTracks.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DWaypointBuffer.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DWebBrowser.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\W3DDevice\GameClient\WorldHeightMap.h">
+      <Filter>Include\W3DDevice H\GameClient H %28W3DDevice%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Win32Device\Common\Win32BIGFile.h">
+      <Filter>Include\Win32Device H\Common H %28Win32Device%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Win32Device\Common\Win32BIGFileSystem.h">
+      <Filter>Include\Win32Device H\Common H %28Win32Device%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Win32Device\Common\Win32CDManager.h">
+      <Filter>Include\Win32Device H\Common H %28Win32Device%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Win32Device\Common\Win32GameEngine.h">
+      <Filter>Include\Win32Device H\Common H %28Win32Device%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Win32Device\Common\Win32LocalFile.h">
+      <Filter>Include\Win32Device H\Common H %28Win32Device%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Win32Device\Common\Win32LocalFileSystem.h">
+      <Filter>Include\Win32Device H\Common H %28Win32Device%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Win32Device\GameClient\Win32DIKeyboard.h">
+      <Filter>Include\Win32Device H\GameClient H %28Win32Device%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Win32Device\GameClient\Win32Mouse.h">
+      <Filter>Include\Win32Device H\GameClient H %28Win32Device%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\VideoDevice\Bink\BINK.H">
+      <Filter>Include\VideoDevice H\Bink H</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\VideoDevice\Bink\BinkVideoPlayer.h">
+      <Filter>Include\VideoDevice H\Bink H</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\VideoDevice\Bink\RAD.H">
+      <Filter>Include\VideoDevice H\Bink H</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\VideoDevice\Bink\radbase.h">
+      <Filter>Include\VideoDevice H\Bink H</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\MilesAudioDevice\MilesAudioManager.h">
+      <Filter>Include\MilesAudioDevice H</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Water\wave.nvp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Water</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Water\wave.nvv">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Water</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\invmonochrome.nvp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\monochrome.nvp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\motionblur.nvp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\MotionBlur.nvv">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\roadnoise2.nvp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\terrain.nvp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\terrainnoise.nvp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\terrainnoise2.nvp">
+      <Filter>Source\W3DDevice\GameClient %28W3DDevice%29\Shaders</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
