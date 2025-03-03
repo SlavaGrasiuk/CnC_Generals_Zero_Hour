@@ -1,0 +1,2608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Internal|Win32">
+      <Configuration>Internal</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Win32">
+      <Configuration>Profile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/RTS/Code/GameEngine", FAAAAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <ProjectGuid>{BC1412EF-8D8C-45DD-A81D-B05DD7983F33}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">
+    <OutDir>.\Internal\</OutDir>
+    <IntDir>.\Internal\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <OutDir>.\Profile\</OutDir>
+    <IntDir>.\Profile\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\Libraries\Source\WWVegas;..\Libraries\Source\WWVegas\WWLib;Include/Precompiled;../Libraries/Source/WWVegas;../Libraries/Source/WWVegas\WWLib;Include;../Libraries/Include;../Libraries/Source/GameSpy;../Libraries/Source/Compression;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;BROWSER_DEBUG;_LIB;_WINDOWS;WIN32;Z_PREFIX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\GameEngine.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PreRTS.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\GameEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>Lib/GameEngineDebug.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>Include/Precompiled;../Libraries/Source/WWVegas;../Libraries/Source/WWVegas\WWLib;Include;../Libraries/Include;../Libraries/Source/GameSpy;../Libraries/Source/Compression;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>IG_DEBUG_STACKTRACE;NDEBUG;_RELEASE;_LIB;_WINDOWS;WIN32;Z_PREFIX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\GameEngine.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PreRTS.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\GameEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>Lib/GameEngine.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>../Libraries/Source/Compression;Include/Precompiled;../Libraries/Source/WWVegas;../Libraries/Source/WWVegas\WWLib;Include;../Libraries/Include;../Libraries/Source/GameSpy;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_INTERNAL;_LIB;_WINDOWS;WIN32;Z_PREFIX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Internal\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Internal\GameEngine.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PreRTS.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Internal\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Internal\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Internal\GameEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>Lib/GameEngineInternal.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>Include/Precompiled;../Libraries/Source/WWVegas;../Libraries/Source/WWVegas\WWLib;Include;../Libraries/Include;../Libraries/Source/GameSpy;../Libraries/Source/Compression;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>IG_DEBUG_STACKTRACE;NDEBUG;_RELEASE;_LIB;_WINDOWS;WIN32;Z_PREFIX;_PROFILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Profile\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Profile\GameEngine.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PreRTS.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Profile\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Profile\</ProgramDataBaseFileName>
+      <AdditionalOptions> /Gh </AdditionalOptions>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Profile\GameEngine.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>Lib/GameEngineProfile.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Common\Audio\AudioEventRTS.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Audio\AudioRequest.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Audio\DynamicAudioEventInfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Audio\GameAudio.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Audio\GameMusic.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Audio\GameSounds.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Bezier\BezFwdIterator.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Bezier\BezierSegment.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\BitFlags.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\CommandLine.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\crc.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\CRCDebug.cpp">
+      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">TurnOffAllWarnings</WarningLevel>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</TreatWarningAsError>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DamageFX.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Dict.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\DiscreteCircle.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\GameEngine.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\GameLOD.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\GameMain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\GlobalData.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INI.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIAiData.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIAnimation.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIAudioEventInfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INICommandButton.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INICommandSet.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIControlBarScheme.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INICrate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIDamageFX.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIDrawGroupInfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIGameData.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIMapCache.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIMapData.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIMappedImage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIMiscAudio.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIModel.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIMultiplayer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIObject.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIParticleSys.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INISpecialPower.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INITerrain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INITerrainBridge.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INITerrainRoad.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIVideo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIWater.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIWeapon.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\INI\INIWebpageURL.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Language.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\MessageStream.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\MiniLog.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\MultiplayerSettings.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\NameKeyGenerator.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\PartitionSolver.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\PerfTimer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RandomValue.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Recorder.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\AcademyStats.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\ActionManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\Energy.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\Handicap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\MissionStats.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\Money.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\Player.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\PlayerList.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\PlayerTemplate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\ProductionPrerequisite.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\ResourceGatheringManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\Science.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\ScoreKeeper.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\SpecialPower.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\Team.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\RTS\TunnelTracker.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\SkirmishBattleHonors.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\StateMachine.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\StatsCollector.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\ArchiveFile.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\ArchiveFileSystem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\AsciiString.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\BuildAssistant.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\CDManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\Compression.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\CopyProtection.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\CriticalSection.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\DataChunk.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\Debug.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\Directory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\DisabledTypes.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\encrypt.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\File.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\FileSystem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\FunctionLexicon.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\GameCommon.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\GameMemory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\GameType.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\Geometry.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\KindOf.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\List.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\LocalFile.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\LocalFileSystem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\MemoryInit.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\ObjectStatusTypes.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\QuickTrig.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\QuotedPrintable.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\Radar.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\RAMFile.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\registry.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\SaveGame\GameState.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\SaveGame\GameStateMap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\Snapshot.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\StackDump.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\StreamingArchiveFile.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\String.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\SubsystemInterface.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\Trig.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\UnicodeString.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\Upgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\Xfer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\XferCRC.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\XferLoad.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\System\XferSave.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\TerrainTypes.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Thing\DrawModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Thing\Module.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Thing\ModuleFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Thing\Thing.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Thing\ThingFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Thing\ThingTemplate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\UserPreferences.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Common\version.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Color.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Credits.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Display.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\DisplayString.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\DisplayStringManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Drawable.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Drawable\DrawableManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Drawable\Update\AnimatedParticleSysBoneClientUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Drawable\Update\BeaconClientUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Drawable\Update\SwayClientUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\DrawGroupInfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Eva.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\FXList.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GameClient.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GameClientDispatch.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GameText.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GlobalLanguage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GraphDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\AnimateWindowManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ChallengeGenerals.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBar.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBarBeacon.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBarCommand.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBarCommandProcessing.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBarMultiSelect.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBarObserver.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBarOCLTimer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBarPrintPositions.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBarResizer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBarScheme.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBarStructureInventory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ControlBar\ControlBarUnderConstruction.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\DisconnectMenu\DisconnectMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\EstablishConnectionsMenu\EstablishConnectionsMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Gadget\GadgetCheckBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Gadget\GadgetComboBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Gadget\GadgetHorizontalSlider.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Gadget\GadgetListBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Gadget\GadgetProgressBar.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Gadget\GadgetPushButton.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Gadget\GadgetRadioButton.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Gadget\GadgetStaticText.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Gadget\GadgetTabControl.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Gadget\GadgetTextEntry.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Gadget\GadgetVerticalSlider.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GameFont.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GameWindow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GameWindowGlobal.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GameWindowManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GameWindowManagerScript.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GameWindowTransitions.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GameWindowTransitionsStyles.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\ControlBarCallback.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\ControlBarPopupDescription.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Diplomacy.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\ExtendedMessageBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\GeneralsExpPoints.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\IMECandidate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\InGameChat.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\InGamePopupMessage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\ChallengeMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\CreditsMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\DifficultySelect.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\DisconnectWindow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\DownloadMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\EstablishConnectionsWindow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\GameInfoWindow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\KeyboardOptionsMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\LanGameOptionsMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\LanLobbyMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\LanMapSelectMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\MainMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\MapSelectMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\NetworkDirectConnect.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\OptionsMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\PopupCommunicator.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\PopupHostGame.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\PopupJoinGame.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\PopupLadderSelect.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\PopupPlayerInfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\PopupReplay.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\PopupSaveLoad.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\QuitMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\ReplayMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\ScoreScreen.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\SinglePlayerMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\SkirmishGameOptionsMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\SkirmishMapSelectMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLBuddyOverlay.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLCustomScoreScreen.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLGameSetupMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLLadderScreen.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLLobbyMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLLocaleSelectPopup.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLLoginMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLMapSelectMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLMessageWindow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLQMScoreScreen.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLQuickMatchMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLStatusMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\Menus\WOLWelcomeMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\MessageBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\GUICallbacks\ReplayControls.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\HeaderTemplate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\IMEManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\LoadScreen.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\ProcessAnimateWindow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Shell\Shell.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\Shell\ShellMenuScheme.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\WindowLayout.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\WindowVideoManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\GUI\WinInstanceData.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\InGameUI.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Input\Keyboard.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Input\Mouse.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\LanguageFilter.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Line2D.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\MapUtil.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\MessageStream\CommandXlat.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\MessageStream\GUICommandTranslator.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\MessageStream\HintSpy.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\MessageStream\HotKey.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\MessageStream\LookAtXlat.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\MessageStream\MetaEvent.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\MessageStream\PlaceEventTranslator.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\MessageStream\SelectionXlat.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\MessageStream\WindowXlat.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\ParabolicEase.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\RadiusDecal.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\SelectionInfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Snow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Statistics.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\System\Anim2D.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\System\CampaignManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\System\Debug Displayers\AudioDebugDisplay.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\System\DebugDisplay.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\System\Image.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\System\ParticleSys.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\System\RayEffect.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\System\Smudge.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Terrain\TerrainRoads.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Terrain\TerrainVisual.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\VideoPlayer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\View.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameClient\Water.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\AI.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\AIDock.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\AIGroup.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\AIGuard.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\AIGuardRetaliate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\AIPathfind.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\AIPlayer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\AISkirmishPlayer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\AIStates.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\AITNGuard.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\Squad.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\AI\TurretAI.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Map\PolygonTrigger.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Map\SidesList.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Map\TerrainLogic.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Armor.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\AutoHealBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\BattleBusSlowDeathBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\BehaviorModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\BridgeBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\BridgeScaffoldBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\BridgeTowerBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\BunkerBusterBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\CountermeasuresBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\DumbProjectileBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\FireWeaponWhenDamagedBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\FireWeaponWhenDeadBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\FlightDeckBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\GenerateMinefieldBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\GrantStealthBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\InstantDeathBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\JetSlowDeathBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\MinefieldBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\NeutonBlastBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\OverchargeBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\ParkingPlaceBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\PoisonedBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\POWTruckBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\PrisonBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\PropagandaCenterBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\PropagandaTowerBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\RebuildHoleBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\SlowDeathBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\SpawnBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\SupplyWarehouseCripplingBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Behavior\TechBuildingBehavior.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Body\ActiveBody.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Body\BodyModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Body\HighlanderBody.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Body\HiveStructureBody.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Body\ImmortalBody.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Body\InactiveBody.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Body\StructureBody.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Body\UndeadBody.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CollideModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\ConvertToCarBombCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\ConvertToHijackedVehicleCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\CrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\HealCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\MoneyCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\SabotageCommandCenterCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\SabotageFakeBuilding.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\SabotageInternetCenterCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\SabotageMilitaryFactoryCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\SabotagePowerPlantCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\SabotageSuperweaponCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\SabotageSupplyCenterCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\SabotageSupplyDropzoneCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\SalvageCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\ShroudCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\UnitCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\CrateCollide\VeterancyCrateCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\FireWeaponCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Collide\SquishCollide.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\CaveContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\GarrisonContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\HealContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\HelixContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\InternetHackContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\MobNexusContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\OpenContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\OverlordContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\ParachuteContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\RailedTransportContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\RiderChangeContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\TransportContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Contain\TunnelContain.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Create\CreateModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Create\GrantUpgradeCreate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Create\LockWeaponCreate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Create\PreorderCreate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Create\SpecialPowerCreate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Create\SupplyCenterCreate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Create\SupplyWarehouseCreate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Create\VeterancyGainCreate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Damage\BoneFXDamage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Damage\DamageModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Damage\TransitionDamageFX.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Destroy\DestroyModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\CreateCrateDie.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\CreateObjectDie.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\CrushDie.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\DamDie.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\DestroyDie.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\DieModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\EjectPilotDie.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\FXListDie.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\KeepObjectDie.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\RebuildHoleExposeDie.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\SpecialPowerCompletionDie.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Die\UpgradeDie.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\ExperienceTracker.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\FiringTracker.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\GhostObject.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Helper\ObjectDefectionHelper.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Helper\ObjectHelper.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Helper\ObjectRepulsorHelper.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Helper\ObjectSMCHelper.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Helper\ObjectWeaponStatusHelper.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Helper\StatusDamageHelper.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Helper\SubdualDamageHelper.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Helper\TempWeaponBonusHelper.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Locomotor.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Object.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\ObjectCreationList.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\ObjectTypes.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\PartitionManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SimpleObjectIterator.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SpecialPower\BaikonurLaunchPower.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SpecialPower\CashBountyPower.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SpecialPower\CashHackSpecialPower.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SpecialPower\CleanupAreaPower.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SpecialPower\DefectorSpecialPower.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SpecialPower\DemoralizeSpecialPower.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SpecialPower\FireWeaponPower.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SpecialPower\OCLSpecialPower.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SpecialPower\SpecialAbility.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SpecialPower\SpecialPowerModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\SpecialPower\SpyVisionSpecialPower.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\AssaultTransportAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\ChinookAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\DeliverPayloadAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\DeployStyleAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\DozerAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\HackInternetAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\JetAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\MissileAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\POWTruckAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\RailedTransportAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\RailroadGuideAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\SupplyTruckAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\TransportAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\WanderAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AIUpdate\WorkerAIUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AnimationSteeringUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AssistedTargetingUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AutoDepositUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\AutoFindHealingUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\BaseRenerateUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\BattlePlanUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\BoneFXUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\CheckpointUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\CleanupHazardUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\CommandButtonHuntUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\DeletionUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\DemoTrapUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\DockUpdate\DockUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\DockUpdate\PrisonDockUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\DockUpdate\RailedTransportDockUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\DockUpdate\RepairDockUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\DockUpdate\SupplyCenterDockUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\DockUpdate\SupplyWarehouseDockUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\DynamicGeometryInfoUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\DynamicShroudClearingRangeUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\EMPUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\EnemyNearUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\FireOCLAfterWeaponCooldownUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\FireSpreadUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\FirestormDynamicGeometryInfoUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\FireWeaponUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\FlammableUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\FloatUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\HeightDieUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\HelicopterSlowDeathUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\HijackerUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\HordeUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\LaserUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\LifetimeUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\MissileLauncherBuildingUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\MobMemberSlavedUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\NeutronMissileSlowDeathUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\NeutronMissileUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\OCLUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\ParticleUplinkCannonUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\PhysicsUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\PilotFindVehicleUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\PointDefenseLaserUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\PowerPlantUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\ProductionExitUpdate\DefaultProductionExitUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\ProductionExitUpdate\QueueProductionExitUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\ProductionExitUpdate\SpawnPointProductionExitUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\ProductionExitUpdate\SupplyCenterProductionExitUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\ProductionUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\ProjectileStreamUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\ProneUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\RadarUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\RadiusDecalUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\SlavedUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\SmartBombTargetHomingUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\SpecialAbilityUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\SpecialPowerUpdateModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\SpectreGunshipDeploymentUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\SpectreGunshipUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\SpyVisionUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\StealthDetectorUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\StealthUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\StickyBombUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\StructureCollapseUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\StructureToppleUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\TensileFormationUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\ToppleUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\UpdateModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\WaveGuideUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Update\WeaponBonusUpdate.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\ActiveShroudUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\ArmorUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\CommandSetUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\CostModifierUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\ExperienceScalarUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\GrantScienceUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\LocomotorSetUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\MaxHealthUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\ModelConditionUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\ObjectCreationUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\PassengersFireUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\PowerPlantUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\RadarUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\ReplaceObjectUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\StatusBitsUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\StealthUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\SubObjectsUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\UnpauseSpecialPowerUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\UpgradeModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\WeaponBonusUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Upgrade\WeaponSetUpgrade.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\Weapon.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\Object\WeaponSet.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\ScriptEngine\ScriptActions.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\ScriptEngine\ScriptConditions.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\ScriptEngine\ScriptEngine.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\ScriptEngine\Scripts.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\ScriptEngine\VictoryConditions.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\System\CaveSystem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\System\CrateSystem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\System\Damage.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\System\GameLogic.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\System\GameLogicDispatch.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameLogic\System\RankInfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\Connection.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\ConnectionManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\DisconnectManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\DownloadManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\FileTransfer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\FirewallHelper.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\FrameData.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\FrameDataManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\FrameMetrics.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameInfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameMessageParser.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpyChat.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpyGameInfo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpyGP.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpyOverlay.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpyPersistentStorage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\Chat.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\GSConfig.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\LadderDefs.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\LobbyUtils.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\MainMenuUtils.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\PeerDefs.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\StagingRoomGameInfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\Thread\BuddyThread.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\Thread\GameResultsThread.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\Thread\PeerThread.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\Thread\PersistentStorageThread.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\Thread\PingThread.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GameSpy\Thread\ThreadUtils.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\GUIUtil.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\IPEnumeration.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\LANAPI.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\LANAPICallbacks.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\LANAPIhandlers.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\LANGameInfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\NAT.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\NetCommandList.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\NetCommandMsg.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\NetCommandRef.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\NetCommandWrapperList.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\NetMessageStream.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\NetPacket.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\Network.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\NetworkUtil.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\Transport.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\udp.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\User.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\GameNetwork\WOLBrowser\WebBrowser.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Precompiled\PreRTS.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PreRTS.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PreRTS.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">PreRTS.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">PreRTS.h</PrecompiledHeaderFile>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\CEngine\goaceng.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\CEngine\gserver.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\chat\chat.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\chat\chatCallbacks.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\chat\chatChannel.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\Chat\chatCrypt.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\chat\chatHandlers.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\chat\chatMain.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\chat\chatSocket.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\darray.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\hashtable.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\md5.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\nonport.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\peer\peer.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\peer\peerCallbacks.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\peer\peerCEngine.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\peer\peerGlobalCallbacks.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\peer\peerKeys.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\peer\peerMain.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\peer\peerMangle.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\peer\peerOperations.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\peer\peerPing.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\peer\peerPlayers.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\peer\peerRooms.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\pinger\pinger.h" />
+    <ClInclude Include="..\Libraries\Source\GameSpy\GameSpy\queryreporting\gqueryreporting.h" />
+    <ClInclude Include="Include\Common\AcademyStats.h" />
+    <ClInclude Include="Include\Common\ActionManager.h" />
+    <ClInclude Include="Include\Common\ArchiveFile.h" />
+    <ClInclude Include="Include\Common\ArchiveFileSystem.h" />
+    <ClInclude Include="Include\Common\AsciiString.h" />
+    <ClInclude Include="Include\Common\AudioAffect.h" />
+    <ClInclude Include="Include\Common\AudioEventInfo.h" />
+    <ClInclude Include="Include\Common\AudioEventRTS.h" />
+    <ClInclude Include="Include\Common\AudioHandleSpecialValues.h" />
+    <ClInclude Include="Include\Common\AudioRandomValue.h" />
+    <ClInclude Include="Include\Common\AudioRequest.h" />
+    <ClInclude Include="Include\Common\AudioSettings.h" />
+    <ClInclude Include="Include\Common\BattleHonors.h" />
+    <ClInclude Include="Include\Common\BezFwdIterator.h" />
+    <ClInclude Include="Include\Common\BezierSegment.h" />
+    <ClInclude Include="Include\Common\BitFlags.h" />
+    <ClInclude Include="Include\Common\BitFlagsIO.h" />
+    <ClInclude Include="Include\Common\BuildAssistant.h" />
+    <ClInclude Include="Include\Common\CDManager.h" />
+    <ClInclude Include="Include\Common\ClientUpdateModule.h" />
+    <ClInclude Include="Include\Common\CommandLine.h" />
+    <ClInclude Include="Include\Common\CopyProtection.h" />
+    <ClInclude Include="Include\Common\crc.h" />
+    <ClInclude Include="Include\Common\CRCDebug.h" />
+    <ClInclude Include="Include\Common\CriticalSection.h" />
+    <ClInclude Include="Include\Common\CustomMatchPreferences.h" />
+    <ClInclude Include="Include\Common\DamageFX.h" />
+    <ClInclude Include="Include\Common\DataChunk.h" />
+    <ClInclude Include="Include\Common\Debug.h" />
+    <ClInclude Include="Include\Common\Dict.h" />
+    <ClInclude Include="Include\Common\Directory.h" />
+    <ClInclude Include="Include\Common\DisabledTypes.h" />
+    <ClInclude Include="Include\Common\DiscreteCircle.h" />
+    <ClInclude Include="Include\Common\DrawModule.h" />
+    <ClInclude Include="Include\Common\DynamicAudioEventInfo.h" />
+    <ClInclude Include="Include\Common\encrypt.h" />
+    <ClInclude Include="Include\Common\Energy.h" />
+    <ClInclude Include="Include\Common\Errors.h" />
+    <ClInclude Include="Include\Common\file.h" />
+    <ClInclude Include="Include\Common\FileSystem.h" />
+    <ClInclude Include="Include\Common\FunctionLexicon.h" />
+    <ClInclude Include="Include\Common\GameAudio.h" />
+    <ClInclude Include="Include\Common\GameCommon.h" />
+    <ClInclude Include="Include\Common\GameEngine.h" />
+    <ClInclude Include="Include\Common\GameLOD.h" />
+    <ClInclude Include="Include\Common\GameMemory.h" />
+    <ClInclude Include="Include\Common\GameMusic.h" />
+    <ClInclude Include="Include\Common\GameSounds.h" />
+    <ClInclude Include="Include\Common\GameSpeech.h" />
+    <ClInclude Include="Include\Common\GameSpyMiscPreferences.h" />
+    <ClInclude Include="Include\Common\GameState.h" />
+    <ClInclude Include="Include\Common\GameStateMap.h" />
+    <ClInclude Include="Include\Common\GameType.h" />
+    <ClInclude Include="Include\Common\Geometry.h" />
+    <ClInclude Include="Include\Common\GlobalData.h" />
+    <ClInclude Include="Include\Common\Handicap.h" />
+    <ClInclude Include="Include\Common\IgnorePreferences.h" />
+    <ClInclude Include="Include\Common\INI.h" />
+    <ClInclude Include="Include\Common\INIException.h" />
+    <ClInclude Include="Include\Common\KindOf.h" />
+    <ClInclude Include="Include\Common\LadderPreferences.h" />
+    <ClInclude Include="Include\Common\Language.h" />
+    <ClInclude Include="Include\Common\LatchRestore.h" />
+    <ClInclude Include="Include\Common\List.h" />
+    <ClInclude Include="Include\Common\LocalFile.h" />
+    <ClInclude Include="Include\Common\LocalFileSystem.h" />
+    <ClInclude Include="Include\Common\MapObject.h" />
+    <ClInclude Include="Include\Common\MapReaderWriterInfo.h" />
+    <ClInclude Include="Include\Common\MessageStream.h" />
+    <ClInclude Include="Include\Common\MiniLog.h" />
+    <ClInclude Include="Include\Common\MiscAudio.h" />
+    <ClInclude Include="Include\Common\MissionStats.h" />
+    <ClInclude Include="Include\Common\ModelState.h" />
+    <ClInclude Include="Include\Common\Module.h" />
+    <ClInclude Include="Include\Common\ModuleFactory.h" />
+    <ClInclude Include="Include\Common\Money.h" />
+    <ClInclude Include="Include\Common\MultiplayerSettings.h" />
+    <ClInclude Include="Include\Common\NameKeyGenerator.h" />
+    <ClInclude Include="Include\Common\ObjectStatusTypes.h" />
+    <ClInclude Include="Include\Common\OSDisplay.h" />
+    <ClInclude Include="Include\Common\Overridable.h" />
+    <ClInclude Include="Include\Common\Override.h" />
+    <ClInclude Include="Include\Common\PartitionSolver.h" />
+    <ClInclude Include="Include\Common\PerfMetrics.h" />
+    <ClInclude Include="Include\Common\PerfTimer.h" />
+    <ClInclude Include="Include\Common\Player.h" />
+    <ClInclude Include="Include\Common\PlayerList.h" />
+    <ClInclude Include="Include\Common\PlayerTemplate.h" />
+    <ClInclude Include="Include\Common\ProductionPrerequisite.h" />
+    <ClInclude Include="Include\Common\QuickmatchPreferences.h" />
+    <ClInclude Include="Include\Common\QuickTrig.h" />
+    <ClInclude Include="Include\Common\QuotedPrintable.h" />
+    <ClInclude Include="Include\Common\Radar.h" />
+    <ClInclude Include="Include\Common\RAMFile.h" />
+    <ClInclude Include="Include\Common\RandomValue.h" />
+    <ClInclude Include="Include\Common\Recorder.h" />
+    <ClInclude Include="Include\Common\Registry.h" />
+    <ClInclude Include="Include\Common\ResourceGatheringManager.h" />
+    <ClInclude Include="Include\Common\Science.h" />
+    <ClInclude Include="Include\Common\ScoreKeeper.h" />
+    <ClInclude Include="Include\Common\SkirmishBattleHonors.h" />
+    <ClInclude Include="Include\Common\SkirmishPreferences.h" />
+    <ClInclude Include="Include\Common\Snapshot.h" />
+    <ClInclude Include="Include\Common\SparseMatchFinder.h" />
+    <ClInclude Include="Include\Common\SpecialPower.h" />
+    <ClInclude Include="Include\Common\SpecialPowerMaskType.h" />
+    <ClInclude Include="Include\Common\SpecialPowerType.h" />
+    <ClInclude Include="Include\Common\StackDump.h" />
+    <ClInclude Include="Include\Common\StateMachine.h" />
+    <ClInclude Include="Include\Common\StatsCollector.h" />
+    <ClInclude Include="Include\Common\STLTypedefs.h" />
+    <ClInclude Include="Include\Common\StreamingArchiveFile.h" />
+    <ClInclude Include="Include\Common\string.h" />
+    <ClInclude Include="Include\Common\SubsystemInterface.h" />
+    <ClInclude Include="Include\Common\SystemInfo.h" />
+    <ClInclude Include="Include\Common\Team.h" />
+    <ClInclude Include="Include\Common\Terrain.h" />
+    <ClInclude Include="Include\Common\TerrainTypes.h" />
+    <ClInclude Include="Include\Common\Thing.h" />
+    <ClInclude Include="Include\Common\ThingFactory.h" />
+    <ClInclude Include="Include\Common\ThingSort.h" />
+    <ClInclude Include="Include\Common\ThingTemplate.h" />
+    <ClInclude Include="Include\Common\TunnelTracker.h" />
+    <ClInclude Include="Include\Common\UnicodeString.h" />
+    <ClInclude Include="Include\Common\UnitTimings.h" />
+    <ClInclude Include="Include\Common\Upgrade.h" />
+    <ClInclude Include="Include\Common\UserPreferences.h" />
+    <ClInclude Include="Include\Common\version.h" />
+    <ClInclude Include="Include\Common\WellKnownKeys.h" />
+    <ClInclude Include="Include\Common\Xfer.h" />
+    <ClInclude Include="Include\Common\XferCRC.h" />
+    <ClInclude Include="Include\Common\XferDeepCRC.h" />
+    <ClInclude Include="Include\Common\XferLoad.h" />
+    <ClInclude Include="Include\Common\XferSave.h" />
+    <ClInclude Include="Include\GameClient\Anim2D.h" />
+    <ClInclude Include="Include\GameClient\AnimateWindowManager.h" />
+    <ClInclude Include="Include\GameClient\CampaignManager.h" />
+    <ClInclude Include="Include\GameClient\CDCheck.h" />
+    <ClInclude Include="Include\GameClient\ChallengeGenerals.h" />
+    <ClInclude Include="Include\GameClient\ClientRandomValue.h" />
+    <ClInclude Include="Include\GameClient\Color.h" />
+    <ClInclude Include="Include\GameClient\CommandXlat.h" />
+    <ClInclude Include="Include\GameClient\ControlBar.h" />
+    <ClInclude Include="Include\GameClient\ControlBarResizer.h" />
+    <ClInclude Include="Include\GameClient\ControlBarScheme.h" />
+    <ClInclude Include="Include\GameClient\Credits.h" />
+    <ClInclude Include="Include\GameClient\DebugDisplay.h" />
+    <ClInclude Include="Include\GameClient\Diplomacy.h" />
+    <ClInclude Include="Include\GameClient\DisconnectMenu.h" />
+    <ClInclude Include="Include\GameClient\Display.h" />
+    <ClInclude Include="Include\GameClient\DisplayString.h" />
+    <ClInclude Include="Include\GameClient\DisplayStringManager.h" />
+    <ClInclude Include="Include\GameClient\Drawable.h" />
+    <ClInclude Include="Include\GameClient\DrawableInfo.h" />
+    <ClInclude Include="Include\GameClient\DrawableManager.h" />
+    <ClInclude Include="Include\GameClient\DrawGroupInfo.h" />
+    <ClInclude Include="Include\GameClient\EstablishConnectionsMenu.h" />
+    <ClInclude Include="Include\GameClient\Eva.h" />
+    <ClInclude Include="Include\GameClient\ExtendedMessageBox.h" />
+    <ClInclude Include="Include\GameClient\FontDesc.h" />
+    <ClInclude Include="Include\GameClient\FXList.h" />
+    <ClInclude Include="Include\GameClient\Gadget.h" />
+    <ClInclude Include="Include\GameClient\GadgetCheckBox.h" />
+    <ClInclude Include="Include\GameClient\GadgetComboBox.h" />
+    <ClInclude Include="Include\GameClient\GadgetListBox.h" />
+    <ClInclude Include="Include\GameClient\GadgetProgressBar.h" />
+    <ClInclude Include="Include\GameClient\GadgetPushButton.h" />
+    <ClInclude Include="Include\GameClient\GadgetRadioButton.h" />
+    <ClInclude Include="Include\GameClient\GadgetSlider.h" />
+    <ClInclude Include="Include\GameClient\GadgetStaticText.h" />
+    <ClInclude Include="Include\GameClient\GadgetTabControl.h" />
+    <ClInclude Include="Include\GameClient\GadgetTextEntry.h" />
+    <ClInclude Include="Include\GameClient\GameClient.h" />
+    <ClInclude Include="Include\GameClient\GameFont.h" />
+    <ClInclude Include="Include\GameClient\GameInfoWindow.h" />
+    <ClInclude Include="Include\GameClient\GameText.h" />
+    <ClInclude Include="Include\GameClient\GameWindow.h" />
+    <ClInclude Include="Include\GameClient\GameWindowGlobal.h" />
+    <ClInclude Include="Include\GameClient\GameWindowID.h" />
+    <ClInclude Include="Include\GameClient\GameWindowManager.h" />
+    <ClInclude Include="Include\GameClient\GameWindowTransitions.h" />
+    <ClInclude Include="Include\GameClient\GlobalLanguage.h" />
+    <ClInclude Include="Include\GameClient\GraphDraw.h" />
+    <ClInclude Include="Include\GameClient\GUICallbacks.h" />
+    <ClInclude Include="Include\GameClient\GUICommandTranslator.h" />
+    <ClInclude Include="Include\GameClient\HeaderTemplate.h" />
+    <ClInclude Include="Include\GameClient\HintSpy.h" />
+    <ClInclude Include="Include\GameClient\HotKey.h" />
+    <ClInclude Include="Include\GameClient\Image.h" />
+    <ClInclude Include="Include\GameClient\IMEManager.h" />
+    <ClInclude Include="Include\GameClient\InGameUI.h" />
+    <ClInclude Include="Include\GameClient\Keyboard.h" />
+    <ClInclude Include="Include\GameClient\KeyDefs.h" />
+    <ClInclude Include="Include\GameClient\LanguageFilter.h" />
+    <ClInclude Include="Include\GameClient\Line2D.h" />
+    <ClInclude Include="Include\GameClient\LoadScreen.h" />
+    <ClInclude Include="Include\GameClient\LookAtXlat.h" />
+    <ClInclude Include="Include\GameClient\MapUtil.h" />
+    <ClInclude Include="Include\GameClient\MessageBox.h" />
+    <ClInclude Include="Include\GameClient\MetaEvent.h" />
+    <ClInclude Include="Include\GameClient\Module\AnimatedParticleSysBoneClientUpdate.h" />
+    <ClInclude Include="Include\GameClient\Module\BeaconClientUpdate.h" />
+    <ClInclude Include="Include\GameClient\Module\SwayClientUpdate.h" />
+    <ClInclude Include="Include\GameClient\Mouse.h" />
+    <ClInclude Include="Include\GameClient\ParabolicEase.h" />
+    <ClInclude Include="Include\GameClient\ParticleSys.h" />
+    <ClInclude Include="Include\GameClient\PlaceEventTranslator.h" />
+    <ClInclude Include="Include\GameClient\ProcessAnimateWindow.h" />
+    <ClInclude Include="Include\GameClient\RadiusDecal.h" />
+    <ClInclude Include="Include\GameClient\RayEffect.h" />
+    <ClInclude Include="Include\GameClient\SelectionInfo.h" />
+    <ClInclude Include="Include\GameClient\SelectionXlat.h" />
+    <ClInclude Include="Include\GameClient\Shadow.h" />
+    <ClInclude Include="Include\GameClient\Shell.h" />
+    <ClInclude Include="Include\GameClient\ShellHooks.h" />
+    <ClInclude Include="Include\GameClient\ShellMenuScheme.h" />
+    <ClInclude Include="Include\GameClient\Smudge.h" />
+    <ClInclude Include="Include\GameClient\Snow.h" />
+    <ClInclude Include="Include\GameClient\Statistics.h" />
+    <ClInclude Include="Include\GameClient\TerrainRoads.h" />
+    <ClInclude Include="Include\GameClient\TerrainVisual.h" />
+    <ClInclude Include="Include\GameClient\VideoPlayer.h" />
+    <ClInclude Include="Include\GameClient\View.h" />
+    <ClInclude Include="Include\GameClient\Water.h" />
+    <ClInclude Include="Include\GameClient\WindowLayout.h" />
+    <ClInclude Include="Include\GameClient\WindowVideoManager.h" />
+    <ClInclude Include="Include\GameClient\WindowXlat.h" />
+    <ClInclude Include="Include\GameClient\WinInstanceData.h" />
+    <ClInclude Include="Include\GameLogic\AI.h" />
+    <ClInclude Include="Include\GameLogic\AIDock.h" />
+    <ClInclude Include="Include\GameLogic\AIGuard.h" />
+    <ClInclude Include="Include\GameLogic\AIGuardRetaliate.h" />
+    <ClInclude Include="Include\GameLogic\AIPathfind.h" />
+    <ClInclude Include="Include\GameLogic\AIPlayer.h" />
+    <ClInclude Include="Include\GameLogic\AISkirmishPlayer.h" />
+    <ClInclude Include="Include\GameLogic\AIStateMachine.h" />
+    <ClInclude Include="Include\GameLogic\AITNGuard.h" />
+    <ClInclude Include="Include\GameLogic\Armor.h" />
+    <ClInclude Include="Include\GameLogic\ArmorSet.h" />
+    <ClInclude Include="Include\GameLogic\CaveSystem.h" />
+    <ClInclude Include="Include\GameLogic\CrateSystem.h" />
+    <ClInclude Include="Include\GameLogic\Damage.h" />
+    <ClInclude Include="Include\GameLogic\ExperienceTracker.h" />
+    <ClInclude Include="Include\GameLogic\FiringTracker.h" />
+    <ClInclude Include="Include\GameLogic\FPUControl.h" />
+    <ClInclude Include="Include\GameLogic\GameLogic.h" />
+    <ClInclude Include="Include\GameLogic\GhostObject.h" />
+    <ClInclude Include="Include\GameLogic\Locomotor.h" />
+    <ClInclude Include="Include\GameLogic\LocomotorSet.h" />
+    <ClInclude Include="Include\GameLogic\LogicRandomValue.h" />
+    <ClInclude Include="Include\GameLogic\Module\ActiveBody.h" />
+    <ClInclude Include="Include\GameLogic\Module\ActiveShroudUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\AIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\AnimationSteeringUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\ArmorUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\AssaultTransportAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\AssistedTargetingUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\AutoDepositUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\AutoFindHealingUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\AutoHealBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\BaikonurLaunchPower.h" />
+    <ClInclude Include="Include\GameLogic\Module\BaseRegenerateUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\BattleBusSlowDeathBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\BattlePlanUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\BehaviorModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\BodyModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\BoneFXDamage.h" />
+    <ClInclude Include="Include\GameLogic\Module\BoneFXUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\BridgeBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\BridgeScaffoldBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\BridgeTowerBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\BunkerBusterBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\CashBountyPower.h" />
+    <ClInclude Include="Include\GameLogic\Module\CashHackSpecialPower.h" />
+    <ClInclude Include="Include\GameLogic\Module\CaveContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\CheckpointUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\ChinookAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\CleanupAreaPower.h" />
+    <ClInclude Include="Include\GameLogic\Module\CleanupHazardUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\CollideModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\CommandButtonHuntUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\CommandSetUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\ContainModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\ConvertToCarBombCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\ConvertToHijackedVehicleCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\CostModifierUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\CountermeasuresBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\CrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\CreateCrateDie.h" />
+    <ClInclude Include="Include\GameLogic\Module\CreateModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\CreateObjectDie.h" />
+    <ClInclude Include="Include\GameLogic\Module\CrushDie.h" />
+    <ClInclude Include="Include\GameLogic\Module\DamageModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\DamDie.h" />
+    <ClInclude Include="Include\GameLogic\Module\DefaultProductionExitUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\DefectorSpecialPower.h" />
+    <ClInclude Include="Include\GameLogic\Module\DeletionUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\DeliverPayloadAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\DemoralizeSpecialPower.h" />
+    <ClInclude Include="Include\GameLogic\Module\DemoTrapUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\DeployStyleAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\DestroyDie.h" />
+    <ClInclude Include="Include\GameLogic\Module\DestroyModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\DieModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\DockUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\DozerAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\DumbProjectileBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\DynamicGeometryInfoUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\DynamicShroudClearingRangeUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\EjectPilotDie.h" />
+    <ClInclude Include="Include\GameLogic\Module\EMPUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\EnemyNearUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\ExperienceScalarUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\FireOCLAfterWeaponCooldownUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\FireSpreadUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\FirestormDynamicGeometryInfoUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\FireWeaponCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\FireWeaponUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\FireWeaponWhenDamagedBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\FireWeaponWhenDeadBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\FlammableUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\FlightDeckBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\FloatUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\FXListDie.h" />
+    <ClInclude Include="Include\GameLogic\Module\GarrisonContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\GenerateMinefieldBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\GrantScienceUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\GrantStealthBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\GrantUpgradeCreate.h" />
+    <ClInclude Include="Include\GameLogic\Module\HackInternetAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\HealContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\HealCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\HeightDieUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\HelicopterSlowDeathUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\HelixContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\HighlanderBody.h" />
+    <ClInclude Include="Include\GameLogic\Module\HijackerUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\HiveStructureBody.h" />
+    <ClInclude Include="Include\GameLogic\Module\HordeUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\ImmortalBody.h" />
+    <ClInclude Include="Include\GameLogic\Module\InactiveBody.h" />
+    <ClInclude Include="Include\GameLogic\Module\InstantDeathBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\InternetHackContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\JetAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\JetSlowDeathBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\KeepObjectDie.h" />
+    <ClInclude Include="Include\GameLogic\Module\LaserUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\LifetimeUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\LockWeaponCreate.h" />
+    <ClInclude Include="Include\GameLogic\Module\LocomotorSetUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\MaxHealthUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\MinefieldBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\MissileAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\MissileLauncherBuildingUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\MobMemberSlavedUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\MobNexusContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\ModelConditionUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\MoneyCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\NeutronBlastBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\NeutronMissileSlowDeathUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\NeutronMissileUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\ObjectCreationUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\ObjectDefectionHelper.h" />
+    <ClInclude Include="Include\GameLogic\Module\ObjectHelper.h" />
+    <ClInclude Include="Include\GameLogic\Module\ObjectRepulsorHelper.h" />
+    <ClInclude Include="Include\GameLogic\Module\ObjectSMCHelper.h" />
+    <ClInclude Include="Include\GameLogic\Module\ObjectWeaponStatusHelper.h" />
+    <ClInclude Include="Include\GameLogic\Module\OCLSpecialPower.h" />
+    <ClInclude Include="Include\GameLogic\Module\OCLUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\OpenContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\OverchargeBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\OverlordContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\ParachuteContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\ParkingPlaceBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\ParticleUplinkCannonUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\PassengersFireUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\PhysicsUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\PilotFindVehicleUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\PointDefenseLaserUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\PoisonedBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\PowerPlantUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\PowerPlantUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\POWTruckAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\POWTruckBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\PreorderCreate.h" />
+    <ClInclude Include="Include\GameLogic\Module\PrisonBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\PrisonDockUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\ProductionUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\ProjectileStreamUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\ProneUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\PropagandaCenterBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\PropagandaTowerBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\QueueProductionExitUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\RadarUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\RadarUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\RadiusDecalUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\RailedTransportAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\RailedTransportContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\RailedTransportDockUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\RailroadGuideAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\RebuildHoleBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\RebuildHoleExposeDie.h" />
+    <ClInclude Include="Include\GameLogic\Module\RepairDockUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\ReplaceObjectUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\RiderChangeContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\SabotageCommandCenterCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\SabotageFakeBuildingCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\SabotageInternetCenterCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\SabotageMilitaryFactoryCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\SabotagePowerPlantCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\SabotageSuperweaponCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\SabotageSupplyCenterCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\SabotageSupplyDropzoneCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\SalvageCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\ShroudCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\SlavedUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SlowDeathBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\SmartBombTargetHomingUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpawnBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpawnPointProductionExitUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpecialAbility.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpecialAbilityUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpecialPowerCompletionDie.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpecialPowerCreate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpecialPowerModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpecialPowerUpdateModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpectreGunshipDeploymentUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpectreGunshipUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpyVisionSpecialPower.h" />
+    <ClInclude Include="Include\GameLogic\Module\SpyVisionUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SquishCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\StatusBitsUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\StatusDamageHelper.h" />
+    <ClInclude Include="Include\GameLogic\Module\StealthDetectorUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\StealthUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\StealthUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\StickyBombUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\StructureBody.h" />
+    <ClInclude Include="Include\GameLogic\Module\StructureCollapseUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\StructureToppleUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SubdualDamageHelper.h" />
+    <ClInclude Include="Include\GameLogic\Module\SubObjectsUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\SupplyCenterCreate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SupplyCenterDockUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SupplyCenterProductionExitUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SupplyTruckAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SupplyWarehouseCreate.h" />
+    <ClInclude Include="Include\GameLogic\Module\SupplyWarehouseCripplingBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\SupplyWarehouseDockUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\TechBuildingBehavior.h" />
+    <ClInclude Include="Include\GameLogic\Module\TempWeaponBonusHelper.h" />
+    <ClInclude Include="Include\GameLogic\Module\TensileFormationUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\ToppleUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\TransitionDamageFX.h" />
+    <ClInclude Include="Include\GameLogic\Module\TransportAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\TransportContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\TunnelContain.h" />
+    <ClInclude Include="Include\GameLogic\Module\UndeadBody.h" />
+    <ClInclude Include="Include\GameLogic\Module\UnitCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\UnpauseSpecialPowerUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\UpdateModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\UpgradeDie.h" />
+    <ClInclude Include="Include\GameLogic\Module\UpgradeModule.h" />
+    <ClInclude Include="Include\GameLogic\Module\VeterancyCrateCollide.h" />
+    <ClInclude Include="Include\GameLogic\Module\VeterancyGainCreate.h" />
+    <ClInclude Include="Include\GameLogic\Module\WanderAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\WaveGuideUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\WeaponBonusUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Module\WeaponBonusUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\WeaponSetUpgrade.h" />
+    <ClInclude Include="Include\GameLogic\Module\WorkerAIUpdate.h" />
+    <ClInclude Include="Include\GameLogic\Object.h" />
+    <ClInclude Include="Include\GameLogic\ObjectCreationList.h" />
+    <ClInclude Include="Include\GameLogic\ObjectIter.h" />
+    <ClInclude Include="Include\GameLogic\ObjectScriptStatusBits.h" />
+    <ClInclude Include="Include\GameLogic\ObjectTypes.h" />
+    <ClInclude Include="Include\GameLogic\PartitionManager.h" />
+    <ClInclude Include="Include\GameLogic\PolygonTrigger.h" />
+    <ClInclude Include="Include\GameLogic\Powers.h" />
+    <ClInclude Include="Include\GameLogic\RankInfo.h" />
+    <ClInclude Include="Include\GameLogic\ScriptActions.h" />
+    <ClInclude Include="Include\GameLogic\ScriptConditions.h" />
+    <ClInclude Include="Include\GameLogic\ScriptEngine.h" />
+    <ClInclude Include="Include\GameLogic\Scripts.h" />
+    <ClInclude Include="Include\GameLogic\SidesList.h" />
+    <ClInclude Include="Include\GameLogic\Squad.h" />
+    <ClInclude Include="Include\GameLogic\TerrainLogic.h" />
+    <ClInclude Include="Include\GameLogic\TurretAI.h" />
+    <ClInclude Include="Include\GameLogic\VictoryConditions.h" />
+    <ClInclude Include="Include\GameLogic\Weapon.h" />
+    <ClInclude Include="Include\GameLogic\WeaponBonusConditionFlags.h" />
+    <ClInclude Include="Include\GameLogic\WeaponSet.h" />
+    <ClInclude Include="Include\GameLogic\WeaponSetFlags.h" />
+    <ClInclude Include="Include\GameLogic\WeaponSetType.h" />
+    <ClInclude Include="Include\GameLogic\WeaponStatus.h" />
+    <ClInclude Include="Include\GameNetwork\Connection.h" />
+    <ClInclude Include="Include\GameNetwork\ConnectionManager.h" />
+    <ClInclude Include="Include\GameNetwork\DisconnectManager.h" />
+    <ClInclude Include="Include\GameNetwork\DownloadManager.h" />
+    <ClInclude Include="Include\GameNetwork\FileTransfer.h" />
+    <ClInclude Include="Include\GameNetwork\FirewallHelper.h" />
+    <ClInclude Include="Include\GameNetwork\FrameData.h" />
+    <ClInclude Include="Include\GameNetwork\FrameDataManager.h" />
+    <ClInclude Include="Include\GameNetwork\FrameMetrics.h" />
+    <ClInclude Include="Include\GameNetwork\GameInfo.h" />
+    <ClInclude Include="Include\GameNetwork\GameMessageParser.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpyChat.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpyGameInfo.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpyGP.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpyOverlay.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpyPersistentStorage.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpyThread.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\BuddyDefs.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\BuddyThread.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\GameResultsThread.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\GSConfig.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\LadderDefs.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\LobbyUtils.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\MainMenuUtils.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\PeerDefs.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\PeerDefsImplementation.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\PeerThread.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\PersistentStorageDefs.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\PersistentStorageThread.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\PingThread.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\StagingRoomGameInfo.h" />
+    <ClInclude Include="Include\GameNetwork\GameSpy\ThreadUtils.h" />
+    <ClInclude Include="Include\GameNetwork\GUIUtil.h" />
+    <ClInclude Include="Include\GameNetwork\IPEnumeration.h" />
+    <ClInclude Include="Include\GameNetwork\LANAPI.h" />
+    <ClInclude Include="Include\GameNetwork\LANAPICallbacks.h" />
+    <ClInclude Include="Include\GameNetwork\LANGameInfo.h" />
+    <ClInclude Include="Include\GameNetwork\LANPlayer.h" />
+    <ClInclude Include="Include\GameNetwork\NAT.h" />
+    <ClInclude Include="Include\GameNetwork\NetCommandList.h" />
+    <ClInclude Include="Include\GameNetwork\NetCommandMsg.h" />
+    <ClInclude Include="Include\GameNetwork\NetCommandRef.h" />
+    <ClInclude Include="Include\GameNetwork\NetCommandWrapperList.h" />
+    <ClInclude Include="Include\GameNetwork\NetPacket.h" />
+    <ClInclude Include="Include\GameNetwork\NetworkDefs.h" />
+    <ClInclude Include="Include\GameNetwork\NetworkInterface.h" />
+    <ClInclude Include="Include\GameNetwork\NetworkUtil.h" />
+    <ClInclude Include="Include\GameNetwork\RankPointValue.h" />
+    <ClInclude Include="Include\GameNetwork\Transport.h" />
+    <ClInclude Include="Include\GameNetwork\udp.h" />
+    <ClInclude Include="Include\GameNetwork\User.h" />
+    <ClInclude Include="Include\GameNetwork\WOLBrowser\FEBDispatch.h" />
+    <ClInclude Include="Include\GameNetwork\WOLBrowser\WebBrowser.h" />
+    <ClInclude Include="Include\Precompiled\PreRTS.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LIBRARIES\Source\Benchmark\Benchmark.vcxproj">
+      <Project>{26efdb28-529e-4bff-9c15-2a9b7d73940c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Source\Compression\Compression.vcxproj">
+      <Project>{e5f17cff-665f-448e-a79f-d9a387903af0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Source\EABrowserDispatch\EABrowserDispatch.vcxproj">
+      <Project>{3cb46150-0e65-4e8e-8838-1c938a81ebf6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

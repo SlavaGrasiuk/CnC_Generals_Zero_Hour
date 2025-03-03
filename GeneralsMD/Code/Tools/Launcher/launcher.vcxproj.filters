@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="dbglib">
+      <UniqueIdentifier>{5f54221d-e432-4c6c-a6fd-295c83ecbfef}</UniqueIdentifier>
+      <Extensions>.cpp,.h</Extensions>
+    </Filter>
+    <Filter Include="Support">
+      <UniqueIdentifier>{d050d19f-a225-4b43-aa81-f2dc317ecda2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{450830d8-ecef-477f-b09b-dd4111ebbfcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Storage">
+      <UniqueIdentifier>{87ed19f3-46be-42aa-af2b-49a85909a9fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SafeDisk">
+      <UniqueIdentifier>{264e7cd9-e3c4-4197-864a-1742a07dcdcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{28afe650-77ac-47b5-8167-92154d200793}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="configfile.cpp">
+      <Filter>dbglib</Filter>
+    </ClCompile>
+    <ClCompile Include="monod.cpp">
+      <Filter>dbglib</Filter>
+    </ClCompile>
+    <ClCompile Include="streamer.cpp">
+      <Filter>dbglib</Filter>
+    </ClCompile>
+    <ClCompile Include="wdebug.cpp">
+      <Filter>dbglib</Filter>
+    </ClCompile>
+    <ClCompile Include="wstring.cpp">
+      <Filter>dbglib</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit\Support\StringConvert.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit\Support\UString.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit\Debug\DebugPrint.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolkit\Storage\File.cpp">
+      <Filter>Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="BFISH.CPP" />
+    <ClCompile Include="dialog.cpp" />
+    <ClCompile Include="findpatch.cpp" />
+    <ClCompile Include="loadbmp.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="patch.cpp" />
+    <ClCompile Include="process.cpp" />
+    <ClCompile Include="Protect.cpp" />
+    <ClCompile Include="winblows.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="configfile.h">
+      <Filter>dbglib</Filter>
+    </ClInclude>
+    <ClInclude Include="dictionary.h">
+      <Filter>dbglib</Filter>
+    </ClInclude>
+    <ClInclude Include="filed.h">
+      <Filter>dbglib</Filter>
+    </ClInclude>
+    <ClInclude Include="monod.h">
+      <Filter>dbglib</Filter>
+    </ClInclude>
+    <ClInclude Include="odevice.h">
+      <Filter>dbglib</Filter>
+    </ClInclude>
+    <ClInclude Include="streamer.h">
+      <Filter>dbglib</Filter>
+    </ClInclude>
+    <ClInclude Include="wdebug.h">
+      <Filter>dbglib</Filter>
+    </ClInclude>
+    <ClInclude Include="wstring.h">
+      <Filter>dbglib</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolkit\Support\RefCounted.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolkit\Support\RefPtr.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolkit\Support\StringConvert.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolkit\Support\UString.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolkit\Support\UTypes.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolkit\Support\Visualc.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolkit\Debug\DebugPrint.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolkit\Storage\File.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolkit\Storage\Rights.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolkit\Storage\Stream.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="SafeDisk\CdaPfn.h">
+      <Filter>SafeDisk</Filter>
+    </ClInclude>
+    <ClInclude Include="BFISH.H" />
+    <ClInclude Include="dialog.h" />
+    <ClInclude Include="findpatch.h" />
+    <ClInclude Include="loadbmp.h" />
+    <ClInclude Include="patch.h" />
+    <ClInclude Include="process.h" />
+    <ClInclude Include="Protect.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="winblows.h" />
+    <ClInclude Include="wstypes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Generals.ico" />
+    <Image Include="..\..\..\Run\launcher.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="launcher1.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\Run\generals.lcf" />
+    <CustomBuild Include="..\..\..\Run\patchw32.dll" />
+  </ItemGroup>
+</Project>

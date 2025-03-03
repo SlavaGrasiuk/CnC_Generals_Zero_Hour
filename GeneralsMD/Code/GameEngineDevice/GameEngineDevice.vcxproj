@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Internal|Win32">
+      <Configuration>Internal</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Win32">
+      <Configuration>Profile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/RTS/Code/GameEngineDevice", TNAAAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <ProjectGuid>{A823F378-7094-47D5-899B-C97813506BA0}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <OutDir>.\Profile\</OutDir>
+    <IntDir>.\Profile\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">
+    <OutDir>.\Internal\</OutDir>
+    <IntDir>.\Internal\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>../Libraries/Source/Benchmark;..\Main;Include;..\GameEngine\Include;..\Libraries\Include;..\Libraries\Source\WWVegas;..\Libraries\Source\WWVegas\WW3D2;..\Libraries\Source\WWVegas\WWLib;..\Libraries\Source\WWVegas\WWDebug;..\Libraries\Source\WWVegas\WWMath;..\Libraries\Source\WWVegas\WWSaveLoad;..\Libraries\Include\Granny;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;_WINDOWS;IG_DEBUG_STACKTRACE;WIN32;NDEBUG;_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\GameEngineDevice.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\GameEngineDevice.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>Lib\GameEngineDevice.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>../Libraries/Source/Benchmark;..\Main;Include;..\GameEngine\Include;..\Libraries\Include;..\Libraries\Source\WWVegas;..\Libraries\Source\WWVegas\WW3D2;..\Libraries\Source\WWVegas\WWLib;..\Libraries\Source\WWVegas\WWDebug;..\Libraries\Source\WWVegas\WWMath;..\Libraries\Source\WWVegas\WWSaveLoad;..\Libraries\Include\Granny;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;_WINDOWS;IG_DEBUG_STACKTRACE;WIN32;NDEBUG;_RELEASE;_PROFILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Profile\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Profile\GameEngineDevice.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Profile\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Profile\</ProgramDataBaseFileName>
+      <AdditionalOptions> /Gh </AdditionalOptions>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Profile\GameEngineDevice.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>Lib\GameEngineDeviceProfile.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\Libraries\Include\MSS;../Libraries/Source/Benchmark;..\Main;Include;..\GameEngine\Include;..\Libraries\Include;..\Libraries\Source\WWVegas;..\Libraries\Source\WWVegas\WW3D2;..\Libraries\Source\WWVegas\WWLib;..\Libraries\Source\WWVegas\WWDebug;..\Libraries\Source\WWVegas\WWMath;..\Libraries\Source\WWVegas\WWSaveLoad;..\Libraries\Include\Granny;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_LIB;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\GameEngineDevice.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\GameEngineDevice.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>Lib\GameEngineDeviceDebug.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>../Libraries/Source/Benchmark;..\Main;Include;..\GameEngine\Include;..\Libraries\Include;..\Libraries\Source\WWVegas;..\Libraries\Source\WWVegas\WW3D2;..\Libraries\Source\WWVegas\WWLib;..\Libraries\Source\WWVegas\WWDebug;..\Libraries\Source\WWVegas\WWMath;..\Libraries\Source\WWVegas\WWSaveLoad;..\Libraries\Include\Granny;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_LIB;_WINDOWS;_INTERNAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Internal\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Internal\GameEngineDevice.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Internal\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Internal\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Internal\GameEngineDevice.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>Lib\GameEngineDeviceInternal.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\MilesAudioDevice\MilesAudioManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\VideoDevice\Bink\BinkVideoPlayer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\Common\System\W3DFunctionLexicon.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\Common\System\W3DRadar.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\Common\Thing\W3DModuleFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\Common\Thing\W3DThingFactory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\Common\W3DConvert.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\BaseHeightMap.cpp">
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">All</AssemblerOutput>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\camerashakesystem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DDebrisDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DDefaultDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DDependencyModelDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DLaserDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DModelDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DOverlordAircraftDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DOverlordTankDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DOverlordTruckDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DPoliceCarDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DProjectileStreamDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DPropDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DRopeDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DScienceModelDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DSupplyDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DTankDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DTankTruckDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DTracerDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DTreeDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Drawable\Draw\W3DTruckDraw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\FlatHeightMap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DCheckBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DComboBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DHorizontalSlider.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DListBox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DProgressBar.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DPushButton.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DRadioButton.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DStaticText.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DTabControl.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DTextEntry.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\Gadget\W3DVerticalSlider.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\GUICallbacks\W3DControlBar.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\GUICallbacks\W3DMainMenu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\GUICallbacks\W3DMOTD.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\W3DGameFont.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\W3DGameWindow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\GUI\W3DGameWindowManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\HeightMap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Shadow\W3DBufferManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Shadow\W3DProjectedShadow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Shadow\W3DShadow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Shadow\W3DVolumetricShadow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\TerrainTex.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\TileData.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DAssetManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DAssetManagerExposed.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DBibBuffer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DBridgeBuffer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DCustomEdging.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDebugDisplay.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDebugIcons.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDisplay.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDisplayString.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDisplayStringManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DDynamicLight.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DFileSystem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DGameClient.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DGranny.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DInGameUI.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DMouse.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DParticleSys.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DPoly.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DPropBuffer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DRoadBuffer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DScene.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DShaderManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DShroud.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DSmudge.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DSnow.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DStatusCircle.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DTerrainBackground.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DTerrainTracks.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DTerrainVisual.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DTreeBuffer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DVideoBuffer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DView.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3dWaypointBuffer.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\W3DWebBrowser.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Water\W3DWater.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\Water\W3DWaterTracks.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameClient\WorldHeightMap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameLogic\W3DGameLogic.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameLogic\W3DGhostObject.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\W3DDevice\GameLogic\W3DTerrainLogic.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32BIGFile.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32BIGFileSystem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32CDManager.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32GameEngine.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32LocalFile.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32LocalFileSystem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\Common\Win32OSDisplay.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\GameClient\Win32DIKeyboard.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Source\Win32Device\GameClient\Win32Mouse.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'"> /Gh   /Gh </AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\fterrain.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\fterrain.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\fterrain.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\fterrain0.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\fterrain0.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\fterrain0.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\fterrainnoise.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\fterrainnoise.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\fterrainnoise.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\fterrainnoise2.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\fterrainnoise2.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\fterrainnoise2.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\invmonochrome.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\invmonochrome.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\Shaders\invmonochrome.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\invmonochrome.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(SolutionDir)..\Run\Shaders\invmonochrome.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\invmonochrome.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\invmonochrome.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\invmonochrome.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\invmonochrome.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\monochrome.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\monochrome.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\Shaders\monochrome.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\monochrome.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(SolutionDir)..\Run\Shaders\monochrome.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\monochrome.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\monochrome.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\monochrome.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\monochrome.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\motionblur.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\motionblur.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\Shaders\motionblur.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\motionblur.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(SolutionDir)..\Run\Shaders\motionblur.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\motionblur.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\motionblur.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\motionblur.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\motionblur.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\MotionBlur.nvv">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\MotionBlur.vso</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\Shaders\MotionBlur.vso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\MotionBlur.vso</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(SolutionDir)..\Run\Shaders\MotionBlur.vso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\MotionBlur.vso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\MotionBlur.vso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\MotionBlur.vso</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\MotionBlur.vso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\roadnoise2.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\roadnoise2.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\Shaders\roadnoise2.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\roadnoise2.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(SolutionDir)..\Run\Shaders\roadnoise2.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\roadnoise2.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\roadnoise2.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\roadnoise2.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\roadnoise2.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\terrain.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrain.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\Shaders\terrain.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrain.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(SolutionDir)..\Run\Shaders\terrain.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrain.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\terrain.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrain.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\terrain.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\terrainnoise.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrainnoise.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\Shaders\terrainnoise.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrainnoise.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(SolutionDir)..\Run\Shaders\terrainnoise.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrainnoise.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\terrainnoise.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrainnoise.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\terrainnoise.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\terrainnoise2.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrainnoise2.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\Shaders\terrainnoise2.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrainnoise2.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(SolutionDir)..\Run\Shaders\terrainnoise2.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrainnoise2.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\terrainnoise2.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\terrainnoise2.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\terrainnoise2.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\Trees.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\Trees.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\Shaders\Trees.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\Trees.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\Trees.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\Trees.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\Trees.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Shaders\Trees.nvv">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\Trees.vso</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\Shaders\Trees.vso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\Trees.vso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\Trees.vso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\Trees.vso</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\Trees.vso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Water\wave.nvp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\wave.pso</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\wave.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\wave.pso</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(SolutionDir)..\Run\wave.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\wave.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\wave.pso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\wave.pso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\wave.pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Source\W3DDevice\GameClient\Water\wave.nvv">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\wave.vso</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)..\Run\wave.vso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\wave.vso</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(SolutionDir)..\Run\wave.vso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\wave.vso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\Run\Shaders\wave.vso;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">..\tools\nvasm\nvasm -d %(FullPath) $(SolutionDir)..\Run\Shaders\wave.vso 
+if ERRORLEVEL 7 ECHO Warning: Output File Read Only! </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(SolutionDir)..\Run\Shaders\wave.vso;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\MilesAudioDevice\MilesAudioManager.h" />
+    <ClInclude Include="Include\VideoDevice\Bink\BINK.H" />
+    <ClInclude Include="Include\VideoDevice\Bink\BinkVideoPlayer.h" />
+    <ClInclude Include="Include\VideoDevice\Bink\RAD.H" />
+    <ClInclude Include="Include\VideoDevice\Bink\radbase.h" />
+    <ClInclude Include="Include\W3DDevice\Common\W3DConvert.h" />
+    <ClInclude Include="Include\W3DDevice\Common\W3DFunctionLexicon.h" />
+    <ClInclude Include="Include\W3DDevice\Common\W3DModuleFactory.h" />
+    <ClInclude Include="Include\W3DDevice\Common\W3DRadar.h" />
+    <ClInclude Include="Include\W3DDevice\Common\W3DThingFactory.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\BaseHeightMap.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\camerashakesystem.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\FlatHeightMap.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\HeightMap.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DDebrisDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DDefaultDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DDependencyModelDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DLaserDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DModelDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DOverlordAircraftDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DOverlordTankDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DOverlordTruckDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DPoliceCarDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DProjectileStreamDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DPropDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DRopeDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DScienceModelDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DSupplyDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DTankDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DTankTruckDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DTracerDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DTreeDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\Module\W3DTruckDraw.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\TerrainTex.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\TileData.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DAssetManager.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DAssetManagerExposed.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DBibBuffer.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DBridgeBuffer.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DBufferManager.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DCustomEdging.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DCustomScene.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDebugDisplay.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDebugIcons.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDisplay.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDisplayString.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDisplayStringManager.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DDynamicLight.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DFileSystem.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGadget.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGameClient.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGameFont.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGameWindow.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGameWindowManager.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGranny.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DGUICallbacks.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DInGameUI.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DMirror.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DMouse.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DParticleSys.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DPoly.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DProjectedShadow.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DPropBuffer.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DRoadBuffer.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DScene.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DShaderManager.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DShadow.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DShroud.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DSmudge.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DSnow.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DStatusCircle.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DTerrainBackground.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DTerrainTracks.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DTerrainVisual.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DTreeBuffer.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DVideobuffer.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DView.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DVolumetricShadow.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DWater.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DWaterTracks.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DWaypointBuffer.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\W3DWebBrowser.h" />
+    <ClInclude Include="Include\W3DDevice\GameClient\WorldHeightMap.h" />
+    <ClInclude Include="Include\W3DDevice\GameLogic\W3DGameLogic.h" />
+    <ClInclude Include="Include\W3DDevice\GameLogic\W3DGhostObject.h" />
+    <ClInclude Include="Include\W3DDevice\GameLogic\W3DTerrainLogic.h" />
+    <ClInclude Include="Include\Win32Device\Common\Win32BIGFile.h" />
+    <ClInclude Include="Include\Win32Device\Common\Win32BIGFileSystem.h" />
+    <ClInclude Include="Include\Win32Device\Common\Win32CDManager.h" />
+    <ClInclude Include="Include\Win32Device\Common\Win32GameEngine.h" />
+    <ClInclude Include="Include\Win32Device\Common\Win32LocalFile.h" />
+    <ClInclude Include="Include\Win32Device\Common\Win32LocalFileSystem.h" />
+    <ClInclude Include="Include\Win32Device\GameClient\Win32DIKeyboard.h" />
+    <ClInclude Include="Include\Win32Device\GameClient\Win32Mouse.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LIBRARIES\Source\Benchmark\Benchmark.vcxproj">
+      <Project>{26efdb28-529e-4bff-9c15-2a9b7d73940c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Source\Compression\Compression.vcxproj">
+      <Project>{e5f17cff-665f-448e-a79f-d9a387903af0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\Source\EABrowserDispatch\EABrowserDispatch.vcxproj">
+      <Project>{3cb46150-0e65-4e8e-8838-1c938a81ebf6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
