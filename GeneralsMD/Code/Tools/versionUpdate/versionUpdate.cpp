@@ -38,166 +38,134 @@
 #define NUMFMT "#define %s %d\n"
 #define STRFMT "#define %s \"%s\"\n"
 
-static void writeVersion(char *file, int build)
-{
-	FILE *filePtr = fopen(file, "w");
-	// Clobber the file.  Hey, this is a simple program.
-	if (file)
-	{
-		if (filePtr)
-		{
-			unsigned long bufSize = UNLEN + 1;
-			char userName[UNLEN + 1];
-			if (!GetUserName(userName, &bufSize))
-			{
-				strcpy(userName, "unknown");
-			}
+static void writeVersion(char* file, int build) {
+    FILE* filePtr = fopen(file, "w");
+    // Clobber the file.  Hey, this is a simple program.
+    if (file) {
+        if (filePtr) {
+            unsigned long bufSize = UNLEN + 1;
+            char userName[UNLEN + 1];
+            if (!GetUserName(userName, &bufSize)) {
+                strcpy(userName, "unknown");
+            }
 
-			bufSize = MAX_COMPUTERNAME_LENGTH + 1;
-			char computerName[MAX_COMPUTERNAME_LENGTH + 1];
-			if (!GetComputerName(computerName, &bufSize))
-			{
-				strcpy(computerName, "unknown");
-			}
+            bufSize = MAX_COMPUTERNAME_LENGTH + 1;
+            char computerName[MAX_COMPUTERNAME_LENGTH + 1];
+            if (!GetComputerName(computerName, &bufSize)) {
+                strcpy(computerName, "unknown");
+            }
 
-			printf("Build is by %s at %s\n", userName, computerName);
+            printf("Build is by %s at %s\n", userName, computerName);
 
-			fprintf(filePtr, COMMENTS);
-			fprintf(filePtr, FORMAT, build);
-			fprintf(filePtr, NUMFMT, VERSION_BUILDNUM, build);
-			fprintf(filePtr, STRFMT, VERSION_BUILDUSER, userName);
-			fprintf(filePtr, STRFMT, VERSION_BUILDLOC, computerName);
-			fclose(filePtr);
-		}
-		else
-		{
-			printf("Cannot write file\n");
-		}
-	}
-	else
-	{
-		printf("No file to write\n");
-	}
+            fprintf(filePtr, COMMENTS);
+            fprintf(filePtr, FORMAT, build);
+            fprintf(filePtr, NUMFMT, VERSION_BUILDNUM, build);
+            fprintf(filePtr, STRFMT, VERSION_BUILDUSER, userName);
+            fprintf(filePtr, STRFMT, VERSION_BUILDLOC, computerName);
+            fclose(filePtr);
+        } else {
+            printf("Cannot write file\n");
+        }
+    } else {
+        printf("No file to write\n");
+    }
 }
 
-static void usage(char *progname)
-{
-	if (progname)
-	{
-		printf ("Usage: %s versionfile.h", progname);
-	}
+static void usage(char* progname) {
+    if (progname) {
+        printf("Usage: %s versionfile.h", progname);
+    }
 }
 
 
 // strtrim ====================================================================
 /** Trim leading and trailing whitespace from a character string (in place). */
 //=============================================================================
-static char* strtrim(char* buffer)
-{
-	if (buffer != NULL) {
-		//	Strip leading white space from the string.
-		char * source = buffer;
-		while ((*source != 0) && ((unsigned char)*source <= 32))
-		{
-			source++;
-		}
+static char* strtrim(char* buffer) {
+    if (buffer != nullptr) {
+        //	Strip leading white space from the string.
+        char* source = buffer;
+        while ((*source != 0) && ((unsigned char)*source <= 32)) {
+            source++;
+        }
 
-		if (source != buffer)
-		{
-			strcpy(buffer, source);
-		}
+        if (source != buffer) {
+            strcpy(buffer, source);
+        }
 
-		//	Clip trailing white space from the string.
-		for (int index = strlen(buffer)-1; index >= 0; index--)
-		{
-			if ((*source != 0) && ((unsigned char)buffer[index] <= 32))
-			{
-				buffer[index] = '\0';
-			}
-			else
-			{
-				break;
-			}
-		}
-	}
+        //	Clip trailing white space from the string.
+        for (int index = strlen(buffer) - 1; index >= 0; index--) {
+            if ((*source != 0) && ((unsigned char)buffer[index] <= 32)) {
+                buffer[index] = '\0';
+            } else {
+                break;
+            }
+        }
+    }
 
-	return buffer;
+    return buffer;
 }
 
-int APIENTRY WinMain(HINSTANCE hInstance,
-                     HINSTANCE hPrevInstance,
-                     LPSTR     lpCmdLine,
-                     int       nCmdShow)
-{
-	/*
-	** Convert WinMain arguments to simple main argc and argv
-	*/
-	int argc = 1;
-	char * argv[20];
-	argv[0] = NULL;
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+    /*
+    ** Convert WinMain arguments to simple main argc and argv
+    */
+    int argc = 1;
+    char* argv[20];
+    argv[0] = nullptr;
 
-	char * token = strtok(lpCmdLine, " ");
-	while (argc < 20 && token != NULL)
-	{
-		argv[argc++] = strtrim(token);
-		token = strtok(NULL, " ");
-	}
+    char* token = strtok(lpCmdLine, " ");
+    while (argc < 20 && token != nullptr) {
+        argv[argc++] = strtrim(token);
+        token = strtok(nullptr, " ");
+    }
 
-	int build = 0;
+    int build = 0;
 
-	if (argc != 2)
-	{
-		usage(argv[0]);
-	}
-	else
-	{
-		char *target = argv[argc-1];
-		FILE *filePtr;
+    if (argc != 2) {
+        usage(argv[0]);
+    } else {
+        char* target = argv[argc - 1];
+        FILE* filePtr;
 
-		if (target) {
-			filePtr = fopen(target, "r+");
-			if (filePtr)
-			{
-				char buffer[256];
-				char *stringPtr = NULL;
+        if (target) {
+            filePtr = fopen(target, "r+");
+            if (filePtr) {
+                char buffer[256];
+                char* stringPtr = nullptr;
 
-				while (!feof(filePtr))
-				{
-					fread(buffer, 256, 1, filePtr);
-					if ((stringPtr = strstr(buffer, VERSION_STRING)) != NULL) 
-					{
-						char *ptr;
+                while (!feof(filePtr)) {
+                    fread(buffer, 256, 1, filePtr);
+                    if ((stringPtr = strstr(buffer, VERSION_STRING)) != nullptr) {
+                        char* ptr;
 
-						// Looking for '#define VERSION "x.y.z"'
-						ptr = strtok(stringPtr, " ");	// The VERSION
-						ptr = strtok(NULL, "\n");			// The remainder
-						
-						if (*ptr == '\"')
-						{
-							ptr++; // Inc past the first "
-							build = atoi(ptr);
-							fclose(filePtr);
+                        // Looking for '#define VERSION "x.y.z"'
+                        ptr = strtok(stringPtr, " ");	// The VERSION
+                        ptr = strtok(nullptr, "\n");			// The remainder
 
-							build++;
+                        if (*ptr == '\"') {
+                            ptr++; // Inc past the first "
+                            build = atoi(ptr);
+                            fclose(filePtr);
 
-							printf ("Local build is %d\n", build);
-							writeVersion(target, build);
-							break;
-						} else
-						{
-							printf ("Local build is 0. Oops, didn't find a string of the format: '#define VERSION \"x.y.z\"'");
-						}
-					} // End if if (strstr
-				} // End of while
-			} // End of if filePtr
-			else
-			{
-				// Didn't find the file, write a new one
-				printf ("Local build is %d\n", build);
-				writeVersion(target, build);
-			}
-		}
-	}
+                            build++;
 
-	return 0;
+                            printf("Local build is %d\n", build);
+                            writeVersion(target, build);
+                            break;
+                        } else {
+                            printf("Local build is 0. Oops, didn't find a string of the format: '#define VERSION \"x.y.z\"'");
+                        }
+                    } // End if if (strstr
+                } // End of while
+            } // End of if filePtr
+            else {
+                // Didn't find the file, write a new one
+                printf("Local build is %d\n", build);
+                writeVersion(target, build);
+            }
+        }
+    }
+
+    return 0;
 }
