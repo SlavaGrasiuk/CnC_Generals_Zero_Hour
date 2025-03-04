@@ -17,9 +17,9 @@
 */
 
 ////////////////////////////////////////////////////////////////////////////////
-//																																						//
-//  (c) 2001-2003 Electronic Arts Inc.																				//
-//																																						//
+//                                                                            //
+//  (c) 2001-2003 Electronic Arts Inc.										  //
+//                                                                            //
 ////////////////////////////////////////////////////////////////////////////////
 
 // FILE: CopyProtection.h ////////////////////////////////////////////////////
@@ -33,7 +33,7 @@
 #define COPYPROTECTION_H
 
 // Comment out the following line to disable copy protection checks
-#define DO_COPY_PROTECTION
+//#define DO_COPY_PROTECTION
 
 #ifdef DO_COPY_PROTECTION
 
