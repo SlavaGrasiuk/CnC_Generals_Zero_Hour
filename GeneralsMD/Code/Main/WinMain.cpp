@@ -62,7 +62,7 @@
 #include "Win32Device/Common/Win32GameEngine.h"
 #include "Common/Version.h"
 #include "BuildVersion.h"
-#include "GeneratedVersion.h"
+#include <GeneratedVersion.h>
 #include "Resource.h"
 
 #include <rts/profile.h>

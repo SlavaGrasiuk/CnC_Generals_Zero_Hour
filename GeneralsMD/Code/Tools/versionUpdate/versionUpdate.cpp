@@ -64,7 +64,7 @@ static void writeVersion(char* file, int build) {
             fprintf(filePtr, STRFMT, VERSION_BUILDLOC, computerName);
             fclose(filePtr);
         } else {
-            printf("Cannot write file\n");
+            printf("Cannot write file %s\n", file);
         }
     } else {
         printf("No file to write\n");
