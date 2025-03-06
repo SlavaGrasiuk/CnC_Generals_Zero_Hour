@@ -17,9 +17,9 @@
 */
 
 ////////////////////////////////////////////////////////////////////////////////
-//																																						//
-//  (c) 2001-2003 Electronic Arts Inc.																				//
-//																																						//
+//                                                                            //
+//  (c) 2001-2003 Electronic Arts Inc.                                        //
+//                                                                            //
 ////////////////////////////////////////////////////////////////////////////////
 
 // FILE: Memory.h 
@@ -878,8 +878,9 @@ extern void userMemoryAdjustPoolSize(const char *poolName, Int& initialAllocatio
 	// additional overloads for 'placement new'
 	//inline void* __cdecl operator new							(size_t s, void *p) { return p; }
 	//inline void __cdecl operator delete						(void *, void *p)		{ }
-	inline void* __cdecl operator new[]						(size_t s, void *p) { return p; }
-	inline void __cdecl operator delete[]					(void *, void *p)		{ }
+	// NOTE: (slavagrasiuk) This was commented out during porting to msvc v143 toolchain
+	//inline void* __cdecl operator new[]						(size_t s, void *p) { return p; }
+	//inline void __cdecl operator delete[]					(void *, void *p)		{ }
 
 #endif
 
