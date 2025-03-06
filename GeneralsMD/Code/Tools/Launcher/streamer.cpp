@@ -23,16 +23,17 @@
 #endif
 
 
-Streamer::Streamer() : streambuf()
+Streamer::Streamer() : std::streambuf()
 {
-  int state=unbuffered();
-  unbuffered(0);  // 0 = buffered, 1 = unbuffered
+    // NOTE: (slavagrasiuk) this unbuffered() call is non-standart; pay attention to commented lines in this file
+  //int state=unbuffered();
+  //unbuffered(0);  // 0 = buffered, 1 = unbuffered
 }
  
 Streamer::~Streamer()
 {
   sync();
-  delete[](base());
+  delete[](pbase());
 }
 
 int Streamer::setOutputDevice(OutputDevice *device)
@@ -75,7 +76,7 @@ int Streamer::overflow(int c)
     return(EOF);
   else {
     sputc(c);
-    if ((unbuffered() && c=='\n' || pptr() >= epptr())
+    if ((/*unbuffered() && c=='\n' ||*/ pptr() >= epptr())
         && sync()==EOF) {
       return(EOF);
     }
@@ -92,16 +93,16 @@ int Streamer::underflow(void)
 int Streamer::doallocate()
 {
 
-  if (base()==NULL)
+  if (pbase()==NULL)
   {
     char *buf=new char[(2*STREAMER_BUFSIZ)];   // deleted by destructor
     memset(buf,0,2*STREAMER_BUFSIZ);
 
     // Buffer
-    setb(
-       buf,         // base pointer
-       buf+STREAMER_BUFSIZ,  // ebuf pointer (end of buffer);
-       0);          // 0 = manual deletion of buff 
+    setbuf(
+        buf,         // base pointer
+        STREAMER_BUFSIZ);  // ebuf pointer (end of buffer);
+       //0);          // 0 = manual deletion of buff 
 
     // Get area
     setg(
@@ -132,11 +133,11 @@ int Streamer::sync()
     Output_Device->print(pbase(),wlen);
   }
 
-  if (unbuffered()) {
-    setp(pbase(),pbase());
-  }
-  else {
+  //if (unbuffered()) {
+  //  setp(pbase(),pbase());
+  //}
+  //else {
     setp(pbase(),pbase()+STREAMER_BUFSIZ);
-  }
+  //}
   return(0);
 }

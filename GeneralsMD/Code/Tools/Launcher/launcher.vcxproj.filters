@@ -14,9 +14,6 @@
     <Filter Include="Storage">
       <UniqueIdentifier>{87ed19f3-46be-42aa-af2b-49a85909a9fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SafeDisk">
-      <UniqueIdentifier>{264e7cd9-e3c4-4197-864a-1742a07dcdcf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="util">
       <UniqueIdentifier>{28afe650-77ac-47b5-8167-92154d200793}</UniqueIdentifier>
     </Filter>
@@ -113,9 +110,6 @@
     </ClInclude>
     <ClInclude Include="Toolkit\Storage\Stream.h">
       <Filter>Storage</Filter>
-    </ClInclude>
-    <ClInclude Include="SafeDisk\CdaPfn.h">
-      <Filter>SafeDisk</Filter>
     </ClInclude>
     <ClInclude Include="BFISH.H" />
     <ClInclude Include="dialog.h" />
