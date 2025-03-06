@@ -50,14 +50,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Main\buildVersion.h">
-      <Filter>Main</Filter>
-    </ClInclude>
     <ClInclude Include="Main\WinMain.h">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="Main\resource.h">
       <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(GeneratedHeadersDirRelative)\BuildVersion.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="$(GeneratedHeadersDirRelative)\GeneratedVersion.h">
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,9 +80,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="Main\generatedVersion.h">
-      <Filter>Main</Filter>
-    </CustomBuild>
     <CustomBuild Include="..\Run\Data\INI\Default\AIData.ini">
       <Filter>INI Files\Default</Filter>
     </CustomBuild>

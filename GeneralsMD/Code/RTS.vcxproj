@@ -100,36 +100,40 @@
     <Import Project="common.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <!-- Relative to this .vcxproj file; NOTE: keep in sync with .\Main\PreBuild.bat and common.props -->
+    <GeneratedHeadersDirRelative>..\Tmp\gen\include</GeneratedHeadersDirRelative>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">
     <OutDir>.\Main\Internal\</OutDir>
     <IntDir>.\Main\Internal\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\Tmp\gen\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(GeneratedHeadersDirRelative);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\Tmp\gen\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(GeneratedHeadersDirRelative);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
     <OutDir>.\Main\Profile\</OutDir>
     <IntDir>.\Main\Profile\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\Tmp\gen\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(GeneratedHeadersDirRelative);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>.\Main\Release\</OutDir>
     <IntDir>.\Main\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\Tmp\gen\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(GeneratedHeadersDirRelative);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugW3D|Win32'">
     <OutDir>.\Main\DebugW3D\</OutDir>
     <IntDir>.\Main\DebugW3D\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\Tmp\gen\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(GeneratedHeadersDirRelative);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
-    <IncludePath>..\Tmp\gen\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(GeneratedHeadersDirRelative);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">
     <ClCompile>
@@ -372,34 +376,8 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Main\buildVersion.h" />
-    <CustomBuild Include="Main\generatedVersion.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(TargetDir)versionUpdate.exe %(FullPath) 
-$(TargetDir)buildVersionUpdate.exe .\Main\buildVersion.h </Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">Incrementing version numbers held in %(FullPath) .\Main\buildVersion.h</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(InputPath);%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">$(ProjectDir)main\winmain.cpp;$(ProjectDir)main\winmain.h;$(ProjectDir)Libraries\Lib\WW3D2Internal.lib;$(ProjectDir)Libraries\Lib\WWDebugInternal.lib;$(ProjectDir)Libraries\Lib\WWUtilInternal.lib;$(ProjectDir)Libraries\Lib\WWLibInternal.lib;$(ProjectDir)Libraries\Lib\WWMathInternal.lib;$(ProjectDir)GameEngine\Lib\GameEngineInternal.lib;$(ProjectDir)GameEngineDevice\Lib\GameEngineDeviceInternal.lib;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(TargetDir)versionUpdate.exe %(FullPath) 
-$(TargetDir)buildVersionUpdate.exe .\Main\buildVersion.h </Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Incrementing version numbers held in %(FullPath) .\Main\buildVersion.h</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputPath);%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)main\winmain.cpp;$(ProjectDir)main\winmain.h;$(ProjectDir)Libraries\Lib\WW3D2Debug.lib;$(ProjectDir)Libraries\Lib\WWDebugDebug.lib;$(ProjectDir)Libraries\Lib\WWUtilDebug.lib;$(ProjectDir)Libraries\Lib\WWLibDebug.lib;$(ProjectDir)Libraries\Lib\WWMathDebug.lib;$(ProjectDir)GameEngine\Lib\GameEngineDebug.lib;$(ProjectDir)GameEngineDevice\Lib\GameEngineDeviceDebug.lib;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(TargetDir)versionUpdate.exe %(FullPath) 
-$(TargetDir)buildVersionUpdate.exe .\Main\buildVersion.h </Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">Incrementing version numbers held in %(FullPath) .\Main\buildVersion.h</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(InputPath);%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(ProjectDir)main\winmain.cpp;$(ProjectDir)main\winmain.h;$(ProjectDir)Libraries\Lib\WW3D2.lib;$(ProjectDir)Libraries\Lib\WWDebug.lib;$(ProjectDir)Libraries\Lib\WWUtil.lib;$(ProjectDir)Libraries\Lib\WWLib.lib;$(ProjectDir)Libraries\Lib\WWMath.lib;$(ProjectDir)GameEngine\Lib\GameEngine.lib;$(ProjectDir)GameEngineDevice\Lib\GameEngineDevice.lib;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(TargetDir)versionUpdate.exe %(FullPath) 
-$(TargetDir)buildVersionUpdate.exe .\Main\buildVersion.h </Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Incrementing version numbers held in %(FullPath) .\Main\buildVersion.h</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputPath);%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)main\winmain.cpp;$(ProjectDir)main\winmain.h;$(ProjectDir)Libraries\Lib\WW3D2.lib;$(ProjectDir)Libraries\Lib\WWDebug.lib;$(ProjectDir)Libraries\Lib\WWUtil.lib;$(ProjectDir)Libraries\Lib\WWLib.lib;$(ProjectDir)Libraries\Lib\WWMath.lib;$(ProjectDir)GameEngine\Lib\GameEngine.lib;$(ProjectDir)GameEngineDevice\Lib\GameEngineDevice.lib;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='DebugW3D|Win32'">$(TargetDir)versionUpdate.exe %(FullPath) 
-$(TargetDir)buildVersionUpdate.exe .\Main\buildVersion.h </Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='DebugW3D|Win32'">Incrementing version numbers held in %(FullPath) .\Main\buildVersion.h</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='DebugW3D|Win32'">$(InputPath);%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='DebugW3D|Win32'">$(ProjectDir)main\winmain.cpp;$(ProjectDir)main\winmain.h;$(ProjectDir)Libraries\Lib\WW3D2Debug.lib;$(ProjectDir)Libraries\Lib\WWDebugDebug.lib;$(ProjectDir)Libraries\Lib\WWUtilDebug.lib;$(ProjectDir)Libraries\Lib\WWLibDebug.lib;$(ProjectDir)Libraries\Lib\WWMathDebug.lib;$(ProjectDir)GameEngine\Lib\GameEngineDebug.lib;$(ProjectDir)GameEngineDevice\Lib\GameEngineDeviceDebug.lib;%(AdditionalInputs)</AdditionalInputs>
-    </CustomBuild>
+    <ClInclude Include="$(GeneratedHeadersDirRelative)\BuildVersion.h" />
+    <ClInclude Include="$(GeneratedHeadersDirRelative)\GeneratedVersion.h" />
     <ClInclude Include="Main\resource.h" />
     <ClInclude Include="Main\WinMain.h" />
   </ItemGroup>
