@@ -279,7 +279,7 @@ static int Build_List_From_String
 			// Parse the string and pull out its entries.
 			//
 			count = 0;
-			for (entry = buffer;
+			for (const char* entry = buffer;
 				  (entry != NULL) && (entry[1] != 0);
 				  entry = ::strstr (entry, delimiter))
 			{

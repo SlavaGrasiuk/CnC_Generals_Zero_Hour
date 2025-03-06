@@ -39,8 +39,8 @@
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #include	"sha.h"
-#include	<iostream.h>
-#include	<stdlib.h>
+#include	<iostream>
+#include	<cstdlib>
 
 
 #if !defined(__BORLANDC__) && !defined(min)
