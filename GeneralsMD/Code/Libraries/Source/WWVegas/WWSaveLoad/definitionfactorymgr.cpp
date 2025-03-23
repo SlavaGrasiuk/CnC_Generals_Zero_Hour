@@ -99,7 +99,7 @@ DefinitionFactoryMgrClass::Find_Factory (const char *name)
 		//
 		//	Is this the factory we were looking for?
 		//
-		if (::stricmp (curr_factory->Get_Name (), name) == 0) {
+		if (::_stricmp (curr_factory->Get_Name (), name) == 0) {
 			factory = curr_factory;
 		}
 	}
@@ -156,7 +156,7 @@ DefinitionFactoryMgrClass::Get_Next
 	//	Loop through all the factories and see if we can
 	// find the next one that belongs to the given superclass
 	//
-	while ((factory == NULL) && ((curr_factory = curr_factory->m_NextFactory) != NULL)) {
+	while ((factory == nullptr) && ((curr_factory = curr_factory->m_NextFactory) != nullptr)) {
 
 		//
 		//	Is this the factory we were looking for?
@@ -195,7 +195,7 @@ DefinitionFactoryMgrClass::Get_Next (DefinitionFactoryClass *curr_factory)
 	//
 	//	Simply return the next factory in the chain
 	//
-	if (curr_factory != NULL) {
+	if (curr_factory != nullptr) {
 		factory = curr_factory->m_NextFactory;
 	}
 
