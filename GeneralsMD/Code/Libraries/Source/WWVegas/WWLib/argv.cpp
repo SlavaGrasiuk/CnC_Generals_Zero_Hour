@@ -37,7 +37,7 @@
  *   ArgvClass::Free -- Release data allocated.                                                * 
  *   ArgvClass::Load_File -- Load args from a file.                                            * 
  *   *ArgvClass::Find_Value -- Find value of argument given prefix.                            * 
- *   *ArgvClass::Get_Cur_Value -- Get value of current argugment.                              * 
+ *   *ArgvClass::Get_Cur_Value -- Get value of current argument.                               * 
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 #include "argv.h"
 
@@ -55,8 +55,8 @@ char 		*ArgvClass::Argv[MAX_ARGC];
  * CurrentPos -- Create an instance to parse argv with.                                        * 
  *                                                                                             * 
  * INPUT:                                                                                      * 
- *    	bool case_sensitive - Do you want to perform a case sensitive search (stricmp)?		  *
- *			bool exact_size     - Do you want string of same lenght (strncmp) ?						  *
+ *    	bool case_sensitive - Do you want to perform a case sensitive search (stricmp)?		   *
+ *			bool exact_size     - Do you want string of same length (strncmp) ?				   *
  *                                                                                             * 
  * OUTPUT:                                                                                     * 
  *                                                                                             * 
@@ -78,7 +78,7 @@ ArgvClass::ArgvClass(bool case_sensitive, bool exact_size):
  * *ArgvClass::Find_Again -- Search for a string given the flags.                              * 
  *                                                                                             * 
  * INPUT:                                                                                      * 
- *      const char *arg - String to search for. If NULL, LastArg will be used.                 * 
+ *      const char *arg - String to search for. If nullptr, LastArg will be used.                 * 
  *                                                                                             * 
  * OUTPUT:                                                                                     * 
  *      const char *string found (null if not found)														  *	
@@ -122,7 +122,7 @@ const char *ArgvClass::Find_Again(const char *arg)
 			if (Is_Exact_Size()) {
 				// Note case sensitive, Exact Size.
 				for (; CurrentPos < Argc; CurrentPos++) {
-					if (!stricmp(arg, Argv[CurrentPos])) {
+					if (!_stricmp(arg, Argv[CurrentPos])) {
 						return Argv[CurrentPos];
 					}
 				}
@@ -130,35 +130,35 @@ const char *ArgvClass::Find_Again(const char *arg)
 				// Note case sensitive, Match first strlen(arg).
 				int len = strlen(arg);
 				for (; CurrentPos < Argc; CurrentPos++) {
-					if (!strnicmp(arg, Argv[CurrentPos], len)) {
+					if (!_strnicmp(arg, Argv[CurrentPos], len)) {
 						return Argv[CurrentPos];
 					}
 				}
 			}
 		}
 	}
-	return NULL;
+	return nullptr;
 }
 
-/*********************************************************************************************** 
- * ArgvClass::Init -- Setup the command line.                                                  * 
- *                                                                                             * 
- * INPUT:                                                                                      * 
- *			LPSTR lpCmdLine - A string of white space seperated strings.  Quotes force spaces to  *
- *                         be ignored.                                                         * 
- *			char *fileprefix - A prefix on an arguement telling system to load postfix file name  *
- *                          as command line params.                                            * 
- *                                                                                             * 
- * OUTPUT:                                                                                     * 
- *                                                                                             * 
- * WARNINGS:                                                                                   * 
- *      This may be called multible times with different strings.                              * 
- *      Once Argc reaches MAX_ARGC, no more will be added.                                     * 
- *                                                                                             * 
- * HISTORY:                                                                                    * 
- *   06/17/1999 SKB : Created.                                                                 * 
- *   07/15/2001 SKB : Put file arguements in the correct order they were included.             * 
- *=============================================================================================*/
+/************************************************************************************************ 
+ * ArgvClass::Init -- Setup the command line.                                                   * 
+ *                                                                                              * 
+ * INPUT:                                                                                       * 
+ *			LPSTR lpCmdLine - A string of white space separated strings.  Quotes force spaces to*
+ *                         be ignored.                                                          * 
+ *			char *fileprefix - A prefix on an argument telling system to load postfix file name *
+ *                          as command line params.                                             * 
+ *                                                                                              * 
+ * OUTPUT:                                                                                      * 
+ *                                                                                              * 
+ * WARNINGS:                                                                                    * 
+ *      This may be called multiple times with different strings.                               * 
+ *      Once Argc reaches MAX_ARGC, no more will be added.                                      * 
+ *                                                                                              * 
+ * HISTORY:                                                                                     * 
+ *   06/17/1999 SKB : Created.                                                                  * 
+ *   07/15/2001 SKB : Put file arguments in the correct order they were included.               * 
+ *==============================================================================================*/
 int ArgvClass::Init(char *lpCmdLine, char *fileprefix)
 {
 	// Get pointer to command line.
@@ -213,14 +213,14 @@ int ArgvClass::Init(char *lpCmdLine, char *fileprefix)
 		// If it was not the file or the load failed...then add parameter.
 		if (!was_file) {
 			// Copy string over and continue.
-			Argv[Argc] = strdup(ptr);
+			Argv[Argc] = _strdup(ptr);
 			Argc++;
 		}
 
 		// If save is null, then we are at the end and we can bail out.
 		if (!save) break;
 
-		// resore whitespace.
+		// restore whitespace.
 		*eos = save;
 		ptr = eos + 1;
 	}
@@ -244,45 +244,50 @@ int ArgvClass::Init(char *lpCmdLine, char *fileprefix)
  *=============================================================================================*/
 bool ArgvClass::Load_File(const char *fname)
 {
-	FILE *fp = fopen(fname, "r");
+	FILE* fp;
+	const errno_t error = fopen_s(&fp, fname, "r");
 
-	if (fp)  {							
-		while (Argc < MAX_ARGC) {
-			const int maxstrlen = 255;
-			char string[maxstrlen + 1];
+	if (error) {
+		// TODO: (slavagrasiuk) add some error logs
+		return false;
+	}
 
-			// Get next line in file.
-			if (!fgets(string, maxstrlen - 1, fp)) {
-				break;
+	while (Argc < MAX_ARGC) {
+		constexpr size_t maxStringLength = 255;
+		char string[maxStringLength + 1];
+
+		// Get next line in file.
+		if (!fgets(string, maxStringLength - 1, fp)) {
+			break;
+		}
+
+		// Check for comments.
+		if ((*string != '#') && (*string != ';'))  {
+			// Make sure null terminated.
+			string[maxStringLength - 1] = '\0';
+
+			char *ptr = string + (strlen(string) - 1);
+			while (*ptr <= ' ')  {
+				*ptr = 0;
+
+				// Is it just a blank line?
+				if (ptr == string) {
+					break;
+				}
+				ptr--;
 			}
 
-			// Check for comments.
-			if ((*string != '#') && (*string != ';'))  {
-				// Make sure null terminated.
-				string[maxstrlen - 1] = '\0';
-
-				char *ptr = string + (strlen(string) - 1);
-				while (*ptr <= ' ')  {
-					*ptr = 0;
-
-					// Is it just a blank line?
-					if (ptr == string) {
-						break;
-					}
-					ptr--;
-				}
-
-				// If there is anyting in the string. (NAK: old code used to fail for 1 char options)
-				if (strlen(string)) {
-					Argv[Argc] = strdup(string);
-					Argc++;
-				}
+			// If there is anything in the string. (NAK: old code used to fail for 1 char options)
+			if (strlen(string)) {
+				Argv[Argc] = _strdup(string);
+				Argc++;
 			}
 		}
-		fclose(fp);
-		return(true);
-	}				  
-	return(false);
+	}
+
+	fclose(fp);
+
+	return true;
 }	
 
 /*********************************************************************************************** 
@@ -327,11 +332,11 @@ const char *ArgvClass::Find_Value(const char *arg)
 			return(Get_Cur_Value(strlen(arg)));
 		}		  
 	}
-	return(NULL);
+	return(nullptr);
 }	
 		
 /*********************************************************************************************** 
- * *ArgvClass::Get_Cur_Value -- Get value of current argugment.                                * 
+ * *ArgvClass::Get_Cur_Value -- Get value of current argument.                                * 
  *                                                                                             * 
  * INPUT:                                                                                      * 
  *                                                                                             * 
@@ -347,12 +352,12 @@ const char *ArgvClass::Get_Cur_Value(unsigned prefixlen, bool * val_in_next)
 {	 
 	if (val_in_next) *val_in_next = false;
 	if (CurrentPos < 0) {
-		return NULL;
+		return nullptr;
 	}
 	char *ptr = Argv[CurrentPos];
 	
 	if (strlen(ptr) < prefixlen) {
-		return(NULL);
+		return(nullptr);
 	}					  
 
 	ptr += prefixlen;
@@ -368,7 +373,7 @@ const char *ArgvClass::Get_Cur_Value(unsigned prefixlen, bool * val_in_next)
 	// Goto next line to handle '-P data' case on command line.
 	ptr = Argv[CurrentPos + 1];
 	if (!ptr) {
-		return NULL;
+		return nullptr;
 	}
 
 	while (*ptr) {
@@ -378,7 +383,7 @@ const char *ArgvClass::Get_Cur_Value(unsigned prefixlen, bool * val_in_next)
 		}
 		ptr++;
 	}			  
-	return (NULL);
+	return (nullptr);
 }	
 
 
@@ -400,18 +405,18 @@ const char *ArgvClass::Get_Cur_Value(unsigned prefixlen, bool * val_in_next)
  *=============================================================================================*/
 void ArgvClass::Update_Value(const char *attrib, const char *value)
 {
-	if ((Find_Value(attrib))!=NULL)
+	if ((Find_Value(attrib))!=nullptr)
 	{
 		if (((CurrentPos+1) < Argc) && (Argv[CurrentPos+1][0] != '-'))  // update old value
 		{
 			free(Argv[CurrentPos+1]);
-			Argv[CurrentPos+1]=strdup(value);
+			Argv[CurrentPos+1]=_strdup(value);
 		}
 		else  // add new value
 		{
 			// shift vals down to make room
 			memmove(&(Argv[CurrentPos+2]),&(Argv[CurrentPos+1]),sizeof(char *) * (MAX_ARGC-CurrentPos-2));
-			Argv[CurrentPos+1]=strdup(value);
+			Argv[CurrentPos+1]=_strdup(value);
 			Argc++;
 		}
 	}
@@ -438,12 +443,12 @@ void ArgvClass::Add_Value(const char *attrib, const char *value)
 {
 	if (attrib)
 	{
-		Argv[Argc]=strdup(attrib);
+		Argv[Argc]=_strdup(attrib);
 		Argc++;
 
 		if (value)
 		{
-			Argv[Argc]=strdup(value);
+			Argv[Argc]=_strdup(value);
 			Argc++;
 		}
 	}
@@ -472,7 +477,7 @@ bool ArgvClass::Remove_Value(const char *attrib)
 {
 	int        removeCount=1;
 
-	if ((Find_Value(attrib))!=NULL)
+	if ((Find_Value(attrib))!=nullptr)
 	{
 		free(Argv[CurrentPos]);
 		if (((CurrentPos+1) < Argc)&&(Argv[CurrentPos+1][0]!='-'))  // value for this arg
@@ -488,14 +493,3 @@ bool ArgvClass::Remove_Value(const char *attrib)
 	}
 	return(false);
 }
-
-
-
-
-
-
-
-
-
-
-

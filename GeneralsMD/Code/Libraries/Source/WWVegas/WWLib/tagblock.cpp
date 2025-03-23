@@ -33,10 +33,10 @@
  *                                                                                             * 
  *---------------------------------------------------------------------------------------------* 
  * Functions:                                                                                  * 
- *   TagBlockFile::TagBlockFile -- Create/open tag file													  *
+ *   TagBlockFile::TagBlockFile -- Create/open tag file										   *
  *   TagBlockFile::~TagBlockFile -- Close down the tag file.                                   * 
  *   TagBlockFile::Create_Index -- Create a index into the IndexList sorted by CRC.            * 
- *   TagBlockFile::Find_Block -- Find block assocated with name.                               * 
+ *   TagBlockFile::Find_Block -- Find block associated with name.                              * 
  *   TagBlockFile::Open_Tag -- Open an existing tag block.                                     * 
  *   TagBlockFile::Create_Tag -- Create a new tag at the end of the block.                     * 
  *   TagBlockFile::Close_Tag -- Close the handle that Create or Open made.                     * 
@@ -123,7 +123,7 @@ private:
 TagBlockFile::TagBlockFile(const char *fname):
 	RawFileClass(),
 	Header(),
-	CreateHandle(NULL),
+	CreateHandle(nullptr),
 	NumOpenHandles(0),
 	IndexList()
 {
@@ -138,7 +138,7 @@ TagBlockFile::TagBlockFile(const char *fname):
 
 	// See if there is any data in file (or was it just created?)
 	if (Header.Version == FILE_VERSION) {
-		TagBlockIndex *lasttag = NULL;
+		TagBlockIndex *lasttag = nullptr;
 		int curpos = sizeof(Header);
 
 		// Loop through each block in file and create an in memory index for it.
@@ -172,7 +172,7 @@ TagBlockFile::TagBlockFile(const char *fname):
 			Header.NumBlocks = block;
 			Header.FileSize = curpos;
 
-			// Start at begining of file and write out our new header.
+			// Start at beginning of file and write out our new header.
 			Seek(0, SEEK_SET);
 			Write(&Header, sizeof(Header));
 		} 
@@ -249,7 +249,7 @@ TagBlockHandle *TagBlockFile::Open_Tag(const char *tagname)
 	// Find tag to open up.
 	TagBlockIndex *index = Find_Block(tagname);
 	if (!index) {
-		return(NULL);
+		return(nullptr);
 	}
 
 	// Load up the block header information.
@@ -283,7 +283,7 @@ TagBlockHandle *TagBlockFile::Create_Tag(const char *tagname)
 {
 	// Only allow one handle to be creating open at a time.
 	if (CreateHandle) {
-		return(NULL);
+		return(nullptr);
 	}
 
 	// Create a new index that we can write too.
@@ -291,11 +291,11 @@ TagBlockHandle *TagBlockFile::Create_Tag(const char *tagname)
 
 	// An index may not be created if a tag of the same name already exists.
 	if (!index) {
-		return(NULL);
+		return(nullptr);
 	}
 
 	// Create a header.
-	// Use -1 for index to indecate that block is not yet written out competely.
+	// Use -1 for index to indecate that block is not yet written out completely.
 	BlockHeader *blockheader = W3DNEW BlockHeader(-1, index->Get_TagSize(), 0);
 
 	// Write out the block header and the tag.
@@ -384,7 +384,7 @@ int TagBlockFile::End_Write_Access(TagBlockHandle *handle)
 		Save_Header();
 
 		// Don't allow writing with this handle anymore.
-		CreateHandle = NULL;
+		CreateHandle = nullptr;
 		return(true);
 	}
 	return(false);
@@ -407,7 +407,7 @@ TagBlockIndex *TagBlockFile::Create_Index(const char *tagname, int blockoffset)
 {
 	// Don't allow duplicate tags.
 	if (Find_Block(tagname)) {
-		return(NULL);
+		return(nullptr);
 	}
 
 	TagBlockIndex *index;
@@ -436,7 +436,7 @@ TagBlockIndex *TagBlockFile::Create_Index(const char *tagname, int blockoffset)
 }	
 
 /*********************************************************************************************** 
- * *TagBlockFile::Find_Block -- Find block assocated with name.                                * 
+ * *TagBlockFile::Find_Block -- Find block associated with name.                               * 
  *                                                                                             * 
  * INPUT:                                                                                      * 
  *                                                                                             * 
@@ -450,7 +450,7 @@ TagBlockIndex *TagBlockFile::Create_Index(const char *tagname, int blockoffset)
 TagBlockIndex *TagBlockFile::Find_Block(const char *tagname)
 {
 	if (IndexList.Is_Empty()) {
-		return(NULL);
+		return(nullptr);
 	}
 
 	unsigned long crc = CRC_Stringi(tagname);
@@ -469,9 +469,9 @@ TagBlockIndex *TagBlockFile::Find_Block(const char *tagname)
 			Read(name, cur->Get_TagSize());
 
 			// Is it a match?
-         assert(name != NULL);
-         assert(tagname != NULL);
-			if (!strcmpi(name, tagname)) {
+         assert(name != nullptr);
+         assert(tagname != nullptr);
+			if (!_strcmpi(name, tagname)) {
 				return(cur);
 			}
 		}
@@ -485,7 +485,7 @@ TagBlockIndex *TagBlockFile::Find_Block(const char *tagname)
 		node = node->Next();
 	}
 
-	return(NULL);
+	return(nullptr);
 }	
 
 						  

@@ -37,10 +37,10 @@
 #include	"always.h"
 #include	"_convert.h"
 
-ConvertClass * VoxelDrawer = NULL;
-ConvertClass * UnitDrawer = NULL;
-ConvertClass * TerrainDrawer = NULL;
-ConvertClass * AnimDrawer = NULL;
-ConvertClass * NormalDrawer = NULL;
-ConvertClass * IsometricDrawer = NULL;
+ConvertClass * VoxelDrawer = nullptr;
+ConvertClass * UnitDrawer = nullptr;
+ConvertClass * TerrainDrawer = nullptr;
+ConvertClass * AnimDrawer = nullptr;
+ConvertClass * NormalDrawer = nullptr;
+ConvertClass * IsometricDrawer = nullptr;
 

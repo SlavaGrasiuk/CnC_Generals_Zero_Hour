@@ -17,36 +17,27 @@
 */
 
 /*************************************************************************** 
- *																									* 
- *						 Project	Name : G														* 
- *																									* 
- *							 File	Name : SLNODE.H									 		* 
- *																									* 
- *							Programmer : Philip W. Gorrow									* 
- *																									* 
- *							Start	Date : 03/11/97											* 
- *																									* 
- *						  Last Update : March 11, 1997 [PWG]							* 
- *																									* 
+ *																		   * 
+ *						 Project	Name : G							   * 
+ *																		   * 
+ *							 File	Name : SLNODE.H						   * 
+ *																		   * 
+ *							Programmer : Philip W. Gorrow				   * 
+ *																		   * 
+ *							Start	Date : 03/11/97						   * 
+ *																		   * 
+ *						  Last Update : March 11, 1997 [PWG]			   * 
+ *																		   * 
  *-------------------------------------------------------------------------* 
- *	Functions:																					* 
+ *	Functions:															   * 
  *	- - -	- - -	- - -	- - -	- - -	- - -	- - -	- - -	- - -	- - -	- - -	- - -	*/
-#if _MSC_VER >= 1000
 #pragma once
-#endif // _MSC_VER >= 1000
-
-#ifndef __SLNODE_H__
-#define __SLNODE_H__
 
 #ifndef ALWAYS_H
 #include "always.h"
 #endif
 
 #include "mempool.h"
-
-#ifndef NULL
-#define NULL 0
-#endif
 
 //	Forward references for friend	classes
 template	<class T> class SList;
@@ -117,5 +108,3 @@ class	SLNode : public GenericSLNode
 	private:
 		SLNode(void) {};
 };
-
-#endif

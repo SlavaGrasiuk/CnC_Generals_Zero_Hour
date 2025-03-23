@@ -69,7 +69,7 @@ Buffer::Buffer(void * buffer, long size) :
 	Size(size),
 	IsAllocated(false)
 {
-	if (buffer == NULL && size > 0) {
+	if (buffer == nullptr && size > 0) {
 		BufferPtr = W3DNEWARRAY char[size];
 		IsAllocated = true;
 	}
@@ -82,7 +82,7 @@ Buffer::Buffer(char * buffer, long size) :
 	Size(size),
 	IsAllocated(false)
 {
-	if (buffer == NULL && size > 0) {
+	if (buffer == nullptr && size > 0) {
 		BufferPtr = W3DNEWARRAY char[size];
 		IsAllocated = true;
 	}
@@ -95,7 +95,7 @@ Buffer::Buffer(void const * buffer, long size) :
 	Size(size),
 	IsAllocated(false)
 {
-	if (buffer == NULL && size > 0) {
+	if (buffer == nullptr && size > 0) {
 		BufferPtr = W3DNEWARRAY char[size];
 		IsAllocated = true;
 	}
@@ -105,7 +105,7 @@ Buffer::Buffer(void const * buffer, long size) :
 /***********************************************************************************************
  * Buffer::Buffer -- Self-allocating constructor for buffer object.                            *
  *                                                                                             *
- *    This construtor for a buffer object will automatically allocate the bytes necessary      *
+ *    This constructor for a buffer object will automatically allocate the bytes necessary     *
  *    to fulfill the size requested. This object is also responsible for deleting the buffer   *
  *    it allocated.                                                                            *
  *                                                                                             *
@@ -114,13 +114,13 @@ Buffer::Buffer(void const * buffer, long size) :
  * OUTPUT:  none                                                                               *
  *                                                                                             *
  * WARNINGS:   There is no way to tell if the allocation failed. To verify, call Get_Buffer    *
- *             and compare with NULL.                                                          *
+ *             and compare with nullptr.                                                       *
  *                                                                                             *
  * HISTORY:                                                                                    *
  *   07/29/1996 JLB : Created.                                                                 *
  *=============================================================================================*/
 Buffer::Buffer(long size) :
-	BufferPtr(NULL),
+	BufferPtr(nullptr),
 	Size(size),
 	IsAllocated(false)
 {
@@ -137,7 +137,7 @@ Buffer::Buffer(long size) :
  *    This will make a duplicate of the specified buffer object. The ownership of the pointer  *
  *    remains with the original object. This prevents multiple deletion of the same pointer.   *
  *                                                                                             *
- * INPUT:   buffer   -- Reference to the buffer object to be dupilcated.                       *
+ * INPUT:   buffer   -- Reference to the buffer object to be duplicated.                       *
  *                                                                                             *
  * OUTPUT:  none                                                                               *
  *                                                                                             *
@@ -158,7 +158,7 @@ Buffer::Buffer(Buffer const & buffer) :
  * Buffer::operator = -- Assignment operator for the buffer object.                            *
  *                                                                                             *
  *    This will make a duplicate of the buffer object specified. Any buffer pointed to by the  *
- *    left hand buffer will be lost (possibley freed as a result).                             *
+ *    left hand buffer will be lost (possibly freed as a result).                              *
  *                                                                                             *
  * INPUT:   buffer   -- Reference to the right hand buffer object.                             *
  *                                                                                             *
@@ -225,7 +225,7 @@ void Buffer::Reset(void)
 	if (IsAllocated) {
 		delete [] BufferPtr;
 	}
-	BufferPtr = NULL;
+	BufferPtr = nullptr;
 	Size = 0;
 	IsAllocated = false;
 }

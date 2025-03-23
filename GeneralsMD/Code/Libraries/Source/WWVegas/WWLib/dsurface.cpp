@@ -60,7 +60,7 @@ extern	LPDIRECTDRAWSURFACE	PaletteSurface;
 /*
 **	Clipper object (for primary surface).
 */
-LPDIRECTDRAWCLIPPER DSurface::Clipper = NULL;
+LPDIRECTDRAWCLIPPER DSurface::Clipper = nullptr;
 
 int DSurface::RedRight = 0;
 int DSurface::RedLeft = 0;
@@ -100,15 +100,15 @@ DDPIXELFORMAT DSurface::PixelFormat;
 DSurface::DSurface(int width, int height, bool system_memory, DDPIXELFORMAT *pixform) :
 	XSurface(width, height),
 	BytesPerPixel(0),
-	LockPtr(NULL),
+	LockPtr(nullptr),
 	IsPrimary(false),
 	IsVideoRam(false),
-	SurfacePtr(NULL),
-	Description(NULL),
+	SurfacePtr(nullptr),
+	Description(nullptr),
 	DCUnlockCount(0)
 {
 	Description = W3DNEW DDSURFACEDESC;
-	if (Description != NULL) {
+	if (Description != nullptr) {
 		memset(Description, '\0', sizeof(DDSURFACEDESC));
 		Description->dwSize = sizeof(DDSURFACEDESC);
 		Description->dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH;
@@ -130,12 +130,12 @@ DSurface::DSurface(int width, int height, bool system_memory, DDPIXELFORMAT *pix
 		}
 
 
-		DirectDrawObject->CreateSurface(Description, &SurfacePtr, NULL);
+		DirectDrawObject->CreateSurface(Description, &SurfacePtr, nullptr);
 
 		/*
 		**	Get a description of the surface that was just allocated.
 		*/
-		if (SurfacePtr != NULL) {
+		if (SurfacePtr != nullptr) {
 			memset(Description, '\0', sizeof(DDSURFACEDESC));
 			Description->dwSize = sizeof(DDSURFACEDESC);
 			SurfacePtr->GetSurfaceDesc(Description);
@@ -217,22 +217,22 @@ DSurface::~DSurface(void)
 	**	If this is the primary surface, then the clipper must be detached from
 	**	this surface and the clipper object deleted.
 	*/
-	if (IsPrimary && SurfacePtr != NULL && Clipper != NULL) {
-		SurfacePtr->SetClipper(NULL);
+	if (IsPrimary && SurfacePtr != nullptr && Clipper != nullptr) {
+		SurfacePtr->SetClipper(nullptr);
 		Clipper->Release();
-		Clipper = NULL;
+		Clipper = nullptr;
 	}
 
 	/*
 	**	Delete the description of the surface.
 	*/
 	delete Description;
-	Description = NULL;
+	Description = nullptr;
 
-	if (SurfacePtr != NULL)  {
+	if (SurfacePtr != nullptr)  {
 		SurfacePtr->Release();
 	}
-	SurfacePtr = NULL;
+	SurfacePtr = nullptr;
 }
 
 
@@ -255,9 +255,9 @@ DSurface::~DSurface(void)
  *=============================================================================================*/
 DSurface::DSurface(void) :
 	BytesPerPixel(0), 
-	LockPtr(NULL), 
-	SurfacePtr(NULL), 
-	Description(NULL),
+	LockPtr(nullptr), 
+	SurfacePtr(nullptr), 
+	Description(nullptr),
 	DCUnlockCount(0)
 {
 	Description = W3DNEW DDSURFACEDESC;
@@ -281,7 +281,7 @@ DSurface::DSurface(void) :
  *=============================================================================================*/
 HDC DSurface::GetDC(void)
 {
-	HDC hdc = NULL;
+	HDC hdc = nullptr;
 	HRESULT hr;
 
 
@@ -300,14 +300,14 @@ HDC DSurface::GetDC(void)
 			Lock();
 			DCUnlockCount--;
 		}
-		return(NULL);
+		return(nullptr);
 	}
 
 	// GetDC() locks the surface internally, so we need to reflect that here
 	if (hr == DD_OK) {
 		LockCount++;
 	}else{
-		hdc = NULL;
+		hdc = nullptr;
 	}
 
 	return (hdc);
@@ -358,7 +358,7 @@ int DSurface::ReleaseDC(HDC hdc)
  *    surface that the Windows GDI is also currently using.                                    *
  *                                                                                             *
  * INPUT:   backsurface -- Optional pointer to specify where the backpage (flip enabled)       *
- *                         pointer will be placed. If this parameter is NULL, then no          *
+ *                         pointer will be placed. If this parameter is nullptr, then no       *
  *                         back surface will be created.                                       *
  *                                                                                             *
  * OUTPUT:  Returns with a pointer to the primary surface.                                     *
@@ -373,7 +373,7 @@ int DSurface::ReleaseDC(HDC hdc)
 DSurface * DSurface::Create_Primary(DSurface ** backsurface1)
 {
 	DSurface * surface = W3DNEW DSurface();
-	int backcount = (backsurface1 != NULL) ? 1 : 0;
+	int backcount = (backsurface1 != nullptr) ? 1 : 0;
 
 	/*
 	**	Setup parameter for creating the primary surface. This will
@@ -387,7 +387,7 @@ DSurface * DSurface::Create_Primary(DSurface ** backsurface1)
 		surface->Description->dwFlags |= DDSD_BACKBUFFERCOUNT;
 		surface->Description->dwBackBufferCount = backcount;
 	}
-	HRESULT result = DirectDrawObject->CreateSurface(surface->Description, &surface->SurfacePtr, NULL);
+	HRESULT result = DirectDrawObject->CreateSurface(surface->Description, &surface->SurfacePtr, nullptr);
 
 	/*
 	**	If the primary surface object was created, then fetch a pointer to the
@@ -425,7 +425,7 @@ DSurface * DSurface::Create_Primary(DSurface ** backsurface1)
 		**	isn't the case for full screen games). It doesn't hurt to attach
 		**	a clipper object anyway -- just in case.
 		*/
-		if (DirectDrawObject->CreateClipper(0, &Clipper, NULL) == DD_OK) {
+		if (DirectDrawObject->CreateClipper(0, &Clipper, nullptr) == DD_OK) {
 			if (Clipper->SetHWnd(0, GetActiveWindow()) == DD_OK) {
 				surface->SurfacePtr->SetClipper(Clipper);
 			}
@@ -495,7 +495,7 @@ DSurface * DSurface::Create_Primary(DSurface ** backsurface1)
 
 	} else {
 		delete surface;
-		surface = NULL;
+		surface = nullptr;
 	}
 
 	return(surface);
@@ -519,11 +519,11 @@ DSurface * DSurface::Create_Primary(DSurface ** backsurface1)
  *=============================================================================================*/
 DSurface::DSurface(LPDIRECTDRAWSURFACE surfaceptr) :
 	BytesPerPixel(0),
-	LockPtr(NULL),
+	LockPtr(nullptr),
 	SurfacePtr(surfaceptr),
-	Description(NULL)
+	Description(nullptr)
 {
-	if (SurfacePtr != NULL) {
+	if (SurfacePtr != nullptr) {
 		Description = W3DNEW DDSURFACEDESC;
 		memset(Description, '\0', sizeof(DDSURFACEDESC));
 		Description->dwSize = sizeof(DDSURFACEDESC);
@@ -588,11 +588,11 @@ int DSurface::Stride(void) const
  *    to directly manipulate surface memory, the surface memory must be mapped into the        *
  *    program's logical address space. In addition, all blitter activity on the surface will   *
  *    be suspended. Every call to Lock must be have a corresponding call to Unlock if the      *
- *    pointer returned is not equal to NULL.                                                   *
+ *    pointer returned is not equal to nullptr.                                                *
  *                                                                                             *
  * INPUT:   point -- Pixel coordinate to return a pointer to.                                  *
  *                                                                                             *
- * OUTPUT:  Returns with a pointer to the pixel specified. If the return value is NULL, then   *
+ * OUTPUT:  Returns with a pointer to the pixel specified. If the return value is nullptr, then*
  *          the surface could not be locked and no call to Unlock should be performed.         *
  *                                                                                             *
  * WARNINGS:   It is important not to keep a surface locked indefinately since the blitter     *
@@ -609,8 +609,8 @@ void * DSurface::Lock(Point2D point) const
 		DDSURFACEDESC desc;
 		memset(&desc, '\0', sizeof(desc));
 		desc.dwSize = sizeof(desc);
-		HRESULT result = SurfacePtr->Lock(NULL, &desc, DDLOCK_SURFACEMEMORYPTR|DDLOCK_WAIT, NULL);
-   	if (result != DD_OK) return(NULL);
+		HRESULT result = SurfacePtr->Lock(nullptr, &desc, DDLOCK_SURFACEMEMORYPTR|DDLOCK_WAIT, nullptr);
+   	if (result != DD_OK) return(nullptr);
 		memcpy(Description, &desc, sizeof(DDSURFACEDESC));
 		BytesPerPixel = (Description->ddpfPixelFormat.dwRGBBitCount+7)/8;
 		LockPtr = Description->lpSurface;
@@ -630,7 +630,7 @@ void * DSurface::Lock(Point2D point) const
  *                                                                                             *
  * OUTPUT:  bool; Was the unlock successful?                                                   *
  *                                                                                             *
- * WARNINGS:   Only pair a call to Unlock if the prior Lock actually returned a non-NULL       *
+ * WARNINGS:   Only pair a call to Unlock if the prior Lock actually returned a non-nullptr    *
  *             value.                                                                          *
  *                                                                                             *
  * HISTORY:                                                                                    *
@@ -643,7 +643,7 @@ bool DSurface::Unlock(void) const
 		XSurface::Unlock();
 		if (LockCount == 0) {
 			SurfacePtr->Unlock(LockPtr);
-			LockPtr = NULL;
+			LockPtr = nullptr;
 		}
 		return(true);
 	}
@@ -774,7 +774,7 @@ bool DSurface::Blit_From(Rect const & dcliprect, Rect const & destrect, Surface 
 		xsrcrect.right = srect.X+swindow.X+srect.Width;
 		xsrcrect.bottom = srect.Y+swindow.Y+srect.Height;
 
-		HRESULT result = SurfacePtr->Blt(&xdestrect, source.SurfacePtr, &xsrcrect, DDBLT_WAIT, NULL);
+		HRESULT result = SurfacePtr->Blt(&xdestrect, source.SurfacePtr, &xsrcrect, DDBLT_WAIT, nullptr);
 		return(result == DD_OK);
 	}
 	return(false);
@@ -867,7 +867,7 @@ bool DSurface::Fill_Rect(Rect const & cliprect, Rect const & fillrect, int color
 	memset(&fx, '\0', sizeof(fx));
 	fx.dwSize = sizeof(fx);
 	fx.dwFillColor = color;
-	HRESULT result = SurfacePtr->Blt(&rect, NULL, NULL, DDBLT_WAIT|DDBLT_COLORFILL, &fx);
+	HRESULT result = SurfacePtr->Blt(&rect, nullptr, nullptr, DDBLT_WAIT|DDBLT_COLORFILL, &fx);
 	return(result == DD_OK);
 }
 
@@ -918,7 +918,7 @@ int DSurface::Build_Hicolor_Pixel(int red, int green, int blue)
  *=============================================================================================*/
 void DSurface::Build_Remap_Table(unsigned short * table, PaletteClass const & palette)
 {
-	assert(table != NULL);
+	assert(table != nullptr);
 
 	/*
 	**	Build the hicolor index table according to the palette.

@@ -34,8 +34,8 @@
 #include "LaunchWeb.h"
 #include <windows.h>
 #include <shellapi.h>
-#include <stdio.h>
-#include <assert.h>
+#include <cstdio>
+#include <cassert>
 
 /******************************************************************************
 *
@@ -48,73 +48,70 @@
 * INPUTS
 *     URL      - Website address
 *     Wait     - Wait for user to close browser (default = false)
-*     Callback - User callback to invoke during wait (default = NULL callback)
+*     Callback - User callback to invoke during wait (default = nullptr callback)
 *
 * RESULT
 *     Success - True if successful; otherwise false
 *
 ******************************************************************************/
 
-bool LaunchWebBrowser(const char* url)
-	{
-	// Just return if no URL specified
-	if (!url || (strlen(url) == 0))
-		{
-		return false;
-		}
+bool LaunchWebBrowser(const char* url) {
+    // Just return if no URL specified
+    if (!url || (strlen(url) == 0)) {
+        return false;
+    }
 
-	// Create a temporary file with HTML content
-	char tempPath[MAX_PATH];
-	GetWindowsDirectory(tempPath, MAX_PATH);
-	
-	char filename[MAX_PATH];
-	GetTempFileName(tempPath, "WWS", 0, filename);
+    // Create a temporary file with HTML content
+    char tempPath[MAX_PATH];
+    GetWindowsDirectory(tempPath, MAX_PATH);
 
-	char* extPtr = strrchr(filename, '.');
-	strcpy(extPtr, ".html");
+    char filename[MAX_PATH];
+    GetTempFileName(tempPath, "WWS", 0, filename);
 
-	HANDLE file = CreateFile(filename, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS,
-			FILE_ATTRIBUTE_NORMAL, NULL);
+    char* extPtr = strrchr(filename, '.');
+    const size_t remainSize = &filename[MAX_PATH - 1] - extPtr;
+    strcpy_s(extPtr, remainSize, ".html");
 
-	assert(INVALID_HANDLE_VALUE != file && "Failed to create temporary HTML file.");
+    HANDLE file = CreateFile(filename, GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS,
+        FILE_ATTRIBUTE_NORMAL, nullptr);
 
-	if (INVALID_HANDLE_VALUE == file)
-		{
-		return false;
-		}
+    assert(INVALID_HANDLE_VALUE != file && "Failed to create temporary HTML file.");
 
-	// Write generic contents
-	const char* contents = "<title>ViewHTML</title>";
-	DWORD written;
-	WriteFile(file, contents, strlen(contents), &written, NULL);
-	CloseHandle(file);
+    if (INVALID_HANDLE_VALUE == file) {
+        return false;
+    }
 
-	// Find the executable that can launch this file
-	char exeName[MAX_PATH];
-	HINSTANCE hInst = FindExecutable(filename, NULL, exeName);
-	assert(((int)hInst > 32) && "Unable to find executable that will display HTML files.");
+    // Write generic contents
+    const char* contents = "<title>ViewHTML</title>";
+    DWORD written;
+    WriteFile(file, contents, strlen(contents), &written, nullptr);
+    CloseHandle(file);
 
-	// Delete temporary file
-	DeleteFile(filename);
+    // Find the executable that can launch this file
+    char exeName[MAX_PATH];
+    HINSTANCE hInst = FindExecutable(filename, nullptr, exeName);
+    assert(((int)hInst > 32) && "Unable to find executable that will display HTML files.");
 
-	if ((int)hInst <= 32)
-		{
-		return false;
-		}
+    // Delete temporary file
+    DeleteFile(filename);
 
-	// Launch browser with specified URL
-	char commandLine[MAX_PATH];
-	sprintf(commandLine, "[open] %s", url);
+    if ((int)hInst <= 32) {
+        return false;
+    }
 
-  STARTUPINFO startupInfo;
-	memset(&startupInfo, 0, sizeof(startupInfo));
-	startupInfo.cb = sizeof(startupInfo);
-  
-	PROCESS_INFORMATION processInfo;
-	BOOL createSuccess = CreateProcess(exeName, commandLine, NULL, NULL, FALSE,
-			0, NULL, NULL, &startupInfo, &processInfo);
+    // Launch browser with specified URL
+    char commandLine[MAX_PATH];
+    sprintf_s(commandLine, "[open] %s", url);
 
-	assert(createSuccess && "Failed to launch default WebBrowser.");
+    STARTUPINFO startupInfo;
+    memset(&startupInfo, 0, sizeof(startupInfo));
+    startupInfo.cb = sizeof(startupInfo);
 
-	return (TRUE == createSuccess);
-	}
+    PROCESS_INFORMATION processInfo;
+    BOOL createSuccess = CreateProcess(exeName, commandLine, nullptr, nullptr, FALSE,
+        0, nullptr, nullptr, &startupInfo, &processInfo);
+
+    assert(createSuccess && "Failed to launch default WebBrowser.");
+
+    return (TRUE == createSuccess);
+}

@@ -43,20 +43,20 @@
  * READ_PCX_FILE -- read a pcx file into a Graphic Buffer                  *
  *                                                                         *
  *	GraphicBufferClass* Read_PCX_File (char* name, char* palette,void *Buff, long size );	*
- *  																								*
+ *  																	   *
  *                                                                         *
  * INPUT: name is a NULL terminated string of the format [xxxx.pcx]        *
- *        palette is optional, if palette != NULL the the color palette of *
- *					 the pcx file will be place in the memory block pointed	   *
- *               by palette.																*
- *			 Buff is optional, if Buff == NULL a new memory Buffer		 		*
- *					 will be allocated, otherwise the file will be placed 		*
- *					 at location pointed by Buffer;										*
- *			Size is the size in bytes of the memory block pointed by Buff		*
- *				  is also optional;															*                                                                         *
+ *        palette is optional, if palette != nullptr the the color palette of *
+ *					 the pcx file will be place in the memory block pointed*
+ *               by palette.											   *
+ *			 Buff is optional, if Buff == nullptr a new memory Buffer	   *
+ *					 will be allocated, otherwise the file will be placed  *
+ *					 at location pointed by Buffer;						   *
+ *			Size is the size in bytes of the memory block pointed by Buff  *
+ *				  is also optional;										   *                                                                         *
  * OUTPUT: on success a pointer to a GraphicBufferClass containing the     *
- *         pcx file, NULL otherwise.                                       *
- *																									*
+ *         pcx file, nullptr otherwise.                                    *
+ *																		   *
  * WARNINGS:                                                               *
  *         Appears to be a comment-free zone                               *
  *                                                                         *
@@ -90,30 +90,30 @@ Surface * Read_PCX_File(FileClass & file_handle, PaletteClass * palette, void * 
 	char						pool [POOL_SIZE];
 	BSurface * pic;
 
-	if (!file_handle.Is_Available()) return (NULL);
+	if (!file_handle.Is_Available()) return (nullptr);
 
 	file_handle.Open(FileClass::READ);
 
 	file_handle.Read (&header, sizeof (PCX_HEADER));
 
-	if (header.id != 10 &&  header.version != 5 && header.pixelsize != 8 ) return NULL ;
+	if (header.id != 10 &&  header.version != 5 && header.pixelsize != 8 ) return nullptr ;
 
 	width = header.width - header.x + 1;
 	height = header.height - header.y + 1;
 
-	if (Buff != NULL) {
+	if (Buff != nullptr) {
     	i = Size / width;
     	height = MIN ((int)(i - 1), (int)height);
 		Buffer b(Buff, Size);
     	pic = W3DNEW BSurface(width, height, 1, &b);
-    	if (pic == NULL) return NULL ;
+    	if (pic == nullptr) return nullptr ;
 	} else {
     	pic = W3DNEW BSurface(width, height, 1);
-    	if (pic == NULL) return NULL ;
+    	if (pic == nullptr) return nullptr ;
 	}
 
 	buffer = (char *)pic->Lock();
-	if (buffer != NULL) {
+	if (buffer != nullptr) {
 		file_ptr = pool ;
 		file_handle.Read (pool, POOL_SIZE);
 

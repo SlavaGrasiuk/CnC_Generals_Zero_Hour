@@ -81,14 +81,14 @@ class TagBlockFile : protected RawFileClass
 
 		// Creation of a Handle so block can be crated/writen/read.
 		// Use delete to destroy handle or use Close_Tag().
-		// Open_Tag() returns NULL if tag not found.
-		// Create_Tag() returns NULL if tag already exists.
+		// Open_Tag() returns nullptr if tag not found.
+		// Create_Tag() returns nullptr if tag already exists.
 		TagBlockHandle *Open_Tag(const char *tagname);
 		TagBlockHandle *Create_Tag(const char *tagname);
 		void Close_Tag(TagBlockHandle *handle);
 
 		int Does_Tag_Exist(const char *tagname)  {
-			return(Find_Block(tagname) != NULL);
+			return(Find_Block(tagname) != nullptr);
 		}						
 		
 		virtual unsigned long Get_Date_Time(void)  {
@@ -184,7 +184,7 @@ class TagBlockFile : protected RawFileClass
 		// Search for block given tag.
 		TagBlockIndex *Find_Block(const char *tagname);
 
-		// Create an index that can be used for seaching.
+		// Create an index that can be used for searching.
 		TagBlockIndex *Create_Index(const char *tagname, int blockoffset);
 
 		// Is this the handle that has creation priveledges?
@@ -244,7 +244,7 @@ class TagBlockHandle
 		// Pointer to parent file object.
 		TagBlockFile						*File;
 
-		// Pointer to index for aditional information.
+		// Pointer to index for additional information.
 		TagBlockIndex						*Index;
 
 		// Keep header infomation in memory so that it can be updated.
@@ -258,7 +258,7 @@ class TagBlockHandle
 		// The constructor is private so only TagBlockFile can create the handle.
 		// This is so that a handle will not be created if the TagBlock
 		// does not exist on a CREAD or if there was already a WRITE access granted.
-		// User needs to call detete to destroy the handle.
+		// User needs to call delete to destroy the handle.
 		TagBlockHandle(TagBlockFile *tagfile, TagBlockIndex *tagindex, TagBlockFile::BlockHeader *blockheader);
 		friend class TagBlockFile;
 

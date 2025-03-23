@@ -34,12 +34,8 @@
  * Functions:                                                                                  * 
  *   Pick_Random_Number -- Picks a random number between two values (inclusive).               * 
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-#if _MSC_VER >= 1000
-#pragma once
-#endif // _MSC_VER >= 1000
 
-#ifndef RANDOM_H
-#define RANDOM_H
+#pragma once
 
 // "unreferenced inline function has been removed" Yea, so what?
 #pragma warning(disable : 4514)
@@ -145,8 +141,8 @@ class Random3Class {
 		};
 
 	protected:
-		static int Mix1[20];
-		static int Mix2[20];
+		static unsigned int Mix1[20];
+		static unsigned int Mix2[20];
 		int Seed;
 		int Index;
 };
@@ -266,5 +262,3 @@ int Pick_Random_Number(T & generator, int minval, int maxval)
 	*/
 	return(pick + minval);
 }
-
-#endif

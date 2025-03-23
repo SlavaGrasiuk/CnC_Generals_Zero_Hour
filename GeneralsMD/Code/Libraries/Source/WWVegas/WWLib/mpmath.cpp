@@ -185,7 +185,7 @@ static int _Byte_Precision(unsigned long value)
  *=============================================================================================*/
 int MPEXPORT XMP_DER_Length_Encode(unsigned long length, unsigned char * output)
 {
-	assert(output != NULL);
+	assert(output != nullptr);
 
 	int header_length = 0;
 
@@ -224,8 +224,8 @@ int MPEXPORT XMP_DER_Length_Encode(unsigned long length, unsigned char * output)
  *=============================================================================================*/
 int MPEXPORT XMP_DER_Encode(digit const * from, unsigned char * output, int precision)
 {
-	assert(from != NULL);
-	assert(output != NULL);
+	assert(from != nullptr);
+	assert(output != nullptr);
 	assert(precision > 0);
 
 	unsigned char buffer[MAX_UNIT_PRECISION*sizeof(digit)+1];
@@ -263,8 +263,8 @@ int MPEXPORT XMP_DER_Encode(digit const * from, unsigned char * output, int prec
  *=============================================================================================*/
 void MPEXPORT XMP_DER_Decode(digit * result, unsigned char const * input, int precision)
 {
-	assert(result != NULL);
-	assert(input != NULL);
+	assert(result != nullptr);
+	assert(input != nullptr);
 	assert(precision > 0);
 
 	if (*input++ == 0x02) {
@@ -308,8 +308,8 @@ void MPEXPORT XMP_DER_Decode(digit * result, unsigned char const * input, int pr
  *=============================================================================================*/
 unsigned MPEXPORT XMP_Encode_Bounded(unsigned char * to, unsigned tobytes, digit const * from, int precision)
 {
-	assert(to != NULL);
-	assert(from != NULL);
+	assert(to != nullptr);
+	assert(from != nullptr);
 	assert(tobytes > 0);
 	assert(precision > 0);
 
@@ -356,8 +356,8 @@ unsigned MPEXPORT XMP_Encode_Bounded(unsigned char * to, unsigned tobytes, digit
 #endif
 unsigned MPEXPORT XMP_Encode(unsigned char * to, digit const * from, int precision)
 {
-	assert(to != NULL);
-	assert(from != NULL);
+	assert(to != nullptr);
+	assert(from != nullptr);
 	assert(precision > 0);
 
 	bool is_negative = XMP_Is_Negative(from, precision);
@@ -407,8 +407,8 @@ unsigned MPEXPORT XMP_Encode(unsigned char * to, digit const * from, int precisi
  *=============================================================================================*/
 void MPEXPORT XMP_Signed_Decode(digit * result, const unsigned char * from, int frombytes, int precision)
 {
-	assert(result != NULL);
-	assert(from != NULL);
+	assert(result != nullptr);
+	assert(from != nullptr);
 	assert(frombytes > 0);
 	assert(precision > 0);
 
@@ -457,8 +457,8 @@ void MPEXPORT XMP_Signed_Decode(digit * result, const unsigned char * from, int 
  *=============================================================================================*/
 void MPEXPORT XMP_Unsigned_Decode(digit * result, const unsigned char * from, int frombytes, int precision)
 {
-	assert(result != NULL);
-	assert(from != NULL);
+	assert(result != nullptr);
+	assert(from != nullptr);
 	assert(frombytes > 0);
 	assert(precision > 0);
 
@@ -502,7 +502,7 @@ void MPEXPORT XMP_Unsigned_Decode(digit * result, const unsigned char * from, in
  *=============================================================================================*/
 int MPEXPORT XMP_Significance(const digit * number, int precision)
 {
-	assert(number != NULL);
+	assert(number != nullptr);
 	assert(precision > 0);
 
 	number += precision;
@@ -533,7 +533,7 @@ int MPEXPORT XMP_Significance(const digit * number, int precision)
  *=============================================================================================*/
 void MPEXPORT XMP_Inc(digit * number, int precision)
 {
-	assert(number != NULL);
+	assert(number != nullptr);
 	assert(precision > 0);
 
 	do {
@@ -563,7 +563,7 @@ void MPEXPORT XMP_Inc(digit * number, int precision)
  *=============================================================================================*/
 void MPEXPORT XMP_Dec(digit * number, int precision)
 {
-	assert(number != NULL);
+	assert(number != nullptr);
 	assert(precision > 0);
 
 	do {
@@ -593,7 +593,7 @@ void MPEXPORT XMP_Dec(digit * number, int precision)
  *=============================================================================================*/
 void MPEXPORT XMP_Neg(digit * number, int precision)
 {
-	assert(number != NULL);
+	assert(number != nullptr);
 	assert(precision > 0);
 
 	XMP_Not(number, precision);
@@ -621,7 +621,7 @@ void MPEXPORT XMP_Neg(digit * number, int precision)
  *=============================================================================================*/
 void MPEXPORT XMP_Abs(digit * number, int precision)
 {
-	assert(number != NULL);
+	assert(number != nullptr);
 	assert(precision > 0);
 
 	if (XMP_Is_Negative(number, precision)) {
@@ -651,7 +651,7 @@ void MPEXPORT XMP_Abs(digit * number, int precision)
  *=============================================================================================*/
 void MPEXPORT XMP_Shift_Right_Bits(digit * number, int bits, int precision)
 {
-	assert(number != NULL);
+	assert(number != nullptr);
 	assert(bits >= 0);
 	assert(precision > 0);
 
@@ -737,7 +737,7 @@ void MPEXPORT XMP_Shift_Right_Bits(digit * number, int bits, int precision)
  *=============================================================================================*/
 void MPEXPORT XMP_Shift_Left_Bits(digit * number, int bits, int precision)
 {
-	assert(number != NULL);
+	assert(number != nullptr);
 	assert(bits >= 0);
 	assert(precision > 0);
 
@@ -824,7 +824,7 @@ void MPEXPORT XMP_Shift_Left_Bits(digit * number, int bits, int precision)
  *=============================================================================================*/
 bool MPEXPORT XMP_Rotate_Left(digit * number, bool carry, int precision)
 {
-	assert(number != NULL);
+	assert(number != nullptr);
 	assert(precision > 0);
 
 	while (precision--) {
@@ -856,7 +856,7 @@ bool MPEXPORT XMP_Rotate_Left(digit * number, bool carry, int precision)
  *=============================================================================================*/
 void MPEXPORT XMP_Not(digit * number, int precision)
 {
-	assert(number != NULL);
+	assert(number != nullptr);
 	assert(precision > 0);
 
 	for (int index = 0; index < precision; index++) {
@@ -887,7 +887,7 @@ void MPEXPORT XMP_Not(digit * number, int precision)
  *=============================================================================================*/
 void MPEXPORT XMP_Init(digit * number, digit value, int precision)
 {
-	assert(number != NULL);
+	assert(number != nullptr);
 	assert(precision > 0);
 
 	memset(number, '\0', precision * sizeof(digit));
@@ -914,7 +914,7 @@ void MPEXPORT XMP_Init(digit * number, digit value, int precision)
  *=============================================================================================*/
 unsigned MPEXPORT XMP_Count_Bits(const digit * number, int precision)
 {
-	assert(number != NULL);
+	assert(number != nullptr);
 	assert(precision > 0);
 
 	int sub_precision = XMP_Significance(number, precision);
@@ -2270,7 +2270,7 @@ bool MPEXPORT XMP_Is_Small_Prime(const digit * candidate, int precision)
 	if (*candidate > primeTable[ARRAY_SIZE(primeTable)-1]) return false;
 
 	unsigned long * ptr = (unsigned long *)bsearch(&candidate, &primeTable[0], ARRAY_SIZE(primeTable), sizeof(primeTable[0]), pfunc);
-	return(ptr != NULL);
+	return(ptr != nullptr);
 }
 
 

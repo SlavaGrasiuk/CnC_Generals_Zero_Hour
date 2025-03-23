@@ -52,12 +52,12 @@
 */
 class SurfaceRect {
 	public:
-		SurfaceRect(Surface * surfaceptr = NULL, Rect * rect = NULL) : SurfacePtr(surfaceptr), Point(0, 0) {
-			assert(SurfacePtr != NULL);
-			if (rect != NULL) Window = *rect; else Window = SurfacePtr->Get_Rect();
+		SurfaceRect(Surface * surfaceptr = nullptr, Rect * rect = nullptr) : SurfacePtr(surfaceptr), Point(0, 0) {
+			assert(SurfacePtr != nullptr);
+			if (rect != nullptr) Window = *rect; else Window = SurfacePtr->Get_Rect();
 		}
-		SurfaceRect(Surface & surface, Rect * rect = NULL) : SurfacePtr(&surface), Point(0, 0) {
-			if (rect != NULL) Window = *rect; else Window = SurfacePtr->Get_Rect();
+		SurfaceRect(Surface & surface, Rect * rect = nullptr) : SurfacePtr(&surface), Point(0, 0) {
+			if (rect != nullptr) Window = *rect; else Window = SurfacePtr->Get_Rect();
 		}
 		SurfaceRect(Surface & surface, Rect const & rect) : SurfacePtr(&surface), Window(rect), Point(0, 0) {}
 		~SurfaceRect(void) {};

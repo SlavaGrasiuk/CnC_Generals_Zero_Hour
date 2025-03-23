@@ -72,7 +72,7 @@
  *=============================================================================================*/
 void SHAEngine::Process_Partial(void const * & data, long & length)
 {
-	if (length == 0 || data == NULL) return;
+	if (length == 0 || data == nullptr) return;
 
 	/*
 	**	If there is no partial buffer and the source is greater than

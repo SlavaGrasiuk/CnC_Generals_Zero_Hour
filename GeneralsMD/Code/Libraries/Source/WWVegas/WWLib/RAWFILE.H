@@ -51,7 +51,7 @@
 #ifdef _UNIX
 #include <stdio.h>
 #include "osdep.h"
-  #define	NULL_HANDLE	 	NULL	
+  #define	NULL_HANDLE	 	nullptr	
   #define	HANDLE_TYPE		FILE*	
 #else
   #define	NULL_HANDLE		INVALID_HANDLE_VALUE
@@ -110,7 +110,7 @@ class RawFileClass : public FileClass
 		virtual void Close(void);
 		virtual unsigned long Get_Date_Time(void);
 		virtual bool Set_Date_Time(unsigned long datetime);
-		virtual void Error(int error, int canretry = false, char const * filename=NULL);
+		virtual void Error(int error, int canretry = false, char const * filename=nullptr);
 		virtual void Bias(int start, int length=-1);
 		virtual void * Get_File_Handle(void) { return Handle; } 
 
@@ -169,11 +169,11 @@ class RawFileClass : public FileClass
  * RawFileClass::File_Name -- Returns with the filename associate with the file object.        *
  *                                                                                             *
  *    Use this routine to determine what filename is associated with this file object. If no   *
- *    filename has yet been assigned, then this routing will return NULL.                      *
+ *    filename has yet been assigned, then this routing will return nullptr.                   *
  *                                                                                             *
  * INPUT:   none                                                                               *
  *                                                                                             *
- * OUTPUT:  Returns with a pointer to the file name associated with this file object or NULL   *
+ * OUTPUT:  Returns with a pointer to the file name associated with this file object or nullptr*
  *          if one doesn't exist.                                                              *
  *                                                                                             *
  * WARNINGS:   none                                                                            *
@@ -181,7 +181,7 @@ class RawFileClass : public FileClass
  * HISTORY:                                                                                    *
  *   10/18/1994 JLB : Created.                                                                 *
  *   11/25/2001 Jani: Note that this is virtual function and thus can't be inlined. Is there a *
- *					 reason for it to be virtual?																	  *
+ *					 reason for it to be virtual?											   *
  *=============================================================================================*/
 inline char const * RawFileClass::File_Name(void) const
 {

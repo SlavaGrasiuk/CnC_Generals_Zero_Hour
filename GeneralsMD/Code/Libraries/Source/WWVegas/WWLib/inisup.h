@@ -41,7 +41,7 @@
 /*
 **	This header defines generally unused member structures used by the INI class.
 **	Previously these were member structures of the INI class but they were separated
-**	to help reduce header dependancies. -ehc
+**	to help reduce header dependencies. -ehc
 */
 
 #include	"listnode.h"
@@ -54,9 +54,9 @@
 **	The entry identifier and value string are combined into this object.
 */
 struct INIEntry : public Node<INIEntry *> {
-	INIEntry(char * entry = NULL, char * value = NULL) : Entry(entry), Value(value) {}
+	INIEntry(char * entry = nullptr, char * value = nullptr) : Entry(entry), Value(value) {}
 	~INIEntry(void);
-//	~INIEntry(void) {free(Entry);Entry = NULL;free(Value);Value = NULL;}
+//	~INIEntry(void) {free(Entry);Entry = nullptr;free(Value);Value = nullptr;}
 //	int Index_ID(void) const {return(CRCEngine()(Entry, strlen(Entry)));};
 	int Index_ID(void) const { return CRC::String(Entry);};
 

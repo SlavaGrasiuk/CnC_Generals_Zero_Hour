@@ -51,7 +51,7 @@ class ThreadClass
 public:
 	typedef int (*ExceptionHandlerType)(int exception_code, struct _EXCEPTION_POINTERS *e_info);
 
-	ThreadClass(const char *name = NULL, ExceptionHandlerType exception_handler = NULL);
+	ThreadClass(const char *name = nullptr, ExceptionHandlerType exception_handler = nullptr);
 	virtual ~ThreadClass();
 
 	// Execute Thread_Function(). Note that only one instance can be executed at a time.
@@ -66,7 +66,7 @@ public:
 	// Put current thread sleep for ms milliseconds (can be called from any thread, ThreadClass or other)
 	static void Sleep_Ms(unsigned ms=0);
 
-	// Put current thread in sleep and switch to next one (Useful for balansing the thread switches with game update)
+	// Put current thread in sleep and switch to next one (Useful for balancing the thread switches with game update)
 	static void Switch_Thread();
 
 	// Return calling thread's unique thread id
@@ -79,7 +79,7 @@ public:
 	const char *Get_Name(void) {return(ThreadName);};
 
 	// Get info about a registered thread by it's index.
-	static int Get_Thread_By_Index(int index, char *name_ptr = NULL);
+	static int Get_Thread_By_Index(int index, char *name_ptr = nullptr);
 
 protected:
 

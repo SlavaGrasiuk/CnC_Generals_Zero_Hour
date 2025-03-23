@@ -89,7 +89,7 @@ class XSurface : public Surface
 		/*
 		**	Gets and frees a direct pointer to the video memory.
 		*/
-		virtual void * Lock(Point2D = Point2D(0, 0)) const {LockCount++;return(NULL);}
+		virtual void * Lock(Point2D = Point2D(0, 0)) const {LockCount++;return(nullptr);}
 		virtual bool Unlock(void) const {LockCount--;return(true);}
 		virtual bool Is_Locked(void) const {return(LockCount != 0);}
 
