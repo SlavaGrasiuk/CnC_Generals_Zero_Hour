@@ -67,15 +67,8 @@ class RenderDeviceDescClass
 
 public:
 
-	RenderDeviceDescClass(void) : DeviceName(NULL), DeviceVendor(NULL), DevicePlatform(NULL), 
-											DriverName(NULL), DriverVendor(NULL), DriverVersion(NULL),
-											HardwareName(NULL), HardwareVendor(NULL), HardwareChipset(NULL)
-	{
-	}
-
-	~RenderDeviceDescClass(void)
-	{
-	}
+	RenderDeviceDescClass() = default;
+	~RenderDeviceDescClass() = default;
 
 	RenderDeviceDescClass & operator = (const RenderDeviceDescClass & src) 
 	{

@@ -80,7 +80,7 @@ public:
 	bool Is_Captured() const
 	{
 #ifdef LAZY_CAP_MTX_ALLOC
-		return CapTransformPtr != NULL;
+		return CapTransformPtr != nullptr;
 #else
 		return IsCaptured;
 #endif

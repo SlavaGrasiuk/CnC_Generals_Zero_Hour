@@ -75,7 +75,7 @@ public:
 
 	void Release()
 	{
-		Texture->Set_D3D_Base_Texture(NULL);
+		Texture->Set_D3D_Base_Texture(nullptr);
 	}
 
 	TextureBaseClass* Get_Texture() const { return Texture; }
@@ -107,7 +107,7 @@ public:
 
 	virtual void Recreate() const
 	{
-		WWASSERT(Texture->Peek_D3D_Base_Texture()==NULL);
+		WWASSERT(Texture->Peek_D3D_Base_Texture()==nullptr);
 		Texture->Poke_Texture
 		(
 			DX8Wrapper::_Create_DX8_Texture
@@ -144,7 +144,7 @@ public:
 
 	virtual void Recreate() const
 	{
-		WWASSERT(Texture->Peek_D3D_Base_Texture()==NULL);
+		WWASSERT(Texture->Peek_D3D_Base_Texture()==nullptr);
 		Texture->Poke_Texture
 		(
 			DX8Wrapper::_Create_DX8_ZTexture

@@ -81,7 +81,7 @@ const unsigned MAX_SHADOW_MAPS=1;
 
 #define prevVer
 #define nextVer
-#define __volatile unsigned
+//#define __volatile unsigned
 
 
 enum {
@@ -474,9 +474,9 @@ public:
 	**	WW3D::Render (scene, camera, FALSE, FALSE);
 	**	WW3D::End_Render ();
 	**
-	**	swap_chain_ptr->Present (NULL, NULL, NULL, NULL);
+	**	swap_chain_ptr->Present (nullptr, nullptr, nullptr, nullptr);
 	**
-	**	DX8Wrapper::Set_Render_Target ((IDirect3DSurface8 *)NULL);
+	**	DX8Wrapper::Set_Render_Target ((IDirect3DSurface8 *)nullptr);
 	**
 	*/
 	static IDirect3DSwapChain8 *	Create_Additional_Swap_Chain (HWND render_window);
@@ -502,7 +502,7 @@ public:
 		TextureClass** target,
 		ZTextureClass** depth_buffer
 	);
-	static void					Set_Render_Target_With_Z (TextureClass * texture, ZTextureClass* ztexture=NULL);
+	static void					Set_Render_Target_With_Z (TextureClass * texture, ZTextureClass* ztexture=nullptr);
 
 	static void Set_Shadow_Map(int idx, ZTextureClass* ztex) { Shadow_Map[idx]=ztex; }
 	static ZTextureClass* Get_Shadow_Map(int idx) { return Shadow_Map[idx]; }
@@ -842,7 +842,7 @@ WWINLINE void DX8Wrapper::Set_Ambient(const Vector3& color)
 //
 // Set vertex buffer to be used in the subsequent render calls. If there was
 // a vertex buffer being used earlier, release the reference to it. Passing
-// NULL just will release the vertex buffer.
+// nullptr just will release the vertex buffer.
 //
 // ----------------------------------------------------------------------------
 
@@ -995,6 +995,10 @@ WWINLINE unsigned int DX8Wrapper::Convert_Color(const Vector4& color)
 }
 #else
 
+#pragma warning(push)
+#pragma warning( disable : 4731 )
+#pragma message("(slavagrasiuk) fix this ebx register access later...")
+
 // ----------------------------------------------------------------------------
 //
 // Convert RGBA color from float vector to 32 bit integer
@@ -1131,6 +1135,8 @@ WWINLINE void DX8Wrapper::Clamp_Color(Vector4& color)
 		mov dword ptr[esi+12],edi
 	}
 }
+
+#pragma warning(pop)
 
 // ----------------------------------------------------------------------------
 //
@@ -1443,7 +1449,7 @@ WWINLINE RenderStateStruct::~RenderStateStruct()
 WWINLINE unsigned flimby( char* name, unsigned crib )
 {
   unsigned lnt prevVer = 0x00000000;  
-  __volatile D3D2_BASE_VEC nextVer = 0;
+  unsigned D3D2_BASE_VEC nextVer = 0;
   for( unsigned t = 0; t < crib; ++t )
   {
     (D3D2_BASE_VEC)nextVer += name[t];

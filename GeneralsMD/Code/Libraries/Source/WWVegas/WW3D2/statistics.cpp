@@ -76,7 +76,7 @@ static void Record_Texture_Begin()
 	procedural_texture_count=0;
 	record_count=0;
 	texture_change_count=0;
-	latest_texture=NULL;
+	latest_texture=nullptr;
 	texture_statistics.Resize(0);
 }
 
@@ -94,7 +94,7 @@ static void Record_Texture_End()
 	texture_statistics_string="";
 	if (record_texture_mode==Debug_Statistics::RECORD_TEXTURE_DETAILS) {
 		char tmp_text[1024];
-		_snprintf(tmp_text,sizeof(tmp_text),
+		_snprintf_s(tmp_text,sizeof(tmp_text),
 			"Set_DX8_Texture count: %d\nactual changes: %d\n\n"
 			"id      refs changes  size      name\n"
 			"--------------------------------------\n",

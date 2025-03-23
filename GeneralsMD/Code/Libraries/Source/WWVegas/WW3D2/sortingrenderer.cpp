@@ -277,7 +277,7 @@ void SortingRendererClass::Insert_Triangles(
 	if (!node) sorted_list.Add_Tail(state);
 
 #ifdef WWDEBUG
-	unsigned short* indices=NULL;
+	unsigned short* indices=nullptr;
 	SortingIndexBufferClass* index_buffer=static_cast<SortingIndexBufferClass*>(state->sorting_state.index_buffer);
 	WWASSERT(index_buffer);
 	indices=index_buffer->index_buffer;
@@ -393,16 +393,16 @@ static void Apply_Render_State(RenderStateStruct& render_state)
 				if (render_state.LightEnable[3]) 
 					DX8Wrapper::Set_DX8_Light(3,&render_state.Lights[3]);
 				else 
-					DX8Wrapper::Set_DX8_Light(3,NULL);
+					DX8Wrapper::Set_DX8_Light(3,nullptr);
 			}
 			else 
-				DX8Wrapper::Set_DX8_Light(2,NULL);
+				DX8Wrapper::Set_DX8_Light(2,nullptr);
 		}
 		else 
-			DX8Wrapper::Set_DX8_Light(1,NULL);
+			DX8Wrapper::Set_DX8_Light(1,nullptr);
 	}
 	else 
-		DX8Wrapper::Set_DX8_Light(0,NULL);
+		DX8Wrapper::Set_DX8_Light(0,nullptr);
 
 
 }
@@ -433,7 +433,7 @@ void SortingRendererClass::Flush_Sorting_Pool()
 		unsigned vertex_array_offset=0;
 		for (unsigned node_id=0;node_id<overlapping_node_count;++node_id) {
 			SortingNodeStruct* state=overlapping_nodes[node_id];
-			VertexFormatXYZNDUV2* src_verts=NULL;
+			VertexFormatXYZNDUV2* src_verts=nullptr;
 			SortingVertexBufferClass* vertex_buffer=static_cast<SortingVertexBufferClass*>(state->sorting_state.vertex_buffers[0]);
 			WWASSERT(vertex_buffer);
 			src_verts=vertex_buffer->VertexBuffer;
@@ -451,7 +451,7 @@ void SortingRendererClass::Flush_Sorting_Pool()
 			D3DXMATRIX d3d_mtx=(D3DXMATRIX&)state->sorting_state.world*(D3DXMATRIX&)state->sorting_state.view;
 			const Matrix4x4& mtx=(const Matrix4x4&)d3d_mtx;
 
-			unsigned short* indices=NULL;
+			unsigned short* indices=nullptr;
 			SortingIndexBufferClass* index_buffer=static_cast<SortingIndexBufferClass*>(state->sorting_state.index_buffer);
 			WWASSERT(index_buffer);
 			indices=index_buffer->index_buffer;
@@ -655,12 +655,12 @@ void SortingRendererClass::Flush()
 
 void SortingRendererClass::Deinit()
 {
-	SortingNodeStruct *head = NULL;
+	SortingNodeStruct *head = nullptr;
 
 	//
 	//	Flush the sorted list
 	//
-	while ((head = sorted_list.Head ()) != NULL) {
+	while ((head = sorted_list.Head ()) != nullptr) {
 		sorted_list.Remove_Head ();
 		delete head;
 	}
@@ -668,13 +668,13 @@ void SortingRendererClass::Deinit()
 	//
 	//	Flush the clean list
 	//
-	while ((head = clean_list.Head ()) != NULL) {
+	while ((head = clean_list.Head ()) != nullptr) {
 		clean_list.Remove_Head ();
 		delete head;
 	}
 
 	delete[] temp_index_array;
-	temp_index_array=NULL;
+	temp_index_array=nullptr;
 	temp_index_array_count=0;
 }
 

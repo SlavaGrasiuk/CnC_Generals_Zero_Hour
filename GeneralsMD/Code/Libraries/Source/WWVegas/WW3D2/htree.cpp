@@ -77,7 +77,7 @@
  *=============================================================================================*/
 HTreeClass::HTreeClass(void) :
 	NumPivots(0),
-	Pivot(NULL),
+	Pivot(nullptr),
 	ScaleFactor(1.0f)
 {
 }
@@ -90,11 +90,11 @@ void HTreeClass::Init_Default(void)
 	Pivot = MSGW3DNEWARRAY("HTreeClass::Pivot") PivotClass[NumPivots];
 
 	Pivot[0].Index = 0;
-	Pivot[0].Parent = NULL;
+	Pivot[0].Parent = nullptr;
 	Pivot[0].BaseTransform.Make_Identity();
 	Pivot[0].Transform.Make_Identity();
 	Pivot[0].IsVisible = true;
-	strcpy(Pivot[0].Name,"RootTransform");
+	strcpy_s(Pivot[0].Name,"RootTransform");
 	//::strcpy (Name, "Default");
 	Name[0] = 0;
 	return ;
@@ -138,7 +138,7 @@ HTreeClass::~HTreeClass(void)
  *=============================================================================================*/
 HTreeClass::HTreeClass(const HTreeClass & src) :
 	NumPivots(0),
-	Pivot(NULL),
+	Pivot(nullptr),
 	ScaleFactor(1.0f)
 {
 	memcpy(&Name,&src.Name,sizeof(Name));
@@ -151,10 +151,10 @@ HTreeClass::HTreeClass(const HTreeClass & src) :
 	for (int pi = 0; pi < NumPivots; pi++) {
 		Pivot[pi] = src.Pivot[pi];
 		
-		if (src.Pivot[pi].Parent != NULL) {
+		if (src.Pivot[pi].Parent != nullptr) {
 			Pivot[pi].Parent = &(Pivot[src.Pivot[pi].Parent->Index]);
 		} else {
-			Pivot[pi].Parent = NULL;
+			Pivot[pi].Parent = nullptr;
 		}
 	}
 
@@ -269,11 +269,11 @@ bool HTreeClass::read_pivots(ChunkLoadClass & cload,bool pre30)
 	*/
 	if (pre30) {
 		Pivot[0].Index = 0;
-		Pivot[0].Parent = NULL;
+		Pivot[0].Parent = nullptr;
 		Pivot[0].BaseTransform.Make_Identity();
 		Pivot[0].Transform.Make_Identity();
 		Pivot[0].IsVisible = true;
-		strcpy(Pivot[0].Name,"RootTransform");
+		strcpy_s(Pivot[0].Name,"RootTransform");
 		first_piv++;
 	}
 
@@ -325,10 +325,10 @@ bool HTreeClass::read_pivots(ChunkLoadClass & cload,bool pre30)
 
 		/*
 		** Set the parent pointer.  The first pivot will have a parent index
-		** of -1 (in post-3.0 files) so set its parent to NULL.
+		** of -1 (in post-3.0 files) so set its parent to nullptr.
 		*/
 		if (piv.ParentIdx == -1) {
-			Pivot[pidx].Parent = NULL;
+			Pivot[pidx].Parent = nullptr;
 			assert(pidx == 0);
 		} else {
 			Pivot[pidx].Parent = &(Pivot[piv.ParentIdx]);
@@ -357,9 +357,9 @@ bool HTreeClass::read_pivots(ChunkLoadClass & cload,bool pre30)
  *=============================================================================================*/
 void HTreeClass::Free(void)
 {
-	if (Pivot != NULL) {
+	if (Pivot != nullptr) {
 		delete[] Pivot;
-		Pivot = NULL;
+		Pivot = nullptr;
 	}
 	NumPivots = 0;
 
@@ -392,8 +392,8 @@ bool HTreeClass::Simple_Evaluate_Pivot
 	bool retval = false;
 	end_tm->Make_Identity ();
 
-	if (	motion != NULL &&
-			end_tm != NULL &&
+	if (	motion != nullptr &&
+			end_tm != nullptr &&
 			pivot_index >= 0 &&
 			pivot_index < NumPivots)
 	{
@@ -402,7 +402,7 @@ bool HTreeClass::Simple_Evaluate_Pivot
 		// attached to and transform each.
 		//
 		for (	PivotClass *pivot = &Pivot[pivot_index];
-				pivot != NULL && pivot->Parent != NULL;
+				pivot != nullptr && pivot->Parent != nullptr;
 				pivot = pivot->Parent)
 		{
 			//
@@ -476,7 +476,7 @@ bool HTreeClass::Simple_Evaluate_Pivot
 	bool retval = false;
 	end_tm->Make_Identity ();
 
-	if (	end_tm != NULL &&
+	if (	end_tm != nullptr &&
 			pivot_index >= 0 &&
 			pivot_index < NumPivots)
 	{
@@ -485,7 +485,7 @@ bool HTreeClass::Simple_Evaluate_Pivot
 		// attached to and transform each.
 		//
 		for (	PivotClass *pivot = &Pivot[pivot_index];
-				pivot != NULL && pivot->Parent != NULL;
+				pivot != nullptr && pivot->Parent != nullptr;
 				pivot = pivot->Parent)
 		{
 			//
@@ -539,7 +539,7 @@ void HTreeClass::Base_Update(const Matrix3D & root)
 		
 		pivot = &Pivot[piv_idx];
 		
-		assert(pivot->Parent != NULL);
+		assert(pivot->Parent != nullptr);
 		Matrix3D::Multiply(pivot->Parent->Transform, pivot->BaseTransform, &(pivot->Transform));
 		pivot->IsVisible = 1;
 
@@ -573,7 +573,7 @@ void HTreeClass::Anim_Update(const Matrix3D & root,HAnimClass * motion,float fra
 		pivot = &Pivot[piv_idx];
 
 		// base pose
-		assert(pivot->Parent != NULL);
+		assert(pivot->Parent != nullptr);
 		Matrix3D::Multiply(pivot->Parent->Transform, pivot->BaseTransform, &(pivot->Transform));
 			
 		// Don't update this pivot if the HTree doesn't have animation data for it...
@@ -637,7 +637,7 @@ void HTreeClass::Anim_Update(const Matrix3D & root,HRawAnimClass * motion,float 
 	for (int piv_idx=1; pivot < endpivot; pivot++,nodeMotion++) {
 
 		// base pose
-		assert(pivot->Parent != NULL);
+		assert(pivot->Parent != nullptr);
 		Matrix3D::Multiply(pivot->Parent->Transform, pivot->BaseTransform, &(pivot->Transform));
 			
 		// Don't update this pivot if the HTree doesn't have animation data for it...
@@ -648,11 +648,11 @@ void HTreeClass::Anim_Update(const Matrix3D & root,HRawAnimClass * motion,float 
 			trans.Set(0.0f,0.0f,0.0f);
 			Matrix3D *xform=&pivot->Transform;
 
-			if (nodeMotion->X != NULL)
+			if (nodeMotion->X != nullptr)
 				nodeMotion->X->Get_Vector(iframe,&(trans[0]));
-			if (nodeMotion->Y != NULL)
+			if (nodeMotion->Y != nullptr)
 				nodeMotion->Y->Get_Vector(iframe,&(trans[1]));
-			if (nodeMotion->Z != NULL)
+			if (nodeMotion->Z != nullptr)
 				nodeMotion->Z->Get_Vector(iframe,&(trans[2]));
 
 			if (ScaleFactor == 1.0f)
@@ -660,7 +660,7 @@ void HTreeClass::Anim_Update(const Matrix3D & root,HRawAnimClass * motion,float 
 			else
 				xform->Translate(trans*ScaleFactor);
 
-			if (nodeMotion->Q != NULL) 
+			if (nodeMotion->Q != nullptr) 
 			{	nodeMotion->Q->Get_Vector_As_Quat(iframe, q);
 #ifdef ALLOW_TEMPORARIES
 				*xform = *xform * ::Build_Matrix3D(q,mtx);
@@ -670,7 +670,7 @@ void HTreeClass::Anim_Update(const Matrix3D & root,HRawAnimClass * motion,float 
 			}
 
 			// visibility
-			if (nodeMotion->Vis != NULL)
+			if (nodeMotion->Vis != nullptr)
 				pivot->IsVisible=(nodeMotion->Vis->Get_Bit(iframe) == 1);
 			else
 				pivot->IsVisible=1;
@@ -719,7 +719,7 @@ void HTreeClass::Blend_Update
 
 		pivot = &Pivot[piv_idx];
 
-		assert(pivot->Parent != NULL);
+		assert(pivot->Parent != nullptr);
 		Matrix3D::Multiply(pivot->Parent->Transform,pivot->BaseTransform,&(pivot->Transform));
 
 		if (piv_idx < num_anim_pivots) {
@@ -792,7 +792,7 @@ void HTreeClass::Combo_Update
 	for (int piv_idx=1; piv_idx < NumPivots; piv_idx++) {
 		
 		pivot = &Pivot[piv_idx];
-		assert(pivot->Parent != NULL);
+		assert(pivot->Parent != nullptr);
 		Matrix3D::Multiply(pivot->Parent->Transform,pivot->BaseTransform,&(pivot->Transform));
 		
 		if (piv_idx < num_anim_pivots) {
@@ -812,7 +812,7 @@ void HTreeClass::Combo_Update
 
 				HAnimClass *motion = anim->Get_Motion( anim_num );
 
-				if ( motion != NULL ) {
+				if ( motion != nullptr ) {
 
 					float frame_num = anim->Get_Frame( anim_num );
 
@@ -822,7 +822,7 @@ void HTreeClass::Combo_Update
 
 					float	weight = anim->Get_Weight( anim_num );
 
-					if ( pivot_map != NULL ) {
+					if ( pivot_map != nullptr ) {
 						weight *= (*pivot_map)[piv_idx];
 						// GREG - Pivot maps are ref counted so shouldn't we
 						// release the rivot map here?
@@ -888,7 +888,7 @@ void HTreeClass::Combo_Update
 
 			for ( int anim_num = 0; (anim_num < anim->Get_Num_Anims()) && (!pivot->IsVisible); anim_num++ ) {
 				HAnimClass *motion = anim->Get_Motion( anim_num );
-				if ( motion != NULL ) {
+				if ( motion != nullptr ) {
 					float frame_num = anim->Get_Frame( anim_num );
 
 					pivot->IsVisible |= motion->Get_Visibility(piv_idx,frame_num);
@@ -922,7 +922,7 @@ void HTreeClass::Combo_Update
 int HTreeClass::Get_Bone_Index(const char * name) const
 {
 	for (int i=0; i < NumPivots; i++) {
-		if (stricmp(Pivot[i].Name,name) == 0) {
+		if (_stricmp(Pivot[i].Name,name) == 0) {
 			return i;
 		}
 	}
@@ -970,7 +970,7 @@ int HTreeClass::Get_Parent_Index(int boneidx) const
 	assert(boneidx >= 0);
 	assert(boneidx < NumPivots);
 
-	if (Pivot[boneidx].Parent != NULL) {
+	if (Pivot[boneidx].Parent != nullptr) {
 		return Pivot[boneidx].Parent->Index;
 	} else {
 		return 0;
@@ -1003,7 +1003,7 @@ void HTreeClass::Capture_Bone(int boneindex)
 	assert(boneindex >= 0);
 	assert(boneindex < NumPivots);
 #ifdef LAZY_CAP_MTX_ALLOC
-	if (Pivot[boneindex].CapTransformPtr == NULL) 
+	if (Pivot[boneindex].CapTransformPtr == nullptr) 
 	{
 		Pivot[boneindex].CapTransformPtr = MSGW3DNEW("PivotClassCaptureBoneMtx") DynamicMatrix3D;
 		Pivot[boneindex].CapTransformPtr->Mat.Make_Identity();
@@ -1021,7 +1021,7 @@ void HTreeClass::Release_Bone(int boneindex)
 	if (Pivot[boneindex].CapTransformPtr) 
 	{
 		delete Pivot[boneindex].CapTransformPtr;
-		Pivot[boneindex].CapTransformPtr = NULL;
+		Pivot[boneindex].CapTransformPtr = nullptr;
 	}
 #else
 	Pivot[boneindex].IsCaptured = false;
@@ -1042,7 +1042,7 @@ void HTreeClass::Control_Bone(int boneindex,const Matrix3D & relative_tm,bool wo
 	assert(Pivot[boneindex].Is_Captured());
 
 #ifdef LAZY_CAP_MTX_ALLOC
-	if (Pivot[boneindex].CapTransformPtr == NULL)
+	if (Pivot[boneindex].CapTransformPtr == nullptr)
 		return;
 	Pivot[boneindex].WorldSpaceTranslation = world_space_translation;
 	Pivot[boneindex].CapTransformPtr->Mat = relative_tm;

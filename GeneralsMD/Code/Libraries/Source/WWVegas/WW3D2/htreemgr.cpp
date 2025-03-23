@@ -68,7 +68,7 @@ HTreeManagerClass::HTreeManagerClass(void) :
 	NumTrees(0)
 {
 	for (int treeidx=0; treeidx < MAX_TREES; treeidx++) {
-		TreePtr[treeidx] = NULL;
+		TreePtr[treeidx] = nullptr;
 	}
 }
 
@@ -124,9 +124,9 @@ void HTreeManagerClass::Free_All_Trees(void)
 	TreeHash.Remove_All();
 
 	for (int treeidx=0; treeidx < MAX_TREES; treeidx++) {
-		if (TreePtr[treeidx] != NULL) {
+		if (TreePtr[treeidx] != nullptr) {
 			delete TreePtr[treeidx];
-			TreePtr[treeidx] = NULL;
+			TreePtr[treeidx] = nullptr;
 		}
 	}
 	NumTrees = 0;
@@ -150,7 +150,7 @@ void HTreeManagerClass::Free_All_Trees_With_Exclusion_List(const W3DExclusionLis
 	int new_tail = 0;
 
 	for (int treeidx=0; treeidx < MAX_TREES; treeidx++) {
-		if (TreePtr[treeidx] != NULL) {
+		if (TreePtr[treeidx] != nullptr) {
 			
 			if (exclusion_list.Is_Excluded(TreePtr[treeidx])) {
 
@@ -162,7 +162,7 @@ void HTreeManagerClass::Free_All_Trees_With_Exclusion_List(const W3DExclusionLis
 				
 				//WWDEBUG_SAY(("deleting tree %s\n",TreePtr[treeidx]->Get_Name()));
 				delete TreePtr[treeidx];
-				TreePtr[treeidx] = NULL;
+				TreePtr[treeidx] = nullptr;
 			}
 		}
 	}
@@ -176,7 +176,7 @@ void HTreeManagerClass::Free_All_Trees_With_Exclusion_List(const W3DExclusionLis
 	{
 		// Insert to hash table for fast name based search
 		StringClass lower_case_name(TreePtr[treeidx]->Get_Name(),true);
-		_strlwr(lower_case_name.Peek_Buffer());
+		_strlwr_s(lower_case_name.Peek_Buffer(), lower_case_name.Get_Length());
 		TreeHash.Insert(lower_case_name,TreePtr[treeidx]);
 	}
 }
@@ -198,7 +198,7 @@ int HTreeManagerClass::Load_Tree(ChunkLoadClass & cload)
 	WWMEMLOG(MEM_ANIMATION);
 	HTreeClass * newtree = W3DNEW HTreeClass;
 
-	if (newtree == NULL) {
+	if (newtree == nullptr) {
 		goto Error;
 	}
 
@@ -222,7 +222,7 @@ int HTreeManagerClass::Load_Tree(ChunkLoadClass & cload)
 
 		// Insert to hash table for fast name based search
 		StringClass lower_case_name(newtree->Get_Name(),true);
-		_strlwr(lower_case_name.Peek_Buffer());
+		_strlwr_s(lower_case_name.Peek_Buffer(), lower_case_name.Get_Length());
 		TreeHash.Insert(lower_case_name,newtree);
 	}
 
@@ -249,7 +249,7 @@ Error:
 int HTreeManagerClass::Get_Tree_ID(const char * name)
 {
 	for (int i=0; i<NumTrees; i++) {
-		if (TreePtr[i] && (stricmp(name,TreePtr[i]->Get_Name()) == 0)) {
+		if (TreePtr[i] && (_stricmp(name,TreePtr[i]->Get_Name()) == 0)) {
 			return i;
 		}
 	}
@@ -276,7 +276,7 @@ char *HTreeManagerClass::Get_Tree_Name(const int idx)
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 
@@ -296,7 +296,7 @@ char *HTreeManagerClass::Get_Tree_Name(const int idx)
 HTreeClass * HTreeManagerClass::Get_Tree(const char * name)
 {
 	StringClass lower_case_name(name,true);
-	_strlwr(lower_case_name.Peek_Buffer());
+	_strlwr_s(lower_case_name.Peek_Buffer(), lower_case_name.Get_Length());
 	return TreeHash.Get(lower_case_name);
 
 //	for (int i=0; i<NumTrees; i++) {
@@ -305,7 +305,7 @@ HTreeClass * HTreeManagerClass::Get_Tree(const char * name)
 //			return TreePtr[i];
 //		}
 //	}
-//	return NULL;
+//	return nullptr;
 }
 
 
@@ -326,6 +326,6 @@ HTreeClass * HTreeManagerClass::Get_Tree(int id)
 	if ((id >= 0) && (id < NumTrees)) {
 		return TreePtr[id];
 	} else {
-		return NULL;
+		return nullptr;
 	}
 }

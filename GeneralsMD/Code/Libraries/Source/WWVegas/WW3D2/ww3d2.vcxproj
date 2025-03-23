@@ -125,24 +125,42 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <ExternalIncludePath>..\..\DX90SDK\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <TargetName>$(ProjectName)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <ExternalIncludePath>..\..\DX90SDK\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <TargetName>$(ProjectName)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <ExternalIncludePath>..\..\DX90SDK\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <TargetName>$(ProjectName)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugW3D|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <ExternalIncludePath>..\..\DX90SDK\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <TargetName>$(ProjectName)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <ExternalIncludePath>..\..\DX90SDK\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <TargetName>$(ProjectName)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <ExternalIncludePath>..\..\DX90SDK\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <TargetName>$(ProjectName)$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <ExternalIncludePath>..\..\DX90SDK\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <TargetName>$(ProjectName)$(Configuration)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ExternalIncludePath>..\..\DX90SDK\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <TargetName>$(ProjectName)$(Configuration)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugE|Win32'">
     <ClCompile>
@@ -165,14 +183,6 @@
     <ResourceCompile>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\DebugE\ww3d2.bsc</OutputFile>
-    </Bscmake>
-    <Lib>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>..\..\..\Lib\ww3d2DebugE.lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Internal|Win32'">
     <ClCompile>
@@ -194,14 +204,6 @@
     <ResourceCompile>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Internal\ww3d2.bsc</OutputFile>
-    </Bscmake>
-    <Lib>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>..\..\..\Lib\ww3d2Internal.lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ProfileE|Win32'">
     <ClCompile>
@@ -224,14 +226,6 @@
     <ResourceCompile>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\ProfileE\ww3d2.bsc</OutputFile>
-    </Bscmake>
-    <Lib>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>..\..\..\Lib\ww3d2ProfileE.lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugW3D|Win32'">
     <ClCompile>
@@ -254,14 +248,6 @@
     <ResourceCompile>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\DebugW3D\ww3d2.bsc</OutputFile>
-    </Bscmake>
-    <Lib>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>..\..\..\Lib\ww3d2DebugW3D.lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
     <ClCompile>
@@ -284,14 +270,6 @@
     <ResourceCompile>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Profile\ww3d2.bsc</OutputFile>
-    </Bscmake>
-    <Lib>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>..\..\..\Lib\ww3d2Profile.lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -313,14 +291,6 @@
     <ResourceCompile>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Debug\ww3d2.bsc</OutputFile>
-    </Bscmake>
-    <Lib>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>..\..\..\Lib\ww3d2Debug.lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -342,14 +312,6 @@
     <ResourceCompile>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Bscmake>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Release\ww3d2.bsc</OutputFile>
-    </Bscmake>
-    <Lib>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>..\..\..\Lib\ww3d2.lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
     <ClCompile>

@@ -41,9 +41,9 @@ static void Create_Hash_Name(StringClass& name, const StringClass& thumb_name)
 {
 	name=thumb_name;
 	int len=name.Get_Length();
-	WWASSERT(!stricmp(&name[len-4],".tga") || !stricmp(&name[len-4],".dds"));
+	WWASSERT(!_stricmp(&name[len-4],".tga") || !_stricmp(&name[len-4],".dds"));
 	name[len-4]='\0';
-	_strlwr(name.Peek_Buffer());
+	_strlwr_s(name.Peek_Buffer(), name.Get_Length());
 }
 
 	/*	file_auto_ptr my_tga_file(_TheFileFactory,filename);
@@ -274,7 +274,7 @@ void ThumbnailManagerClass::Create_Thumbnails()
 		mix.Build_Filename_List(list);
 		for (int i=0;i<list.Count();++i) {
 			int len=list[i].Get_Length();
-			if (!stricmp(&list[i][len-4],".tga") || !stricmp(&list[i][len-4],".dds")) {
+			if (!_stricmp(&list[i][len-4],".tga") || !_stricmp(&list[i][len-4],".dds")) {
 				StringClass tex_name(list[i]);
 				if (!Peek_Thumbnail_Instance(tex_name)) {
 					new ThumbnailClass(this,tex_name);
@@ -487,7 +487,7 @@ void ThumbnailManagerClass::Save(bool force)
 // ----------------------------------------------------------------------------
 ThumbnailManagerClass::ThumbnailManagerClass(const char* thumbnail_filename, const char* mix_filename)
 	:
-	ThumbnailMemory(NULL),
+	ThumbnailMemory(nullptr),
 	ThumbnailFileName(thumbnail_filename),
 	MixFileName(mix_filename),
 	PerTextureTimeStampUsed(false),
@@ -510,7 +510,7 @@ ThumbnailManagerClass::~ThumbnailManagerClass()
 	}
 
 	if (ThumbnailMemory) delete[] ThumbnailMemory;
-	ThumbnailMemory=NULL;
+	ThumbnailMemory=nullptr;
 }
 
 // ----------------------------------------------------------------------------
@@ -523,7 +523,7 @@ ThumbnailManagerClass* ThumbnailManagerClass::Peek_Thumbnail_Manager(const char*
 	}
 	if (GlobalThumbnailManager &&
 		GlobalThumbnailManager->ThumbnailFileName==thumbnail_filename) return GlobalThumbnailManager;
-	return NULL;
+	return nullptr;
 }
 
 // ----------------------------------------------------------------------------
@@ -534,7 +534,7 @@ void ThumbnailManagerClass::Add_Thumbnail_Manager(const char* thumbnail_filename
 	// so we'll do pure string compares here...
 
 	// Must NOT add global manager with this function
-	WWASSERT(stricmp(thumbnail_filename,GLOBAL_THUMBNAIL_MANAGER_FILENAME));
+	WWASSERT(_stricmp(thumbnail_filename,GLOBAL_THUMBNAIL_MANAGER_FILENAME));
 
 	ThumbnailManagerClass* man=Peek_Thumbnail_Manager(thumbnail_filename);
 	if (man) return;
@@ -560,7 +560,7 @@ void ThumbnailManagerClass::Remove_Thumbnail_Manager(const char* thumbnail_filen
 	if (GlobalThumbnailManager &&
 		GlobalThumbnailManager->ThumbnailFileName==thumbnail_filename) {
 		delete GlobalThumbnailManager;
-		GlobalThumbnailManager=NULL;
+		GlobalThumbnailManager=nullptr;
 	}
 }
 // ----------------------------------------------------------------------------
@@ -593,13 +593,13 @@ ThumbnailClass* ThumbnailManagerClass::Peek_Thumbnail_Instance_From_Any_Manager(
 			ThumbnailClass* thumb=new ThumbnailClass(GlobalThumbnailManager,filename);
 			if (!thumb->Peek_Bitmap()) {
 				delete thumb;
-				thumb=NULL;
+				thumb=nullptr;
 			}
 			return thumb;
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 
@@ -685,7 +685,7 @@ void ThumbnailManagerClass::Update_Thumbnail_File(const char* mix_file_name,bool
 
 	if (display_message_box && !message_box_displayed) {
 		message_box_displayed=true;
-		::MessageBox(NULL,
+		::MessageBox(nullptr,
 			"Some or all texture thumbnails need to be updated.\n"
 			"This will take a while. The update will only be done once\n"
 			"each time a mix file changes and thumb database hasn't been\n"
@@ -749,8 +749,8 @@ void ThumbnailManagerClass::Pre_Init(bool display_message_box)
 
 void ThumbnailManagerClass::Init()
 {
-	WWASSERT(GlobalThumbnailManager == NULL);
-	GlobalThumbnailManager=new ThumbnailManagerClass(GLOBAL_THUMBNAIL_MANAGER_FILENAME,NULL);
+	WWASSERT(GlobalThumbnailManager == nullptr);
+	GlobalThumbnailManager=new ThumbnailManagerClass(GLOBAL_THUMBNAIL_MANAGER_FILENAME,nullptr);
 	GlobalThumbnailManager->Enable_Per_Texture_Time_Stamp(true);
 }
 
@@ -761,6 +761,6 @@ void ThumbnailManagerClass::Deinit()
 	}
 	if (GlobalThumbnailManager) {
 		delete GlobalThumbnailManager;
-		GlobalThumbnailManager=NULL;
+		GlobalThumbnailManager=nullptr;
 	}
 }

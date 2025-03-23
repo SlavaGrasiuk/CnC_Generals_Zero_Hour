@@ -56,11 +56,11 @@
  *   07/24/1997 GH  : Created.                                                                 * 
  *=============================================================================================*/
 PivotClass::PivotClass(void) :
-	Parent(NULL),
+	Parent(nullptr),
 	BaseTransform(1),
 	Transform(1),
 #ifdef LAZY_CAP_MTX_ALLOC
-	CapTransformPtr(NULL),
+	CapTransformPtr(nullptr),
 	Index(0),
 	IsVisible(true),
 	WorldSpaceTranslation(false)
@@ -81,7 +81,7 @@ PivotClass::PivotClass(const PivotClass& that) :
 	BaseTransform(that.BaseTransform),
 	Transform(that.Transform),
 #ifdef LAZY_CAP_MTX_ALLOC
-	CapTransformPtr(NULL),
+	CapTransformPtr(nullptr),
 	Index(that.Index),
 	IsVisible(that.IsVisible),
 	WorldSpaceTranslation(that.WorldSpaceTranslation)
@@ -96,7 +96,7 @@ PivotClass::PivotClass(const PivotClass& that) :
 {
 	memcpy(Name, that.Name, sizeof(Name));
 #ifdef LAZY_CAP_MTX_ALLOC
-	if (that.CapTransformPtr != NULL)
+	if (that.CapTransformPtr != nullptr)
 	{
 		CapTransformPtr = MSGW3DNEW("PivotClassCaptureBoneMtx") DynamicMatrix3D;
 		CapTransformPtr->Mat = that.CapTransformPtr->Mat;
@@ -113,11 +113,11 @@ PivotClass& PivotClass::operator=(const PivotClass& that)
 		BaseTransform = that.BaseTransform;
 		Transform = that.Transform;
 	#ifdef LAZY_CAP_MTX_ALLOC
-		CapTransformPtr = NULL;
+		CapTransformPtr = nullptr;
 		Index = that.Index;
 		IsVisible = that.IsVisible;
 		WorldSpaceTranslation = that.WorldSpaceTranslation;
-		if (that.CapTransformPtr != NULL)
+		if (that.CapTransformPtr != nullptr)
 		{
 			CapTransformPtr = MSGW3DNEW("PivotClassCaptureBoneMtx") DynamicMatrix3D;
 			CapTransformPtr->Mat = that.CapTransformPtr->Mat;

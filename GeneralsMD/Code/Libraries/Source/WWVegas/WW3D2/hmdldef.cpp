@@ -58,8 +58,8 @@
  *=============================================================================================*/
 HModelDefClass::HModelDefClass(void) :
 	SubObjectCount(0),
-	SubObjects(NULL),
-	SnapPoints(NULL)
+	SubObjects(nullptr),
+	SnapPoints(nullptr)
 {
 
 }
@@ -95,15 +95,15 @@ HModelDefClass::~HModelDefClass(void)
  *=============================================================================================*/
 void HModelDefClass::Free(void)
 {
-	if (SubObjects != NULL) {
+	if (SubObjects != nullptr) {
 		delete[] SubObjects;
-		SubObjects = NULL;
+		SubObjects = nullptr;
 	}
 	SubObjectCount = 0;
 
-	if (SnapPoints != NULL) {
+	if (SnapPoints != nullptr) {
 		SnapPoints->Release_Ref();
-		SnapPoints = NULL;
+		SnapPoints = nullptr;
 	}
 }
 
@@ -151,18 +151,18 @@ int HModelDefClass::Load_W3D(ChunkLoadClass & cload)
 	/*
 	** process the header info
 	*/
-	strncpy(ModelName,header.Name,W3D_NAME_LEN);
+	strncpy_s(ModelName,header.Name,W3D_NAME_LEN);
 	ModelName[W3D_NAME_LEN - 1] = 0;
-	strncpy(BasePoseName,header.HierarchyName,W3D_NAME_LEN);
+	strncpy_s(BasePoseName,header.HierarchyName,W3D_NAME_LEN);
 	BasePoseName[W3D_NAME_LEN-1] = 0;
-	strcpy(Name,ModelName);
+	strcpy_s(Name,ModelName);
 
 	/*
 	** Just allocate a node for the number of sub objects we're expecting
 	*/
 	SubObjectCount = header.NumConnections;
 	SubObjects = W3DNEWARRAY HmdlNodeDefStruct[SubObjectCount];
-	if (SubObjects == NULL) {
+	if (SubObjects == nullptr) {
 		goto Error;
 	}
 
@@ -237,9 +237,9 @@ bool HModelDefClass::read_connection(ChunkLoadClass & cload,HmdlNodeDefStruct * 
 		return false;
 	}
 
-	strcpy(node->RenderObjName,ModelName);
-	strcat(node->RenderObjName,".");
-	strcat(node->RenderObjName,con.RenderObjName);
+	strcpy_s(node->RenderObjName,ModelName);
+	strcat_s(node->RenderObjName,".");
+	strcat_s(node->RenderObjName,con.RenderObjName);
 
 	if (pre30) {
 		if (con.PivotIdx == 65535) {

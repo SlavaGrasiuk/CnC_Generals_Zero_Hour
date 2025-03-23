@@ -88,7 +88,7 @@ TextureBaseClass::TextureBaseClass
 	bool reducible
 )
 :	MipLevelCount(mip_level_count),
-	D3DTexture(NULL),
+	D3DTexture(nullptr),
 	Initialized(false),
    Name(""),
 	FullPath(""),
@@ -105,8 +105,8 @@ TextureBaseClass::TextureBaseClass
 	Height(height),
 	Pool(pool),
 	Dirty(false),
-	TextureLoadTask(NULL),
-	ThumbnailLoadTask(NULL),
+	TextureLoadTask(nullptr),
+	ThumbnailLoadTask(nullptr),
 	HSVShift(0.0f,0.0f,0.0f)
 {
 }
@@ -119,14 +119,14 @@ TextureBaseClass::TextureBaseClass
 TextureBaseClass::~TextureBaseClass(void)
 {
 	delete TextureLoadTask;
-	TextureLoadTask=NULL;
+	TextureLoadTask=nullptr;
 	delete ThumbnailLoadTask;
-	ThumbnailLoadTask=NULL;
+	ThumbnailLoadTask=nullptr;
 
 	if (D3DTexture) 
 	{
 		D3DTexture->Release();
-		D3DTexture = NULL;
+		D3DTexture = nullptr;
 	}
 
 	DX8TextureManagerClass::Remove(this);
@@ -208,7 +208,7 @@ void TextureBaseClass::Invalidate()
 	if (D3DTexture) 
 	{
 		D3DTexture->Release();
-		D3DTexture = NULL;
+		D3DTexture = nullptr;
 	}
 
 	Initialized=false;
@@ -243,7 +243,7 @@ void TextureBaseClass::Invalidate()
 	if (D3DTexture) 
 	{
 		D3DTexture->Release();
-		D3DTexture = NULL;
+		D3DTexture = nullptr;
 	}
 
 	Initialized=false;
@@ -271,11 +271,11 @@ void TextureBaseClass::Set_D3D_Base_Texture(IDirect3DBaseTexture8* tex)
 	// reset the access timer whenever someon messes with this pointer.
 	LastAccessed=WW3D::Get_Sync_Time();
 	
-	if (D3DTexture != NULL) {
+	if (D3DTexture != nullptr) {
 		D3DTexture->Release();
 	}
 	D3DTexture = tex;
-	if (D3DTexture != NULL) {
+	if (D3DTexture != nullptr) {
 		D3DTexture->AddRef();
 	}
 }
@@ -400,7 +400,7 @@ unsigned TextureBaseClass::Get_Reduction() const
 void TextureBaseClass::Apply_Null(unsigned int stage)
 {
 	// This function sets the render states for a "NULL" texture
-	DX8Wrapper::Set_DX8_Texture(stage, NULL);
+	DX8Wrapper::Set_DX8_Texture(stage, nullptr);
 }
 
 // ----------------------------------------------------------------------------
@@ -735,7 +735,7 @@ TextureClass::TextureClass
 	if (!WW3D::Is_Texturing_Enabled()) 
 	{
 		Initialized=true;
-		Poke_Texture(NULL);
+		Poke_Texture(nullptr);
 	}
 
 	// Find original size from the thumbnail (but don't create thumbnail texture yet!)
@@ -973,7 +973,7 @@ void TextureClass::Apply(unsigned int stage)
 	}
 	else 
 	{
-		DX8Wrapper::Set_DX8_Texture(stage, NULL);
+		DX8Wrapper::Set_DX8_Texture(stage, nullptr);
 	}
 
 	Filter.Apply(stage);
@@ -991,7 +991,7 @@ SurfaceClass *TextureClass::Get_Surface_Level(unsigned int level)
 		return 0;
 	}
 
-	IDirect3DSurface8 *d3d_surface = NULL;
+	IDirect3DSurface8 *d3d_surface = nullptr;
 	DX8_ErrorCode(Peek_D3D_Texture()->GetSurfaceLevel(level, &d3d_surface));
 	SurfaceClass *surface = new SurfaceClass(d3d_surface);
 	d3d_surface->Release();
@@ -1006,7 +1006,7 @@ SurfaceClass *TextureClass::Get_Surface_Level(unsigned int level)
 void TextureClass::Get_Level_Description( SurfaceClass::SurfaceDescription & desc, unsigned int level )
 {
 	SurfaceClass * surf = Get_Surface_Level(level);
-	if (surf != NULL) {
+	if (surf != nullptr) {
 		surf->Get_Description(desc);
 	}
 	REF_PTR_RELEASE(surf);
@@ -1024,7 +1024,7 @@ IDirect3DSurface8 *TextureClass::Get_D3D_Surface_Level(unsigned int level)
 		return 0;
 	}
 
-	IDirect3DSurface8 *d3d_surface = NULL;
+	IDirect3DSurface8 *d3d_surface = nullptr;
 	DX8_ErrorCode(Peek_D3D_Texture()->GetSurfaceLevel(level, &d3d_surface));
 	return d3d_surface;
 }
@@ -1051,7 +1051,7 @@ unsigned TextureClass::Get_Texture_Memory_Usage() const
 TextureClass* Load_Texture(ChunkLoadClass & cload)
 {
 	// Assume failure
-	TextureClass *newtex = NULL;
+	TextureClass *newtex = nullptr;
 
 	char name[256];
 	if (cload.Open_Chunk () && (cload.Cur_Chunk_ID () == W3D_CHUNK_TEXTURE)) 
@@ -1316,7 +1316,7 @@ IDirect3DSurface8* ZTextureClass::Get_D3D_Surface_Level(unsigned int level)
 		return 0;
 	}
 
-	IDirect3DSurface8 *d3d_surface = NULL;
+	IDirect3DSurface8 *d3d_surface = nullptr;
 	DX8_ErrorCode(Peek_D3D_Texture()->GetSurfaceLevel(level, &d3d_surface));
 	return d3d_surface;
 }
@@ -1480,7 +1480,7 @@ CubeTextureClass::CubeTextureClass
 	if (!WW3D::Is_Texturing_Enabled()) 
 	{
 		Initialized=true;
-		Poke_Texture(NULL);
+		Poke_Texture(nullptr);
 	}
 
 	// Find original size from the thumbnail (but don't create thumbnail texture yet!)
@@ -1765,7 +1765,7 @@ VolumeTextureClass::VolumeTextureClass
 	if (!WW3D::Is_Texturing_Enabled()) 
 	{
 		Initialized=true;
-		Poke_Texture(NULL);
+		Poke_Texture(nullptr);
 	}
 
 	// Find original size from the thumbnail (but don't create thumbnail texture yet!)

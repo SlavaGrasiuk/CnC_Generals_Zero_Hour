@@ -91,7 +91,7 @@ const unsigned short Indices[]=
  * HISTORY:                                                               * 
  *   01/15/1998 NH  : Created.                                            * 
  *   04/21/1998 NH  : Ported to SR 1.3.                                   * 
- *	  02/16/2001 HY  : Ported to DX8													  *
+ *	  02/16/2001 HY  : Ported to DX8									  *
  *========================================================================*/
 Line3DClass::Line3DClass (const Vector3 & start, const Vector3 & end,
 	float width, float r, float g, float b, float opacity)
@@ -154,7 +154,7 @@ Line3DClass::Line3DClass (const Vector3 & start, const Vector3 & end,
  * HISTORY:                                                               * 
  *   01/15/1998 NH  : Created.                                            * 
  *   04/21/1998 NH  : Ported to SR 1.3.                                   * 
- *	  02/16/2001 HY  : Ported to DX8													  *
+ *	  02/16/2001 HY  : Ported to DX8									  *
  *========================================================================*/
 Line3DClass::Line3DClass(const Line3DClass & src) :
 	RenderObjClass(src),
@@ -179,7 +179,7 @@ Line3DClass::Line3DClass(const Line3DClass & src) :
  * HISTORY:                                                               * 
  *   01/15/1998 NH  : Created.                                            * 
  *   04/21/1998 NH  : Ported to SR 1.3.                                   *
- *	  02/16/2001 HY  : Ported to DX8													  *
+ *	  02/16/2001 HY  : Ported to DX8									  *
  *========================================================================*/
 Line3DClass & Line3DClass::operator = (const Line3DClass & that)
 {
@@ -213,7 +213,7 @@ Line3DClass & Line3DClass::operator = (const Line3DClass & that)
  * HISTORY:                                                               * 
  *   01/15/1998 NH  : Created.                                            * 
  *   04/21/1998 NH  : Ported to SR 1.3.                                   *
- *	  02/16/2001 HY  : Ported to DX8													  *
+ *	  02/16/2001 HY  : Ported to DX8									  *
  *========================================================================*/
 Line3DClass::~Line3DClass(void)
 {	
@@ -248,7 +248,7 @@ RenderObjClass * Line3DClass::Clone(void) const
  *                                                                                             *
  * HISTORY:                                                                                    *
  *   12/8/98    GTH : Created.                                                                 *
- *	  02/16/2001 HY  : Ported to DX8													                       *
+ *	  02/16/2001 HY  : Ported to DX8													       *
  *=============================================================================================*/
 
 void Line3DClass::Render(RenderInfoClass & rinfo)
@@ -268,7 +268,7 @@ void Line3DClass::Render(RenderInfoClass & rinfo)
 	}
 
 	DX8Wrapper::Set_Shader(Shader);
-	DX8Wrapper::Set_Texture(0,NULL);	
+	DX8Wrapper::Set_Texture(0,nullptr);	
 	VertexMaterialClass *vm=VertexMaterialClass::Get_Preset(VertexMaterialClass::PRELIT_DIFFUSE);
 	DX8Wrapper::Set_Material(vm);
 	REF_PTR_RELEASE(vm);
@@ -321,7 +321,7 @@ void Line3DClass::Render(RenderInfoClass & rinfo)
  * HISTORY:                                                               * 
  *   01/27/1998 NH  : Created.                                            * 
  *   04/21/1998 NH  : Ported to SR 1.3.                                   * 
- *	  02/16/2001 HY  : Ported to DX8													  *
+ *	  02/16/2001 HY  : Ported to DX8									  *
  *========================================================================*/
 void Line3DClass::Scale(float scale)
 {	
@@ -349,7 +349,7 @@ void Line3DClass::Scale(float scale)
  * HISTORY:                                                               * 
  *   01/27/1998 NH  : Created.                                            * 
  *   04/21/1998 NH  : Ported to SR 1.3.                                   *
- *	  02/16/2001 HY  : Ported to DX8													  *
+ *	  02/16/2001 HY  : Ported to DX8									  *
  *========================================================================*/
 void Line3DClass::Scale(float scalex, float scaley, float scalez)
 {

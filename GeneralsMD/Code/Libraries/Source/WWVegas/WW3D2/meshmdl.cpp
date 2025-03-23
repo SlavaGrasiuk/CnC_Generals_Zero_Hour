@@ -69,11 +69,11 @@ static DynamicVectorClass<unsigned long> _TempClipFlagBuffer;
 
 
 MeshModelClass::MeshModelClass(void) :
-	DefMatDesc(NULL),
-	AlternateMatDesc(NULL),
-	CurMatDesc(NULL),
-	MatInfo(NULL),
-	GapFiller(NULL)
+	DefMatDesc(nullptr),
+	AlternateMatDesc(nullptr),
+	CurMatDesc(nullptr),
+	MatInfo(nullptr),
+	GapFiller(nullptr)
 {
 	Set_Flag(DIRTY_BOUNDS,true);
 
@@ -87,15 +87,15 @@ MeshModelClass::MeshModelClass(void) :
 
 MeshModelClass::MeshModelClass(const MeshModelClass & that) :
 	MeshGeometryClass(that),
-	DefMatDesc(NULL),
-	AlternateMatDesc(NULL),
-	CurMatDesc(NULL),
-	MatInfo(NULL),
-	GapFiller(NULL),
+	DefMatDesc(nullptr),
+	AlternateMatDesc(nullptr),
+	CurMatDesc(nullptr),
+	MatInfo(nullptr),
+	GapFiller(nullptr),
 	HasBeenInUse(false)
 {
 	DefMatDesc = W3DNEW MeshMatDescClass(*(that.DefMatDesc));
-	if (that.AlternateMatDesc != NULL) {
+	if (that.AlternateMatDesc != nullptr) {
 		AlternateMatDesc = W3DNEW MeshMatDescClass(*(that.AlternateMatDesc));
 	}
 	CurMatDesc = DefMatDesc;
@@ -112,10 +112,10 @@ MeshModelClass::~MeshModelClass(void)
 	Reset(0,0,0);
 	REF_PTR_RELEASE(MatInfo);
 
-	if (DefMatDesc != NULL) {
+	if (DefMatDesc != nullptr) {
 		delete DefMatDesc;
 	}
-	if (AlternateMatDesc != NULL) {
+	if (AlternateMatDesc != nullptr) {
 		delete AlternateMatDesc;
 	}
 	return ;
@@ -133,12 +133,12 @@ MeshModelClass & MeshModelClass::operator = (const MeshModelClass & that)
 		*DefMatDesc = *(that.DefMatDesc);
 		CurMatDesc = DefMatDesc;
 
-		if (AlternateMatDesc != NULL) {
+		if (AlternateMatDesc != nullptr) {
 			delete AlternateMatDesc;
-			AlternateMatDesc = NULL;
+			AlternateMatDesc = nullptr;
 		}
 
-		if (that.AlternateMatDesc != NULL) {
+		if (that.AlternateMatDesc != nullptr) {
 			AlternateMatDesc = W3DNEW MeshMatDescClass(*(that.AlternateMatDesc));
 		}
 
@@ -147,7 +147,7 @@ MeshModelClass & MeshModelClass::operator = (const MeshModelClass & that)
 		if (GapFiller) {
 			// DMS - using approriate deallocation method
 			delete GapFiller;
-			GapFiller=NULL;
+			GapFiller=nullptr;
 		}
 		if (that.GapFiller) GapFiller=W3DNEW GapFillerClass(*that.GapFiller);
 	}
@@ -159,7 +159,7 @@ void MeshModelClass::Reset(int polycount,int vertcount,int passcount)
 	//DMS - We must delete the gapfiller object BEFORE the geometry is reset.  Otherwise,
 	// the number of stages and passes gets reset and the gapfiller cannot deallocate properly.
 	delete GapFiller;
-	GapFiller=NULL;
+	GapFiller=nullptr;
 
 	Reset_Geometry(polycount,vertcount);
 
@@ -169,9 +169,9 @@ void MeshModelClass::Reset(int polycount,int vertcount,int passcount)
 
 	MatInfo->Reset();
 	DefMatDesc->Reset(polycount,vertcount,passcount);
-	if (AlternateMatDesc != NULL) {
+	if (AlternateMatDesc != nullptr) {
 		delete AlternateMatDesc;
-		AlternateMatDesc = NULL;
+		AlternateMatDesc = nullptr;
 	}
 	CurMatDesc = DefMatDesc;
 
@@ -188,7 +188,7 @@ void MeshModelClass::Register_For_Rendering()
 		}
 		else if (GapFiller) {
 			delete GapFiller;
-			GapFiller=NULL;
+			GapFiller=nullptr;
 		}
 	}
 	else {
@@ -197,7 +197,7 @@ void MeshModelClass::Register_For_Rendering()
 		}
 		else if (GapFiller) {
 			delete GapFiller;
-			GapFiller=NULL;
+			GapFiller=nullptr;
 		}
 	}
 
@@ -261,7 +261,7 @@ void MeshModelClass::Replace_VertexMaterial(VertexMaterialClass* vmat,VertexMate
 
 DX8FVFCategoryContainer* MeshModelClass::Peek_FVF_Category_Container()
 {
-	if (PolygonRendererList.Is_Empty()) return NULL;
+	if (PolygonRendererList.Is_Empty()) return nullptr;
 	DX8PolygonRendererClass* polygon_renderer=PolygonRendererList.Get_Head();
 	WWASSERT(polygon_renderer);
 	DX8TextureCategoryClass* texture_category=polygon_renderer->Get_Texture_Category();
@@ -273,7 +273,7 @@ DX8FVFCategoryContainer* MeshModelClass::Peek_FVF_Category_Container()
 
 void MeshModelClass::Shadow_Render(SpecialRenderInfoClass & rinfo,const Matrix3D & tm,const HTreeClass * htree)
 {
-	if (rinfo.BWRenderer != NULL) {
+	if (rinfo.BWRenderer != nullptr) {
 		if (_TempTransformedVertexBuffer.Length() < VertexCount) _TempTransformedVertexBuffer.Resize(VertexCount);
 		Vector4* transf_ptr=&(_TempTransformedVertexBuffer[0]);
 		get_deformed_screenspace_vertices(transf_ptr,rinfo,tm,htree);
@@ -319,7 +319,7 @@ void MeshModelClass::Make_Color_Array_Unique(int array_index)
 
 void MeshModelClass::Enable_Alternate_Material_Description(bool onoff)
 {
-	if ((onoff == true) && (AlternateMatDesc != NULL)) {
+	if ((onoff == true) && (AlternateMatDesc != nullptr)) {
 		if (CurMatDesc != AlternateMatDesc) {
 			CurMatDesc = AlternateMatDesc;
 			
@@ -448,7 +448,7 @@ HashTemplateClass<TriangleSide,SideIndexInfo> SideHash;
 //
 // ----------------------------------------------------------------------------
 
-GapFillerClass::GapFillerClass(MeshModelClass* mmc_) : mmc(NULL), PolygonCount(0)
+GapFillerClass::GapFillerClass(MeshModelClass* mmc_) : mmc(nullptr), PolygonCount(0)
 {
 	//DMS - We cannot take a reference to the mesh model here!  This is because the mesh model
 	// class OWNS the GapFiller class (allocated via NEW).  If we take a reference here, there
@@ -465,22 +465,22 @@ GapFillerClass::GapFillerClass(MeshModelClass* mmc_) : mmc(NULL), PolygonCount(0
 			if (mmc->Has_Texture_Array(pass,stage)) {
 				TextureArray[pass][stage]=W3DNEWARRAY TextureClass*[ArraySize];
 			}
-			else TextureArray[pass][stage]=NULL;
+			else TextureArray[pass][stage]=nullptr;
 		}
 
 		if (mmc->Has_Material_Array(pass)) {
 			MaterialArray[pass]=W3DNEWARRAY VertexMaterialClass*[ArraySize];
 		}
-		else MaterialArray[pass]=NULL;
+		else MaterialArray[pass]=nullptr;
 
 		if (mmc->Has_Shader_Array(pass)) {
 			ShaderArray[pass]=W3DNEWARRAY ShaderClass[ArraySize];
 		}
-		else ShaderArray[pass]=NULL;
+		else ShaderArray[pass]=nullptr;
 	}
 }
 
-GapFillerClass::GapFillerClass(const GapFillerClass& that) : mmc(NULL), PolygonCount(that.PolygonCount)
+GapFillerClass::GapFillerClass(const GapFillerClass& that) : mmc(nullptr), PolygonCount(that.PolygonCount)
 {
 	//DMS - We cannot take a reference to the mesh model here!  This is because the mesh model
 	// class OWNS the GapFiller class (allocated via NEW).  If we take a reference here, there
@@ -501,7 +501,7 @@ GapFillerClass::GapFillerClass(const GapFillerClass& that) : mmc(NULL), PolygonC
 					TextureArray[pass][stage][i]->Add_Ref();
 				}
 			}
-			else TextureArray[pass][stage]=NULL;
+			else TextureArray[pass][stage]=nullptr;
 		}
 
 		if (that.MaterialArray[pass]) {
@@ -511,7 +511,7 @@ GapFillerClass::GapFillerClass(const GapFillerClass& that) : mmc(NULL), PolygonC
 				MaterialArray[pass][i]->Add_Ref();
 			}
 		}
-		else MaterialArray[pass]=NULL;
+		else MaterialArray[pass]=nullptr;
 
 		if (that.ShaderArray[pass]) {
 			ShaderArray[pass]=W3DNEWARRAY ShaderClass[ArraySize];
@@ -519,7 +519,7 @@ GapFillerClass::GapFillerClass(const GapFillerClass& that) : mmc(NULL), PolygonC
 				ShaderArray[pass][i]=that.ShaderArray[pass][i];
 			}
 		}
-		else ShaderArray[pass]=NULL;
+		else ShaderArray[pass]=nullptr;
 	}
 }
 
@@ -676,7 +676,7 @@ void MeshModelClass::Init_For_NPatch_Rendering()
 		}
 	}
 
-	for (i=0;i<polygon_count;++i) {
+	for (unsigned int i=0;i<polygon_count;++i) {
 		bool duplicates[3];
 		duplicates[0]=DuplicateLocationHash.Exists(locations[polygon_indices[i][0]]);
 		duplicates[1]=DuplicateLocationHash.Exists(locations[polygon_indices[i][1]]);

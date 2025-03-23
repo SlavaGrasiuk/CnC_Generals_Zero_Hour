@@ -77,7 +77,7 @@ void DX8TextureManagerClass::Shutdown()
 	{
 		TextureTrackerClass *track=Managed_Textures.Remove_Head();
 		delete track;
-		track=NULL;
+		track=nullptr;
 	}
 }
 

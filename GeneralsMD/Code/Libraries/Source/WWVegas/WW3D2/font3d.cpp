@@ -24,11 +24,11 @@
  *                                                                                             * 
  *                     $Archive:: /Commando/Code/ww3d2/font3d.cpp                             $* 
  *                                                                                             * 
- *                  $Org Author:: Jani_p                                  $* 
- *                                                                         * 
- *                      $Author:: Kenny_m                                  $* 
- *                                                                         * 
- *                     $Modtime:: 08/05/02 10:44a                          $* 
+ *                  $Org Author:: Jani_p                                                      $* 
+ *                                                                                             * 
+ *                      $Author:: Kenny_m                                                     $* 
+ *                                                                                             * 
+ *                     $Modtime:: 08/05/02 10:44a                                             $* 
  *                                                                                             * 
  *                    $Revision:: 17                                                          $* 
  *                                                                                             * 
@@ -50,30 +50,34 @@ static	SurfaceClass	*_surface;
 
 /*********************************************************************************************** 
  *                                                                                             * 
- * Font3DDataClass::Font3DDataClass -- constructor																	  * 
+ * Font3DDataClass::Font3DDataClass -- constructor											   * 
  *                                                                                             * 
- * Constructs and load a Targa font image to create a texture matetial								  *
+ * Constructs and load a Targa font image to create a texture material						   *
  *                                                                                             * 
  ***********************************************************************************************/
 Font3DDataClass::Font3DDataClass( const char *filename )
 {
-	Texture = NULL;
+	Texture = nullptr;
 	Load_Font_Image( filename);
-	Name = strdup( filename);
-	Name = strupr( Name);
+	Name = _strdup( filename);
+	const size_t nameLength = strlen(filename);
+	const errno_t error = _strupr_s(Name, nameLength);
+	if (error) {
+		// TODO: (slavagrasiuk) add some error logs
+	}
 }
 
 
 /*********************************************************************************************** 
  *                                                                                             * 
- * Font3DDataClass::~Font3DDataClass -- destructor																	  * 
+ * Font3DDataClass::~Font3DDataClass -- destructor											   * 
  *                                                                                             * 
  ***********************************************************************************************/
 Font3DDataClass::~Font3DDataClass(void)
 {
-	if (Name != NULL) {
+	if (Name != nullptr) {
 		free(Name);
-		Name = NULL;
+		Name = nullptr;
 	}
 
 	REF_PTR_RELEASE(Texture);
@@ -82,7 +86,7 @@ Font3DDataClass::~Font3DDataClass(void)
 
 /*********************************************************************************************** 
  *                                                                                             * 
- * FontClass::Minimize_Font_Image																				  *
+ * FontClass::Minimize_Font_Image															   *
  *                                                                                             * 
  * Rebuilds the give image to better pack characters and to insure a square power of two size  *
  * Must be called AFTER Make_Proportional() so each chars minimal bounding box is known        *
@@ -178,12 +182,12 @@ SurfaceClass *Font3DDataClass::Minimize_Font_Image( SurfaceClass *surface )
 
 /*********************************************************************************************** 
  *                                                                                             * 
- * FontClass::Make_Proportional																					  * 
+ * FontClass::Make_Proportional																   * 
  *                                                                                             * 
- * Modifys U and Width tables to convert a monospace font into a proportional font.  Hieght	  *
- * remains the same.  Performed by getting the current mono-space bounding box and bringing	  *
- * in the left and right edges to the first non-transparent ( != 0 ) pixel.  Then the U and	  *
- * width tables are updated with the new values.  The image itself is not modified unless...	  *
+ * Modifys U and Width tables to convert a monospace font into a proportional font.  Hieght	   *
+ * remains the same.  Performed by getting the current mono-space bounding box and bringing	   *
+ * in the left and right edges to the first non-transparent ( != 0 ) pixel.  Then the U and	   *
+ * width tables are updated with the new values.  The image itself is not modified unless...   *
  * 																														  *
  * we complete by calling Minimize_Font_Image to shink the image & insure a power of 2 square  * 
  *                                                                                             * 
@@ -234,15 +238,15 @@ SurfaceClass *Font3DDataClass::Make_Proportional( SurfaceClass	*surface )
 	// now shink the image given the minimum char sizes
 //	surface = Minimize_Font_Image( surface );
 	Minimize_Font_Image( _surface );
-	return NULL;
+	return nullptr;
 }
 
 /*********************************************************************************************** 
  *                                                                                             * 
- * Font3DDataClass::Load_Font_Image( SR_SCENE *scene, char *filename )								  *
+ * Font3DDataClass::Load_Font_Image( SR_SCENE *scene, char *filename )						   *
  *                                                                                             * 
- * Loads a targa font image file, arranged as 16x16 characters, and builds u v tables to 		  *
- * find each character.  Converts the mono-space font into a proportional font, then uploads	  *
+ * Loads a targa font image file, arranged as 16x16 characters, and builds u v tables to 	   *
+ * find each character.  Converts the mono-space font into a proportional font, then uploads   *
  * the image to the scene as a textur material.                                                *
  *                                                                                             * 
  ***********************************************************************************************/
@@ -304,7 +308,7 @@ bool	Font3DDataClass::Load_Font_Image( const char *filename )
 		// convert the just created mon-spaced font to proportional (optional)
 //		surface = Make_Proportional( surface );
 		_surface = surface;
-		surface = NULL;
+		surface = nullptr;
 		Minimize_Font_Image( _surface );
 
 	} else {
@@ -330,7 +334,7 @@ bool	Font3DDataClass::Load_Font_Image( const char *filename )
 		// convert the just created mon-spaced font to proportional (optional)
 
 		_surface = surface;
-		surface = NULL;
+		surface = nullptr;
 		Make_Proportional( _surface );
 	}
 
@@ -347,9 +351,9 @@ bool	Font3DDataClass::Load_Font_Image( const char *filename )
 
 /*********************************************************************************************** 
  *                                                                                             * 
- * Font3DInstanceClass::Font3DInstanceClass -- constructor											     * 
+ * Font3DInstanceClass::Font3DInstanceClass -- constructor									   * 
  *                                                                                             * 
- * Constructs and load a Targa font image to create a texture matetial								  *
+ * Constructs and load a Targa font image to create a texture matetial						   *
  *                                                                                             * 
  ***********************************************************************************************/
 Font3DInstanceClass::Font3DInstanceClass( const char *filename )
@@ -402,10 +406,10 @@ void	Font3DInstanceClass::Build_Cached_Tables()
 
 /*********************************************************************************************** 
  *                                                                                             * 
- * Font3DInstanceClass::String_Screen_Width( char *test_str )									        *
+ * Font3DInstanceClass::String_Screen_Width( char *test_str )								   *
  *                                                                                             * 
  * Finds the normalized screenspace width of a character string - useful for checking before   *
- * printing to avoid overflowing the screen.																	  *                                                                                             * 
+ * printing to avoid overflowing the screen.												   *                                                                                             * 
  ***********************************************************************************************/
 float	Font3DInstanceClass::String_Width( const WCHAR *test_str )
 {

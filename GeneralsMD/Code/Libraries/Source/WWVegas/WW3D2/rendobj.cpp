@@ -109,7 +109,7 @@ StringClass
 Filename_From_Asset_Name (const char *asset_name)
 {
 	StringClass filename;
-	if (asset_name != NULL) {
+	if (asset_name != nullptr) {
 		
 		//
 		// Copy the model name into a new filename buffer
@@ -119,8 +119,8 @@ Filename_From_Asset_Name (const char *asset_name)
 		//
 		// Do we need to strip off the model's suffix?
 		//
-		char *suffix = ::strchr (filename, '.');
-		if (suffix != NULL) {
+		char *suffix = ::strchr (filename.Peek_Buffer(), '.');
+		if (suffix != nullptr) {
 			suffix[0] = 0;
 		}
 
@@ -171,10 +171,10 @@ RenderObjClass::RenderObjClass(void) :
 	Bits(DEFAULT_BITS),
 	Transform(1),
 	NativeScreenSize(WW3D::Get_Default_Native_Screen_Size()),
-	Scene(NULL),
-	Container(NULL),
-	User_Data(NULL),
-	RenderHook(NULL),
+	Scene(nullptr),
+	Container(nullptr),
+	User_Data(nullptr),
+	RenderHook(nullptr),
 	ObjectScale(1.0),
 	ObjectColor(0),
 	CachedBoundingSphere(Vector3(0,0,0),1.0f),
@@ -200,10 +200,10 @@ RenderObjClass::RenderObjClass(const RenderObjClass & src) :
 	Bits(src.Bits),
 	Transform(src.Transform),
 	NativeScreenSize(src.NativeScreenSize),
-	Scene(NULL),
-	Container(NULL),
-	User_Data(NULL),
-	RenderHook(NULL),
+	Scene(nullptr),
+	Container(nullptr),
+	User_Data(nullptr),
+	RenderHook(nullptr),
 	ObjectScale(1.0),
 	ObjectColor(0),
 	CachedBoundingSphere(src.CachedBoundingSphere),
@@ -360,7 +360,7 @@ float RenderObjClass::Get_Screen_Size(CameraClass &camera)
  *=============================================================================================*/
 SceneClass * RenderObjClass::Get_Scene(void)
 {
-	if (Scene != NULL) {
+	if (Scene != nullptr) {
 		Scene->Add_Ref();
 	}
 	return Scene;
@@ -383,7 +383,7 @@ void RenderObjClass::Set_Container(RenderObjClass * con)
 { 
 	// Either we arent currently in a container or we are clearing our container, otherwise
 	// Houston, there is a problem!
-	WWASSERT((con == NULL) || (Container == NULL));
+	WWASSERT((con == nullptr) || (Container == nullptr));
 	Container = con; 
 }
 
@@ -469,11 +469,11 @@ void RenderObjClass::Validate_Transform(void) const
 	*/
 	RenderObjClass * con = Get_Container();
 	bool dirty = false;
-	if (con != NULL) 
+	if (con != nullptr) 
 	{
 		dirty = con->Are_Sub_Object_Transforms_Dirty();
 
-		while (con->Get_Container() != NULL) 
+		while (con->Get_Container() != nullptr) 
 		{
 			dirty |= con->Are_Sub_Object_Transforms_Dirty();
 			con = con->Get_Container();
@@ -532,7 +532,7 @@ RenderObjClass * RenderObjClass::Get_Sub_Object_By_Name(const char * name, int *
 	for (i=0; i<Get_Num_Sub_Objects(); i++) {
 		RenderObjClass * robj = Get_Sub_Object(i);
 		if (robj) {
-			if (stricmp(robj->Get_Name(),name) == 0) {
+			if (_stricmp(robj->Get_Name(),name) == 0) {
 				if (index) *index=i;
 				return robj;
 			} else {
@@ -546,14 +546,14 @@ RenderObjClass * RenderObjClass::Get_Sub_Object_By_Name(const char * name, int *
 		RenderObjClass * robj = Get_Sub_Object(i);
 		if (robj) {
 			const char * subobjname = strchr(robj->Get_Name(),'.');
-			if (subobjname == NULL) {
+			if (subobjname == nullptr) {
 				subobjname = robj->Get_Name();	
 			} else {
 				// skip past the period.
 				subobjname = subobjname+1;
 			}
 
-			if (stricmp(subobjname,name) == 0) {
+			if (_stricmp(subobjname,name) == 0) {
 				if (index) *index=i;
 				return robj;
 			} else {
@@ -562,7 +562,7 @@ RenderObjClass * RenderObjClass::Get_Sub_Object_By_Name(const char * name, int *
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 
@@ -573,9 +573,9 @@ RenderObjClass * RenderObjClass::Get_Sub_Object_By_Name(const char * name, int *
  *                                                                                             *
  * OUTPUT:                                                                                     *
  *                                                                                             *
- * WARNINGS:	If the bone name is unknown then this function will add the the object to the   *  
+ * WARNINGS:	If the bone name is unknown then this function will add the the object to the  *  
  *					root transform rather than failing.  This is due to the fact that GetBoneIndex  *
- *					returns the root tranform for unknown bones.												  *
+ *					returns the root transform for unknown bones.							   *
  *                                                                                             *
  * HISTORY:                                                                                    *
  *   3/4/99     GTH : Created.                                                                 *
@@ -795,7 +795,7 @@ void RenderObjClass::Update_Sub_Object_Transforms(void)
 void RenderObjClass::Add(SceneClass * scene)
 {
 	WWASSERT(scene);
-	WWASSERT(Container == NULL);
+	WWASSERT(Container == nullptr);
 	Scene = scene;
 	Scene->Add_Render_Object(this);
 }
@@ -816,10 +816,10 @@ void RenderObjClass::Add(SceneClass * scene)
 void RenderObjClass::Remove(void)
 {
 	// All render objects have their scene pointers set.  To check if this is a "top level"
-	// object, (i.e. directly in the scene) you see if its Container pointer is NULL.
+	// object, (i.e. directly in the scene) you see if its Container pointer is nullptr.
 #if 1
-	if (Container == NULL) {
-		if (Scene != NULL) {
+	if (Container == nullptr) {
+		if (Scene != nullptr) {
 			Scene->Remove_Render_Object(this);
 			return;
 		}
@@ -830,7 +830,7 @@ void RenderObjClass::Remove(void)
 #else
 	if (!Scene) return;
 	Scene->Remove_Render_Object(this);
-	Scene = NULL;
+	Scene = nullptr;
 #endif
 }
 
@@ -853,7 +853,7 @@ void RenderObjClass::Remove(void)
  *                                                                                             *
  * WARNINGS:                                                                                   *
  * Due to implementation details of some derived scenes, the SceneClass calls this function.   *
- * Please dont move the call to this to RenderObjClass::Add                                    *
+ * Please don't move the call to this to RenderObjClass::Add                                   *
  * Derived classes should also call the base class to ensure that the scene pointer is set     *
  *                                                                                             *
  * HISTORY:                                                                                    *
@@ -883,7 +883,7 @@ void RenderObjClass::Notify_Added(SceneClass * scene)
  *=============================================================================================*/
 void RenderObjClass::Notify_Removed(SceneClass * scene)
 {
-	Scene = NULL;
+	Scene = nullptr;
 }
 
 
@@ -1059,7 +1059,7 @@ bool RenderObjClass::Build_Dependency_List (DynamicVectorClass<StringClass> &fil
 			
 			// Ask this subobj to add all of its file dependencies to the list
 			RenderObjClass *psub_obj = Get_Sub_Object (index);
-			if (psub_obj != NULL) {
+			if (psub_obj != nullptr) {
 				psub_obj->Build_Dependency_List (file_list);
 				psub_obj->Release_Ref ();
 			}
@@ -1104,7 +1104,7 @@ bool RenderObjClass::Build_Texture_List
 			// Ask this subobj to add all of its texture file dependencies to the list
 			//
 			RenderObjClass *sub_obj = Get_Sub_Object (index);
-			if (sub_obj != NULL) {
+			if (sub_obj != nullptr) {
 				sub_obj->Build_Texture_List (texture_file_list);
 				sub_obj->Release_Ref ();
 			}
@@ -1153,7 +1153,7 @@ void RenderObjClass::Add_Dependencies_To_List
 		// External hierarchy file
 		//
 		const HTreeClass *phtree = Get_HTree ();
-		if (phtree != NULL) {
+		if (phtree != nullptr) {
 			const char *htree_name = phtree->Get_Name ();
 			if (::lstrcmpi (htree_name, model_name) != 0) {
 								
@@ -1168,7 +1168,7 @@ void RenderObjClass::Add_Dependencies_To_List
 		// Original W3D file (if an aggregate)
 		//
 		const char *base_model_name = Get_Base_Model_Name ();
-		if (base_model_name != NULL) {
+		if (base_model_name != nullptr) {
 				
 			//
 			// Add this file to the list
@@ -1219,7 +1219,7 @@ uint32 RenderObjPersistFactoryClass::Chunk_ID(void) const
 
 PersistClass *	RenderObjPersistFactoryClass::Load(ChunkLoadClass & cload) const
 {
-	RenderObjClass * old_obj = NULL;
+	RenderObjClass * old_obj = nullptr;
 	Matrix3D tm(1);
 	char name[64];
 
@@ -1252,23 +1252,23 @@ PersistClass *	RenderObjPersistFactoryClass::Load(ChunkLoadClass & cload) const
 			WWDEBUG_SAY(("RenderObjPersistFactory attempted to load an un-named render object!\r\n"));
 			WWDEBUG_SAY(("Replacing it with a NULL render object!\r\n"));
 		}
-		strcpy(name,"NULL");
+		strcpy_s(name,"NULL");
 	}
 
 	RenderObjClass * new_obj = WW3DAssetManager::Get_Instance()->Create_Render_Obj(name);
 	
-	if (new_obj == NULL) {
+	if (new_obj == nullptr) {
 		static int count = 0;
 		if ( ++count < 10 ) {
 			WWDEBUG_SAY(("RenderObjPersistFactory failed to create object: %s!!\r\n",name));
 			WWDEBUG_SAY(("Either the asset for this object is gone or you tried to save a procedural object.\r\n"));
 			WWDEBUG_SAY(("Replacing it with a NULL render object!\r\n"));
 		}
-		strcpy(name,"NULL");
+		strcpy_s(name,"NULL");
 		new_obj = WW3DAssetManager::Get_Instance()->Create_Render_Obj(name);
 	}
 
-	WWASSERT(new_obj != NULL);
+	WWASSERT(new_obj != nullptr);
 	if (new_obj) {
 		new_obj->Set_Transform(tm);
 	}

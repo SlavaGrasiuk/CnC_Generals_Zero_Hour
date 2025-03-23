@@ -109,7 +109,7 @@ bool Get_W3D_Dependencies (const char *w3d_filename, StringList &files)
 		file->Open();
 		if ( ! file->Is_Open()) {
 			_TheFileFactory->Return_File(file);
-			file=NULL;
+			file=nullptr;
 			return false;
 		}
 	} else {
@@ -131,7 +131,7 @@ bool Get_W3D_Dependencies (const char *w3d_filename, StringList &files)
 	// Close the file.
 	file->Close();
 	_TheFileFactory->Return_File(file);
-	file=NULL;
+	file=nullptr;
 
 	// Sort the set of filenames, and remove any duplicates.
 	files.sort();
@@ -530,12 +530,14 @@ static void Get_W3D_Name (const char *filename, char *w3d_name)
 	if (!end)
 		end = start + strlen(start);	// point to the null character
 
+	const size_t w3dNameSize = strlen(w3d_name);	// (slavagrasiuk) ugly solution, but no size in the call arguments:(
+
 	// Copy all characters from start to end (excluding 'end')
 	// into the w3d_name buffer. Then capitalize the string.
 	memset(w3d_name, 0, W3D_NAME_LEN);	// blank out the buffer
 	int num_chars = end - start;
-	strncpy(w3d_name, start, num_chars < W3D_NAME_LEN ? num_chars : W3D_NAME_LEN-1);
-	strupr(w3d_name);
+	strncpy_s(w3d_name, w3dNameSize, start, num_chars < W3D_NAME_LEN ? num_chars : W3D_NAME_LEN-1);
+	_strupr_s(w3d_name, w3dNameSize);
 }
 
 
@@ -565,11 +567,11 @@ static const char * Make_W3D_Filename (const char *w3d_name)
 		buffer[0] = 0;
 		return buffer;
 	}
-	strcpy(buffer, w3d_name);
+	strcpy_s(buffer, w3d_name);
 	char *dot = strchr(buffer, '.');
 	if (dot)
 		*dot = 0;
-	strlwr(buffer);
-	strcat(buffer, ".w3d");
+	_strlwr_s(buffer);
+	strcat_s(buffer, ".w3d");
 	return buffer;
 }

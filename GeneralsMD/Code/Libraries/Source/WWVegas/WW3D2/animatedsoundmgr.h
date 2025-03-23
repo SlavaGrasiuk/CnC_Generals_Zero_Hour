@@ -73,7 +73,7 @@ public:
 	//
 	//	Initialization and shutdown
 	//
-	static void		Initialize (const char *ini_filename = NULL);
+	static void		Initialize (const char *ini_filename = nullptr);
 	static void		Shutdown (void);
 
 	//

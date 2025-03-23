@@ -101,11 +101,11 @@ ParticleEmitterClass::ParticleEmitterClass(float emit_rate, unsigned int burst_s
 	MaxParticles(max_particles),
 	IsComplete(false),
 	NameString(::_strdup ("ParticleEmitter")),
-	UserString(NULL),
+	UserString(nullptr),
 	RemoveOnComplete(DefaultRemoveOnComplete),
 	IsInScene(false),
 	GroupID(0),
-	Buffer(NULL),
+	Buffer(nullptr),
 	IsInvisible(false)
 {
 	max_age		= max_age	> 	0.0f ? max_age : 1.0f;
@@ -132,9 +132,9 @@ ParticleEmitterClass::ParticleEmitterClass(const ParticleEmitterClass & src) :
 	BurstSize(src.BurstSize),
 	OneTimeBurstSize(src.OneTimeBurstSize),
 	OneTimeBurst(src.OneTimeBurst),
-	PosRand(src.PosRand ? src.PosRand->Clone() : NULL),
+	PosRand(src.PosRand ? src.PosRand->Clone() : nullptr),
 	BaseVel(src.BaseVel),
-	VelRand(src.VelRand ? src.VelRand->Clone() : NULL),
+	VelRand(src.VelRand ? src.VelRand->Clone() : nullptr),
 	OutwardVel(src.OutwardVel),
 	VelInheritFactor(src.VelInheritFactor),
 	EmitRemain(src.EmitRemain),
@@ -151,7 +151,7 @@ ParticleEmitterClass::ParticleEmitterClass(const ParticleEmitterClass & src) :
 	RemoveOnComplete(src.RemoveOnComplete),
 	IsInScene(false),
 	GroupID(0),
-	Buffer(NULL),
+	Buffer(nullptr),
 	IsInvisible(src.IsInvisible)
 {
 	Buffer = (ParticleBufferClass *) src.Buffer->Clone();
@@ -177,24 +177,24 @@ ParticleEmitterClass::~ParticleEmitterClass(void)
 	Buffer->Emitter_Is_Dead();
 	Buffer->Release_Ref();
 
-	if (PosRand != NULL) {
+	if (PosRand != nullptr) {
 		delete PosRand;
-		PosRand = NULL;
+		PosRand = nullptr;
 	}
 
-	if (VelRand != NULL) {
+	if (VelRand != nullptr) {
 		delete VelRand;
-		VelRand = NULL;
+		VelRand = nullptr;
 	}
 
-	if (NameString != NULL) {
+	if (NameString != nullptr) {
 		::free (NameString);
-		NameString = NULL;
+		NameString = nullptr;
 	}
 
-	if (UserString != NULL) {
+	if (UserString != nullptr) {
 		::free (UserString);
-		UserString = NULL;
+		UserString = nullptr;
 	}
 
 	return ;
@@ -205,11 +205,11 @@ ParticleEmitterClass *
 ParticleEmitterClass::Create_From_Definition (const ParticleEmitterDefClass &definition)
 {
 	// Assume failure
-	ParticleEmitterClass *pemitter = NULL;
+	ParticleEmitterClass *pemitter = nullptr;
 
 	// Attempt to load the texture for this emitter
 	const char *ptexture_filename = definition.Get_Texture_Filename ();
-	TextureClass *ptexture = NULL;
+	TextureClass *ptexture = nullptr;
 	if (ptexture_filename && ptexture_filename[0]) {
 		ptexture = WW3DAssetManager::Get_Instance()->Get_Texture
 		(
@@ -281,18 +281,18 @@ ParticleEmitterClass::Create_From_Definition (const ParticleEmitterDefClass &def
 																definition.Get_Frame_Mode (),
 																definition.Get_Line_Properties ()) );
 
-	if (color_keys.KeyTimes != NULL) delete [] color_keys.KeyTimes;
-	if (color_keys.Values != NULL) delete [] color_keys.Values;
-	if (opacity_keys.KeyTimes != NULL) delete [] opacity_keys.KeyTimes;
-	if (opacity_keys.Values != NULL) delete [] opacity_keys.Values;
-	if (size_keys.KeyTimes != NULL) delete [] size_keys.KeyTimes;
-	if (size_keys.Values != NULL) delete [] size_keys.Values;
-	if (rotation_keys.KeyTimes != NULL) delete [] rotation_keys.KeyTimes;
-	if (rotation_keys.Values != NULL) delete [] rotation_keys.Values;
-	if (frame_keys.KeyTimes != NULL) delete [] frame_keys.KeyTimes;
-	if (frame_keys.Values != NULL) delete [] frame_keys.Values;
-	if (blur_time_keys.KeyTimes != NULL) delete [] blur_time_keys.KeyTimes;
-	if (blur_time_keys.Values != NULL) delete [] blur_time_keys.Values;
+	if (color_keys.KeyTimes != nullptr) delete [] color_keys.KeyTimes;
+	if (color_keys.Values != nullptr) delete [] color_keys.Values;
+	if (opacity_keys.KeyTimes != nullptr) delete [] opacity_keys.KeyTimes;
+	if (opacity_keys.Values != nullptr) delete [] opacity_keys.Values;
+	if (size_keys.KeyTimes != nullptr) delete [] size_keys.KeyTimes;
+	if (size_keys.Values != nullptr) delete [] size_keys.Values;
+	if (rotation_keys.KeyTimes != nullptr) delete [] rotation_keys.KeyTimes;
+	if (rotation_keys.Values != nullptr) delete [] rotation_keys.Values;
+	if (frame_keys.KeyTimes != nullptr) delete [] frame_keys.KeyTimes;
+	if (frame_keys.Values != nullptr) delete [] frame_keys.Values;
+	if (blur_time_keys.KeyTimes != nullptr) delete [] blur_time_keys.KeyTimes;
+	if (blur_time_keys.Values != nullptr) delete [] blur_time_keys.Values;
 
 	// Pass the name along to the emitter
 	pemitter->Set_Name (definition.Get_Name ());
@@ -362,7 +362,7 @@ void ParticleEmitterClass::On_Frame_Update(void)
 
 			// The particle buffer doesn't have a valid Scene yet - the emitter
 			// finds out what scene it belongs to (goes up the container tree
-			// until it finds a non-NULL Scene), and then adds the particle
+			// until it finds a non-nullptr Scene), and then adds the particle
 			// buffer to it.
 			if ( BufferSceneNeeded ) {
 			
@@ -453,7 +453,7 @@ void ParticleEmitterClass::Set_Position_Randomizer(Vector3Randomizer *rand)
 {
 	if (PosRand) {
 		delete PosRand;
-		PosRand =NULL;
+		PosRand =nullptr;
 	}
 	PosRand = rand;
 }
@@ -463,7 +463,7 @@ void ParticleEmitterClass::Set_Velocity_Randomizer(Vector3Randomizer *rand)
 {
 	if (VelRand) {
 		delete VelRand;
-		VelRand =NULL;
+		VelRand =nullptr;
 	}
 	VelRand = rand;
 	if (VelRand) {
@@ -474,8 +474,8 @@ void ParticleEmitterClass::Set_Velocity_Randomizer(Vector3Randomizer *rand)
 
 Vector3Randomizer *ParticleEmitterClass::Get_Creation_Volume (void) const
 {
-	Vector3Randomizer *randomizer = NULL;
-	if (PosRand != NULL) {
+	Vector3Randomizer *randomizer = nullptr;
+	if (PosRand != nullptr) {
 		randomizer = PosRand->Clone ();
 		//randomizer->Scale (1000.0F);
 	}
@@ -485,8 +485,8 @@ Vector3Randomizer *ParticleEmitterClass::Get_Creation_Volume (void) const
 
 Vector3Randomizer *ParticleEmitterClass::Get_Velocity_Random (void) const	
 {
-	Vector3Randomizer *randomizer = NULL;
-	if (VelRand != NULL) {
+	Vector3Randomizer *randomizer = nullptr;
+	if (VelRand != nullptr) {
 		randomizer = VelRand->Clone ();
 		randomizer->Scale (1000.0F);
 	}
@@ -653,7 +653,7 @@ void ParticleEmitterClass::Create_New_Particles(const Quaternion & curr_quat, co
 
 // Initialize one new particle at the given NewParticleStruct address, with
 // the given age and emitter transform (expressed as a quaternion and origin
-// vector). (must check if address is NULL).
+// vector). (must check if address is nullptr).
 void ParticleEmitterClass::Initialize_Particle(NewParticleStruct * newpart,
    unsigned int timestamp, const Quaternion & quat, const Vector3 & orig)
 {
@@ -712,12 +712,12 @@ ParticleEmitterClass::Build_Definition (void) const
 {	
 	// Allocate a new emitter definition object
 	ParticleEmitterDefClass *pdefinition = W3DNEW ParticleEmitterDefClass;
-	WWASSERT (pdefinition != NULL);
-	if (pdefinition != NULL) {
+	WWASSERT (pdefinition != nullptr);
+	if (pdefinition != nullptr) {
 		
 		// Set the texture's filename
 		TextureClass *ptexture = Get_Texture ();
-		if (ptexture != NULL) {
+		if (ptexture != nullptr) {
 			pdefinition->Set_Texture_Filename (ptexture->Get_Texture_Name());
 			REF_PTR_RELEASE(ptexture);
 		}
@@ -758,8 +758,8 @@ ParticleEmitterClass::Build_Definition (void) const
 		ParticlePropertyStruct<Vector3> colors;
 		Get_Color_Key_Frames (colors);
 		pdefinition->Set_Color_Keyframes (colors);
-		if (colors.KeyTimes != NULL) delete [] colors.KeyTimes;
-		if (colors.Values != NULL) delete [] colors.Values;
+		if (colors.KeyTimes != nullptr) delete [] colors.KeyTimes;
+		if (colors.Values != nullptr) delete [] colors.Values;
 
 		//
 		//	Pass the opacity keyframes onto the definition
@@ -767,8 +767,8 @@ ParticleEmitterClass::Build_Definition (void) const
 		ParticlePropertyStruct<float> opacities;
 		Get_Opacity_Key_Frames (opacities);
 		pdefinition->Set_Opacity_Keyframes (opacities);
-		if (opacities.KeyTimes != NULL) delete [] opacities.KeyTimes;
-		if (opacities.Values != NULL) delete [] opacities.Values;
+		if (opacities.KeyTimes != nullptr) delete [] opacities.KeyTimes;
+		if (opacities.Values != nullptr) delete [] opacities.Values;
 
 		//
 		//	Pass the size keyframes onto the definition
@@ -776,8 +776,8 @@ ParticleEmitterClass::Build_Definition (void) const
 		ParticlePropertyStruct<float> sizes;
 		Get_Size_Key_Frames (sizes);
 		pdefinition->Set_Size_Keyframes (sizes);
-		if (sizes.KeyTimes != NULL) delete [] sizes.KeyTimes;
-		if (sizes.Values != NULL) delete [] sizes.Values;
+		if (sizes.KeyTimes != nullptr) delete [] sizes.KeyTimes;
+		if (sizes.Values != nullptr) delete [] sizes.Values;
 
 		//
 		//	Pass the rotation keyframes onto the definition
@@ -785,8 +785,8 @@ ParticleEmitterClass::Build_Definition (void) const
 		ParticlePropertyStruct<float> rotations;
 		Get_Rotation_Key_Frames (rotations);
 		pdefinition->Set_Rotation_Keyframes (rotations, Get_Initial_Orientation_Random());
-		if (rotations.KeyTimes != NULL) delete [] rotations.KeyTimes;
-		if (rotations.Values != NULL) delete [] rotations.Values;
+		if (rotations.KeyTimes != nullptr) delete [] rotations.KeyTimes;
+		if (rotations.Values != nullptr) delete [] rotations.Values;
 
 		//
 		//	Pass the frame keyframes onto the definition
@@ -794,8 +794,8 @@ ParticleEmitterClass::Build_Definition (void) const
 		ParticlePropertyStruct<float> frames;
 		Get_Frame_Key_Frames (frames);
 		pdefinition->Set_Frame_Keyframes (frames);
-		if (frames.KeyTimes != NULL) delete [] frames.KeyTimes;
-		if (frames.Values != NULL) delete [] frames.Values;
+		if (frames.KeyTimes != nullptr) delete [] frames.KeyTimes;
+		if (frames.Values != nullptr) delete [] frames.Values;
 
 		//
 		//	Pass the blur time keyframes onto the definition
@@ -803,8 +803,8 @@ ParticleEmitterClass::Build_Definition (void) const
 		ParticlePropertyStruct<float> blur_times;
 		Get_Blur_Time_Key_Frames (blur_times);
 		pdefinition->Set_Blur_Time_Keyframes (blur_times);
-		if (blur_times.KeyTimes != NULL) delete [] blur_times.KeyTimes;
-		if (blur_times.Values != NULL) delete [] blur_times.Values;
+		if (blur_times.KeyTimes != nullptr) delete [] blur_times.KeyTimes;
+		if (blur_times.Values != nullptr) delete [] blur_times.Values;
 
 
 		//
@@ -837,7 +837,7 @@ ParticleEmitterClass::Save (ChunkSaveClass &chunk_save) const
 	// Build a definition from this emitter instance, and save it
 	// to the chunk.
 	ParticleEmitterDefClass *pdefinition = Build_Definition ();
-	if (pdefinition != NULL) {
+	if (pdefinition != nullptr) {
 		ret_val = pdefinition->Save_W3D (chunk_save);
 	}
 
@@ -850,9 +850,9 @@ void
 ParticleEmitterClass::Set_Name (const char *pname)
 {
 	// Free the old name if necessary
-	if (NameString != NULL) {
+	if (NameString != nullptr) {
 		::free (NameString);
-		NameString = NULL;
+		NameString = nullptr;
 	}
 
 	// Copy the provided name
@@ -887,7 +887,7 @@ ParticleEmitterClass::Add_Dependencies_To_List
 	// Get the texture the emitter is using and add it to our list
 	//
 	TextureClass *texture = Get_Texture ();
-	if (texture != NULL) {
+	if (texture != nullptr) {
 		file_list.Add (texture->Get_Full_Path ());
 		REF_PTR_RELEASE(texture);
 	}
