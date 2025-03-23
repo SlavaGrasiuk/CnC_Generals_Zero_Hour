@@ -25,12 +25,12 @@
  *                                                                                             * 
  *                    File Name : MATRIX3D.CPP                                                 * 
  *                                                                                             * 
- *                Org Programmer : Greg Hjelstrom                                               * 
+ *                Org Programmer : Greg Hjelstrom                                              * 
  *                                                                                             * 
- *                   Programmer : Kenny Mitchell                          * 
+ *                   Programmer : Kenny Mitchell                                               * 
  *                                                                                             * 
  *                   Start Date : 02/24/97                                                     * 
- *                                                                         * 
+ *                                                                                             * 
  *                  Last Update : June 6, 2002 [KM]                                            * 
  *                                                                                             * 
  * 06/26/02 KM Matrix name change to avoid MAX conflicts                                       *
@@ -57,15 +57,15 @@
 
 #include "matrix3d.h"
 
-#include <math.h>
+#include <cmath>
 #include <assert.h>
-#include <stdlib.h>
+#include <cstdlib>
 //#include <stdio.h>
 #include "vector3.h"
 #include "matrix3.h"
 #include "matrix4.h"
 #include "quat.h"
-#include "D3dx8math.h"
+#include <D3dx8math.h>
 
 // some static matrices which are sometimes useful
 const Matrix3D Matrix3D::Identity
@@ -331,13 +331,13 @@ Vector3 Matrix3D::Inverse_Rotate_Vector(const Vector3 &vect) const
 /*********************************************************************************************** 
  * M3DC::Look_At -- Creates a "look at" transformation.                                        * 
  *                                                                                             * 
- *	Builds a transformation matrix which positions the origin at p,                             *
- *	points the negative z-axis towards a target t, and rolls about the z-axis                   *
- *	by the angle specified by roll.  														                 *
- *																							                          *
- *	This can be useful for creating a camera matrix, just invert 							           *
- *	the matrix after initializing it with this function...									           *
- *																							                          *
+ *	Builds a transformation matrix which positions the origin at p,                            *
+ *	points the negative z-axis towards a target t, and rolls about the z-axis                  *
+ *	by the angle specified by roll.  														   *
+ *																							   *
+ *	This can be useful for creating a camera matrix, just invert 							   *
+ *	the matrix after initializing it with this function...									   *
+ *																							   *
  * INPUT:                                                                                      * 
  * p - position of the coordinate system                                                       * 
  * t - target of the coordinate system                                                         * 
@@ -541,23 +541,23 @@ void Matrix3D::Get_Inverse(Matrix3D & inv) const
 /*********************************************************************************************** 
  * Matrix3D::Get_Orthogonal_Inverse -- Returns the inverse of the matrix                       *  
  *                                                                                             * 
- *	NOTE!!! This only works if the matrix is really ORTHOGONAL!!!						              *
- *																							                          *
+ *	NOTE!!! This only works if the matrix is really ORTHOGONAL!!!						       *
+ *																							   *
  ***********************************************************************************************
- * Inverting an orthogonal Matrix3D																				  *
- *																							                          *
- *  M is the original transform,																	              *
- *  R is rotation submatrix,																                    *
- *  T is translation vector in M.															                 *
- *																							                          *
- *	To build MINV																							           *
- *																							                          *
- *	R' = transpose of R  (inverse of orthogonal 3x3 matrix is transpose)							     *
- *	T' = -R'T																				                       *
- *																							                          *
- *	Build MINV with R'and T'																                    *
- *  MINV is the inverse of M																						  *
- *																							                          *
+ * Inverting an orthogonal Matrix3D															   *
+ *																							   *
+ *  M is the original transform,															   *
+ *  R is rotation submatrix,																   *
+ *  T is translation vector in M.															   *
+ *																							   *
+ *	To build MINV																			   *
+ *																							   *
+ *	R' = transpose of R  (inverse of orthogonal 3x3 matrix is transpose)					   *
+ *	T' = -R'T																				   *
+ *																							   *
+ *	Build MINV with R'and T'																   *
+ *  MINV is the inverse of M																   *
+ *																							   *
  ***********************************************************************************************
  * INPUT:                                                                                      * 
  *                                                                                             * 
@@ -639,7 +639,7 @@ void Matrix3D::Copy_3x3_Matrix(float matrix[3][3])
 
 void Matrix3D::Multiply(const Matrix3D & A,const Matrix3D & B,Matrix3D * set_res)
 {
-	assert(set_res != NULL);
+	assert(set_res != nullptr);
 
 	Matrix3D tmp;
 	Matrix3D * Aptr;
@@ -696,7 +696,7 @@ void Matrix3D::Multiply(const Matrix3D & A,const Matrix3D & B,Matrix3D * set_res
 #if 0
 void Matrix3D::Multiply(const Matrix3D & A,const Matrix3D & B,Matrix3D * set_res)
 {
-	assert(set_res != NULL);
+	assert(set_res != nullptr);
 
 	float tmp[12];
 // Check for aliased parameters, copy the 'A' matrix into a temporary if the
